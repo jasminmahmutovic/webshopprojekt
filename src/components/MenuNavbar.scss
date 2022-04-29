@@ -1,0 +1,41 @@
+@import "../index.scss";
+
+#navbarScrollingDropdown, .nav-link , .navbar-light .navbar-brand{
+        color:$nav-link; 
+        &:hover{
+            color:$hover-link;
+        }    
+}
+
+
+.dropdown-menu.show{
+    display: flex !important;
+    width: 100vh;
+    justify-content: space-around;
+    background-color: black;
+    color:white;
+}
+
+.form-control{
+    color:white;
+    background: none;
+    outline:none;
+    border:1px solid white;
+    border-radius: unset;
+}
+
+.dropdown-item{
+    color:white;
+    &:hover{
+        background-color:$hover-link;
+        color:black;
+    }
+}
+
+
+.my_account{ 
+    .dropdown-menu.show{
+        flex-direction: column;
+    }    
+}
+

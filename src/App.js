@@ -8,7 +8,6 @@ import Products from "./pages/products.js";
 import Register from "./pages/register.js";
 import ShowInDom from "./ShowInDom"
 
-import './App.css';
 
 //Kopierade över och gjorde om våra routes från föregående kurs.
 function App() {
