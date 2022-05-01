@@ -1,19 +1,26 @@
 @import "../index.scss";
 
+
 #navbarScrollingDropdown, .nav-link , .navbar-light .navbar-brand{
         color:$nav-link; 
         &:hover{
             color:$hover-link;
+            border-bottom: 1px solid $hover-link;
         }    
 }
 
 
 .dropdown-menu.show{
-    display: flex !important;
-    width: 100vh;
     justify-content: space-around;
     background-color: black;
     color:white;
+    left: calc(100% - 30rem);
+    @media screen and (min-width: 991px) {
+        width: 100vh;
+    }
+    @media screen and (min-width: 602px) {
+        display: flex !important;
+    }
 }
 
 .form-control{
@@ -22,6 +29,7 @@
     outline:none;
     border:1px solid white;
     border-radius: unset;
+    height: 29px;
 }
 
 .dropdown-item{
@@ -39,3 +47,22 @@
     }    
 }
 
+.me-auto{
+    margin:auto;
+}
+
+
+.navbar-light .navbar-toggler-icon{
+    filter: brightness(0) invert(1);
+}
+
+.navbar .btn-primary{
+    background-color: unset;
+    outline: none;
+    border:none;
+    font-size: 20px;
+}
+
+.links_end{
+    display: flex;
+}
