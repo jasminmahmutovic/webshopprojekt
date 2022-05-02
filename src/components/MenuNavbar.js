@@ -56,7 +56,8 @@ const MenuNavbar = () => {
                 navbarScroll
               >
         
-                <NavDropdown  
+                <NavDropdown 
+                style={{width:'100%'}} 
                 title="SHOP"
                 id="navbarScrollingDropdown"
                 show={show}  

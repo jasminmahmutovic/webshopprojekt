@@ -15,9 +15,7 @@
     background-color: black;
     color:white;
     left: calc(100% - 30rem);
-    @media screen and (min-width: 991px) {
-        width: 100vh;
-    }
+    min-width: 60rem;
     @media screen and (min-width: 602px) {
         display: flex !important;
     }
