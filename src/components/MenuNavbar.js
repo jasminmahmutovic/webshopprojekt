@@ -35,10 +35,10 @@ const MenuNavbar = () => {
 
   //för dropdown
   const [show, setShow] = useState(false);
-  const showDropdown = (e)=>{
-      setShow(!show);
+  const showDropdown = () =>{
+      setShow(true);
   }
-  const hideDropdown = e => {
+  const hideDropdown = () => {
       setShow(false);
   }
 
