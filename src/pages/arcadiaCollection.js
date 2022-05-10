@@ -13,6 +13,9 @@ import shoesGirl from '../assets/images/collection_posters/ARCADIA_CLUB/shoesGir
 import sweaterGirl from '../assets/images/collection_posters/ARCADIA_CLUB/sweaterGirl.jpg';
 import neonGirl from '../assets/images/collection_posters/ARCADIA_CLUB/neonGirl.jpg';
 import bikeGirl from '../assets/images/collection_posters/ARCADIA_CLUB/girlBike.jpg';
+import discoGirl from '../assets/images/collection_posters/ARCADIA_CLUB/discoGirl.jpg';
+import girlLeatherPants from '../assets/images/collection_posters/ARCADIA_CLUB/girlLeatherPants.jpg';
+import bgGirl from '../assets/images/collection_posters/ARCADIA_CLUB/threeGirls.png';
 
 const ArcadiaCollection = () => {
 
@@ -31,13 +34,13 @@ const ArcadiaCollection = () => {
                 <img src={girl2} alt="girl with short hair" />
             </div>
 
-            <div className='sec-3'>
-                <div className='overlay'>
+            <div className='section-3'>
+                <div className='div-overlay'>
                     <div className='pics-row'>
                         <img src={gameGirl} alt="game girl" />
                         <img src={discoMan} alt="disco man" />
-                        <img src={shoesGirl} alt="" />
-                        <img src={sweaterGirl} alt="" />
+                        <img src={shoesGirl} alt="girl with high heels" />
+                        <img src={sweaterGirl} alt="girl with seater" />
                     </div>
                 </div>
             </div>
@@ -47,9 +50,17 @@ const ArcadiaCollection = () => {
                 <img src={bikeGirl} alt="biker girl" />
             </div>
 
-            <div className='two-pics'>
-                <img src={arcadeGirl} alt="arcade girl" />
-                <img src={hawaiiBoy} alt="hawaii boy" />
+            <div className='pics-row-2'>
+                <div className='overlay-div'>
+                    <img src={arcadeGirl} alt="arcade girl" />
+                    <img src={hawaiiBoy} alt="hawaii boy" />
+                    <img src={discoGirl} alt="disco girl" />
+                    <img src={girlLeatherPants} alt="girl leather pants" />
+                </div>
+            </div>
+
+            <div className='last-pics-div'>
+                <img src={bgGirl} alt="girl background" />
             </div>
         </>
     )
