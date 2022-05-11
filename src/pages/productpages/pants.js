@@ -1,16 +1,13 @@
 import React from "react";
-import Card from 'react-bootstrap/Card'
-import Button from 'react-bootstrap/Button'
-import Form from 'react-bootstrap/Form'
+import Card from 'react-bootstrap/Card';
+import Button from 'react-bootstrap/Button';
+import Form from 'react-bootstrap/Form';
+import PantsHeader from "../../assets/images/Produkt_headers/byxor.png";
 
 
 const pantsHeader = {
     width: "100%",
-    height: "13 rem",
-    backgroundColor: "blue",
-    display: "flex",
-    alignItems: "center",
-    justifyContent: "flex-end",
+    height: "auto",
 }
 
 const sidebar = {
@@ -66,15 +63,9 @@ const containerRightSide = {
 
 const Pants = () => {
     return (
-        <div>
+        <div style={{width:"auto", height:"auto"}}>
             <div style={pantsHeader}>
-                    <h1 style={{
-                        marginRight: "10rem",
-                        color: "white",
-                        fontSize: "8em",
-                    }}>
-                        Byxor
-                    </h1>
+                <img src={PantsHeader} style={{width: "100%", height:"20vh", objectFit: "cover"}} alt="pants" />
             </div>
             <div style={container}>
             <div style={sidebar}>
