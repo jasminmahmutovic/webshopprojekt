@@ -3,6 +3,7 @@ import Card from 'react-bootstrap/Card';
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import PantsHeader from "../../assets/images/Produkt_headers/byxor.png";
+import PantsExample from "../../assets/images/KATEGORIER/BYXOR/toa-heftiba-LSYrpn4vy-4-unsplash.jpg";
 
 
 const pantsHeader = {
@@ -254,64 +255,64 @@ const Pants = () => {
             </div>
             <div style={containerRightSide}>
                 <Card style={{ width: '18rem', maxHeight: "15rem" }}>
-                <Card.Img variant="top" src="holder.js/100px180" />
+                <Card.Img variant="top" src={PantsExample} />
                 <Card.Body>
                 <Card.Text>
-                    Lorem ipsun.
+                    1000:-
                 </Card.Text>
                 <Button variant="primary">Köp</Button>
                 </Card.Body>
                 </Card>
                 <Card style={{ width: '18rem', maxHeight: "15rem" }}>
-                <Card.Img variant="top" src="holder.js/100px180" />
+                <Card.Img variant="top" src={PantsExample} />
                 <Card.Body>
                 <Card.Text>
-                    Lorem ipsun.
+                    1000:-
                 </Card.Text>
                 <Button variant="primary">Köp</Button>
                 </Card.Body>
                 </Card>
                 <Card style={{ width: '18rem', maxHeight: "15rem" }}>
-                <Card.Img variant="top" src="holder.js/100px180" />
+                <Card.Img variant="top" src={PantsExample} />
                 <Card.Body>
                 <Card.Text>
-                    Lorem ipsun.
+                    1000:-
                 </Card.Text>
                 <Button variant="primary">Köp</Button>
                 </Card.Body>
                 </Card>
                 <Card style={{ width: '18rem', maxHeight: "15rem" }}>
-                <Card.Img variant="top" src="holder.js/100px180" />
+                <Card.Img variant="top" src={PantsExample} />
                 <Card.Body>
                 <Card.Text>
-                    Lorem ipsun.
+                    1000:-
                 </Card.Text>
                 <Button variant="primary">Köp</Button>
                 </Card.Body>
                 </Card>
                 <Card style={{ width: '18rem', maxHeight: "15rem" }}>
-                <Card.Img variant="top" src="holder.js/100px180" />
+                <Card.Img variant="top" src={PantsExample} />
                 <Card.Body>
                 <Card.Text>
-                    Lorem ipsun.
+                    1000:-
                 </Card.Text>
                 <Button variant="primary">Köp</Button>
                 </Card.Body>
                 </Card>
                 <Card style={{ width: '18rem', maxHeight: "15rem" }}>
-                <Card.Img variant="top" src="holder.js/100px180" />
+                <Card.Img variant="top" src={PantsExample} />
                 <Card.Body>
                 <Card.Text>
-                    Lorem ipsun.
+                    1000:-
                 </Card.Text>
                 <Button variant="primary">Köp</Button>
                 </Card.Body>
                 </Card>
                 <Card style={{ width: '18rem', maxHeight: "15rem" }}>
-                <Card.Img variant="top" src="holder.js/100px180" />
+                <Card.Img variant="top" src={PantsExample} />
                 <Card.Body>
                 <Card.Text>
-                    Lorem ipsun.
+                    1000:-
                 </Card.Text>
                 <Button variant="primary">Köp</Button>
                 </Card.Body>
