@@ -1,0 +1,31 @@
+
+
+footer{
+    flex-direction: row;
+    display: flex;
+    width: 100%;
+    justify-content: space-evenly;
+    .footer_links{
+        display: flex;
+    }
+
+    .brand_logo, .footer_links , .footer_links, .footer_subscribe{
+      ul{
+        text-decoration: none;
+        list-style: none;
+        padding:unset;
+      } 
+
+     @media screen and (max-width:900px) {
+
+        &.footer_subscribe{
+            display: none;
+        } 
+    
+    }
+    
+    }     
+}
+
+
+
