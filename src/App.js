@@ -6,6 +6,7 @@ import Main from "./pages/main.js";
 import MyAccount from "./pages/myaccount.js";
 import Products from "./pages/products.js";
 import Register from "./pages/register.js";
+import Pants from  "./pages/productpages/pants";
 import ShowInDom from "./ShowInDom"
 
 
@@ -20,6 +21,7 @@ function App() {
       <Route path="main" element={ <Main />} />
       <Route path="login" element={ <Login />} />
       <Route path="products" element={ <Products />} />
+      <Route path="pants" element={ <Pants />} />
       <Route path="about" element={ <About />} />
       <Route path="checkout" element={<Checkout/>}></Route>
       <Route path="myaccount" element={ <MyAccount />} />

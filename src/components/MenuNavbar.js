@@ -68,7 +68,7 @@ const MenuNavbar = () => {
                   <NavDropdown.Divider /> 
                   <p>Kategorier</p>
                   <NavDropdown.Divider />
-                  <NavDropdown.Item href="#action3">Byxor</NavDropdown.Item>
+                  <NavDropdown.Item href="/pants">Byxor</NavDropdown.Item>
                   <NavDropdown.Item href="#action4">Jumpsuits</NavDropdown.Item>
                   <NavDropdown.Item href="#action4">Toppar & T-shirts</NavDropdown.Item>
                   <NavDropdown.Item href="#action4">Tröjor & Sweatshirts</NavDropdown.Item>
