@@ -2,12 +2,11 @@ import React from "react";
 import Card from 'react-bootstrap/Card';
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
-import PantsHeader from "../../assets/images/Produkt_headers/byxor.png";
-import PantsExample from "../../assets/images/KATEGORIER/BYXOR/toa-heftiba-LSYrpn4vy-4-unsplash.jpg";
+import TopsHeader from "../../assets/images/Produkt_headers/toppar.png";
+import TopsExample from "../../assets/images/KATEGORIER/TOPPAR/connor-botts-9-5t1Jldx_U-unsplash.jpg";
 import FilterIcon from "../../assets/icons/filter.png";
 
-
-const pantsHeader = {
+const topsHeader = {
     width: "100%",
     height: "auto",
 }
@@ -77,14 +76,14 @@ const filterStyle = {
 const Pants = () => {
     return (
         <div style={{width:"auto", height:"auto"}}>
-            <div style={pantsHeader}>
-                <img src={PantsHeader} style={{width: "100%", height:"auto", objectFit: "cover"}} alt="pants header" />
+            <div style={topsHeader}>
+                <img src={TopsHeader} style={{width: "100%", height:"auto", objectFit: "cover"}} alt="Tops header" />
             </div>
             <div style={container}>
             <div style={sidebar}>
                     <h1 style={filterStyle}>
-                        <img src={FilterIcon} alt="Filter icon" style={filterIconStyle} />
-                            FILTER
+                    <img src={FilterIcon} alt="Filter icon" style={filterIconStyle} />
+                        FILTER
                     </h1>
                     <br />
                     <div >
@@ -265,8 +264,35 @@ const Pants = () => {
                 </div>
             </div>
             <div style={containerRightSide}>
+                <Card style={{ width: '15rem' }}>
+                <Card.Img variant="top" src={TopsExample} />
+                <Card.Body>
+                <Card.Text>
+                    1000:-
+                </Card.Text>
+                <Button variant="primary">Köp</Button>
+                </Card.Body>
+                </Card>
+                <Card style={{ width: '15rem' }}>
+                <Card.Img variant="top" src={TopsExample} />
+                <Card.Body>
+                <Card.Text>
+                    1000:-
+                </Card.Text>
+                <Button variant="primary">Köp</Button>
+                </Card.Body>
+                </Card>
+                <Card style={{ width: '15rem' }}>
+                <Card.Img variant="top" src={TopsExample} />
+                <Card.Body>
+                <Card.Text>
+                    1000:-
+                </Card.Text>
+                <Button variant="primary">Köp</Button>
+                </Card.Body>
+                </Card>
                 <Card style={{ width: '15rem'}}>
-                <Card.Img variant="top" src={PantsExample} />
+                <Card.Img variant="top" src={TopsExample} />
                 <Card.Body>
                 <Card.Text>
                     1000:-
@@ -275,7 +301,7 @@ const Pants = () => {
                 </Card.Body>
                 </Card>
                 <Card style={{ width: '15rem' }}>
-                <Card.Img variant="top" src={PantsExample} />
+                <Card.Img variant="top" src={TopsExample} />
                 <Card.Body>
                 <Card.Text>
                     1000:-
@@ -284,34 +310,7 @@ const Pants = () => {
                 </Card.Body>
                 </Card>
                 <Card style={{ width: '15rem' }}>
-                <Card.Img variant="top" src={PantsExample} />
-                <Card.Body>
-                <Card.Text>
-                    1000:-
-                </Card.Text>
-                <Button variant="primary">Köp</Button>
-                </Card.Body>
-                </Card>
-                <Card style={{ width: '15rem' }}>
-                <Card.Img variant="top" src={PantsExample} />
-                <Card.Body>
-                <Card.Text>
-                    1000:-
-                </Card.Text>
-                <Button variant="primary">Köp</Button>
-                </Card.Body>
-                </Card>
-                <Card style={{ width: '15rem' }}>
-                <Card.Img variant="top" src={PantsExample} />
-                <Card.Body>
-                <Card.Text>
-                    1000:-
-                </Card.Text>
-                <Button variant="primary">Köp</Button>
-                </Card.Body>
-                </Card>
-                <Card style={{ width: '15rem' }}>
-                <Card.Img variant="top" src={PantsExample} />
+                <Card.Img variant="top" src={TopsExample} />
                 <Card.Body>
                 <Card.Text>
                     1000:-

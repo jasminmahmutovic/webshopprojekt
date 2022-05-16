@@ -48,7 +48,10 @@ const MenuNavbar = () => {
       <>
         <Navbar bg="black" expand="lg">
           <Container fluid>
-            <Navbar.Brand href="#">Cool Fashion</Navbar.Brand>
+            <LinkContainer to="/main">
+              <Navbar.Brand>Cool Fashion</Navbar.Brand>
+            </LinkContainer>
+            <Navbar.Brand href="/main">Cool Fashion</Navbar.Brand>
             <Navbar.Toggle aria-controls="navbarScroll" />
             <Navbar.Collapse id="navbarScroll">
               <Nav
@@ -68,15 +71,21 @@ const MenuNavbar = () => {
                   <NavDropdown.Divider /> 
                   <p>Kategorier</p>
                   <NavDropdown.Divider />
-                  <NavDropdown.Item href="/pants">Byxor</NavDropdown.Item>
-                  <NavDropdown.Item href="#action4">Jumpsuits</NavDropdown.Item>
-                  <NavDropdown.Item href="#action4">Toppar & T-shirts</NavDropdown.Item>
-                  <NavDropdown.Item href="#action4">Tröjor & Sweatshirts</NavDropdown.Item>
-                  <NavDropdown.Item href="#action4">Klänningar</NavDropdown.Item>
-                  <NavDropdown.Item href="#action4">Kjolar</NavDropdown.Item>
-                  <NavDropdown.Item href="#action4">Matchande set</NavDropdown.Item>
-                  <NavDropdown.Item href="#action4">Underkläder</NavDropdown.Item>
-                  <NavDropdown.Item href="#action4">Ytterkläder</NavDropdown.Item>
+                  <LinkContainer to="/pants">
+                      <NavDropdown.Item>Byxor</NavDropdown.Item>
+                  </LinkContainer>
+                  <LinkContainer to="/shirts">
+                    <NavDropdown.Item>Skjortor</NavDropdown.Item>
+                  </LinkContainer>
+                  <LinkContainer to="/outerwear">
+                    <NavDropdown.Item>Outerwear</NavDropdown.Item>
+                  </LinkContainer>
+                  <LinkContainer to="/skirtsdresses">
+                    <NavDropdown.Item>Klänningar & Kjolar</NavDropdown.Item>
+                  </LinkContainer>
+                  <LinkContainer to="/tops">
+                    <NavDropdown.Item>Tops</NavDropdown.Item>
+                  </LinkContainer>
                   </div>
         
                   <div className="inspiration">
@@ -141,7 +150,7 @@ const MenuNavbar = () => {
       <>
           <Navbar bg="black" expand="lg">
             <Container fluid>
-              <Navbar.Brand href="#">Cool Fashion</Navbar.Brand>
+              <Navbar.Brand href="/main">Cool Fashion</Navbar.Brand>
               <Navbar.Toggle className="hamburger" aria-controls="navbarScroll" />
               <Navbar.Collapse id="navbarScroll">
                 <Nav className="me-auto my-2 my-lg-0" navbarScroll>
@@ -155,15 +164,21 @@ const MenuNavbar = () => {
                     <NavDropdown.Divider /> 
                     <p>Kategorier</p>
                     <NavDropdown.Divider />
-                    <NavDropdown.Item href="#action3">Byxor</NavDropdown.Item>
-                    <NavDropdown.Item href="#action4">Jumpsuits</NavDropdown.Item>
-                    <NavDropdown.Item href="#action4">Toppar & T-shirts</NavDropdown.Item>
-                    <NavDropdown.Item href="#action4">Tröjor & Sweatshirts</NavDropdown.Item>
-                    <NavDropdown.Item href="#action4">Klänningar</NavDropdown.Item>
-                    <NavDropdown.Item href="#action4">Kjolar</NavDropdown.Item>
-                    <NavDropdown.Item href="#action4">Matchande set</NavDropdown.Item>
-                    <NavDropdown.Item href="#action4">Underkläder</NavDropdown.Item>
-                    <NavDropdown.Item href="#action4">Ytterkläder</NavDropdown.Item>
+                    <LinkContainer to="/pants">
+                      <NavDropdown.Item>Byxor</NavDropdown.Item>
+                    </LinkContainer>
+                    <LinkContainer to="/shirts">
+                      <NavDropdown.Item>Skjortor</NavDropdown.Item>
+                    </LinkContainer>
+                    <LinkContainer to="/outerwear">
+                      <NavDropdown.Item>Outerwear</NavDropdown.Item>
+                    </LinkContainer>
+                    <LinkContainer to="/skirtsdresses">
+                      <NavDropdown.Item>Klänningar & Kjolar</NavDropdown.Item>
+                    </LinkContainer>
+                    <LinkContainer to="/tops">
+                      <NavDropdown.Item>Tops</NavDropdown.Item>
+                    </LinkContainer>
                     </div>
           
                     <div className="inspiration">
@@ -200,7 +215,7 @@ const MenuNavbar = () => {
                 <Button  as="input" type="submit" value="LOGGA IN" onClick={() => navigate("/login")} />
                 <LinkContainer to="/checkout">
                   <Nav.Link>Kassa</Nav.Link>
-                  </LinkContainer>
+                </LinkContainer>
               </Navbar.Collapse>
             </Container>
           </Navbar>
