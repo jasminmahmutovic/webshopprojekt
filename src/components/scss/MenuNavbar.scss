@@ -86,7 +86,7 @@ nav{
         }
     }
     @media screen and (max-width: 700px) {
-        top: 38rem;
+        top: 32rem;
         right: 20.5rem;
     }
 }
@@ -164,6 +164,9 @@ nav{
     padding:0;
 }
 
+#loggaIn.open_navButton,  #loggaUt.open_navButton{
+    margin-right: 1rem;
+}
 
 .end_div{
     display: flex;
@@ -201,3 +204,24 @@ nav{
         display: none;
     } 
 }
+
+.module_login{
+    color:white; 
+width: fit-content;
+    position: absolute;
+    z-index: 10000;
+    top: 2rem;
+    right: 4rem;
+    font-size: 15px;
+    border:none;
+    border-bottom: 1px solid $hover-link;
+    background-color:unset;
+    @media screen and (min-width: 700px) {
+    display: none;
+    }   
+}
+
+
+
+
+

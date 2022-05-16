@@ -1,17 +1,15 @@
 import React from 'react'
+import LoginForm from '../components/LoginForm';
 
 //Styling in footer.scss
 
 
-const Modal = ({open, children, onClose}) => {
+const Modal = ({open, children}) => {
   if(!open) return null;
 
   return (
     <div >
-  
-        {/* <button className='close_modal'  onClick={onClose}>x</button> */}
         {children}
-
     </div>
 
   )

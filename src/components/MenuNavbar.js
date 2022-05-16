@@ -14,6 +14,8 @@ import "./scss/MenuNavbar.scss"
 import LoginForm from "./LoginForm.js";
 //ICON
 import { BsBag } from "react-icons/bs";
+import { MenuDown } from "react-bootstrap-icons";
+import { MenuUp } from "react-bootstrap-icons";
 
 const MenuNavbar = (props) => {
 
@@ -22,13 +24,16 @@ const MenuNavbar = (props) => {
 
   const [shopIsOpen, shopSetIsOpen] = useState(false) //dropdown till shop
   const [yourAccountOpen, accountSetIsOpen] = useState(false) //dropdown "mitt konto"
-  const [logInOpen, setLogInOpen] = useState(false) //modal logga in
+  const [logInOpen, setLogInOpen] = useState(false) // logga in 
   const [navbarOpen, setNavbarOpen] = useState(false) //hamburgermeny
+  
 
 
 
   const handleToggle = () => {
     setNavbarOpen(!navbarOpen)
+    setLogInOpen(!logInOpen)
+
   }
   
   const handleLogOut = () => {
@@ -38,83 +43,12 @@ const MenuNavbar = (props) => {
   };
 
 
-<<<<<<< HEAD
-=======
-  //för dropdown
-  const [show, setShow] = useState(false);
-  const showDropdown = () =>{
-      setShow(true);
-  }
-  const hideDropdown = () => {
-      setShow(false);
-  }
-
->>>>>>> a819d8ff5492d2cd0b6913ea500f18bda66d7a9d
   //Här är du inloggad
   const LoggedIn = () => {
     return(
       <>
-<<<<<<< HEAD
       <nav  className={`menuNav ${navbarOpen ? " showMenu" : ""}`} > 
          <div className={`innerNav ${navbarOpen ? "showInner" : ""}`} > 
-=======
-        <Navbar bg="black" expand="lg">
-          <Container fluid>
-            <Navbar.Brand href="#">Cool Fashion</Navbar.Brand>
-            <Navbar.Toggle aria-controls="navbarScroll" />
-            <Navbar.Collapse id="navbarScroll">
-              <Nav
-                className="me-auto my-2 my-lg-0"
-                navbarScroll
-              >
-        
-                <NavDropdown 
-                style={{width:'100%'}} 
-                title="SHOP"
-                id="navbarScrollingDropdown"
-                show={show}  
-                onMouseEnter={showDropdown}
-                onMouseLeave={hideDropdown}
-                >
-                  <div className="categories">
-                  <NavDropdown.Divider /> 
-                  <p>Kategorier</p>
-                  <NavDropdown.Divider />
-                  <NavDropdown.Item href="/pants">Byxor</NavDropdown.Item>
-                  <NavDropdown.Item href="#action4">Jumpsuits</NavDropdown.Item>
-                  <NavDropdown.Item href="#action4">Toppar & T-shirts</NavDropdown.Item>
-                  <NavDropdown.Item href="#action4">Tröjor & Sweatshirts</NavDropdown.Item>
-                  <NavDropdown.Item href="#action4">Klänningar</NavDropdown.Item>
-                  <NavDropdown.Item href="#action4">Kjolar</NavDropdown.Item>
-                  <NavDropdown.Item href="#action4">Matchande set</NavDropdown.Item>
-                  <NavDropdown.Item href="#action4">Underkläder</NavDropdown.Item>
-                  <NavDropdown.Item href="#action4">Ytterkläder</NavDropdown.Item>
-                  </div>
-        
-                  <div className="inspiration">
-                  <NavDropdown.Divider /> 
-                  <p> Inspiration och Nyheter</p>
-                  <NavDropdown.Divider />
-                  <NavDropdown.Item href="#action4">Vårnyheter</NavDropdown.Item>
-                  <NavDropdown.Item href="#action4">Student</NavDropdown.Item>
-                  <NavDropdown.Item href="#action4">Festival</NavDropdown.Item>
-                  <NavDropdown.Item href="#action4">Tropical vaycay</NavDropdown.Item>
-                  <NavDropdown.Item href="#action4">Summer in the city</NavDropdown.Item>
-                  <NavDropdown.Item href="#action4">Boho summer</NavDropdown.Item>
-                  <NavDropdown.Item href="#action4">TikTok vibe</NavDropdown.Item>
-                  <NavDropdown.Item href="#action4">Stand out from the crowd</NavDropdown.Item>
-                  </div>
-                  <div className="dropdown_img">
-                  <NavDropdown.Divider /> 
-                  <p>Senaste</p>
-                  <NavDropdown.Divider />
-                  <img src={navImage} style={{width:"10rem"}}/>
-                    </div>
-              </NavDropdown>
-        
-        
-              </Nav>
->>>>>>> a819d8ff5492d2cd0b6913ea500f18bda66d7a9d
 
          <button className="nav_button">COOL SHOP</button>
 
@@ -141,6 +75,7 @@ const MenuNavbar = (props) => {
          <Search></Search>
 
          <button id="loggaIn" 
+         style={{marginRight:"1rem"}}
           className={`nav_button ${navbarOpen ? "open_navButton" : ""}`} 
           onClick={() => accountSetIsOpen(!yourAccountOpen)}>
           MITT KONTO
@@ -155,8 +90,9 @@ const MenuNavbar = (props) => {
           <button id="checkout" className="nav_button"><BsBag></BsBag></button>
           <button id="hamburger"  
           className={`nav_button ${navbarOpen ? "open_navButton" : ""}`}
-          onClick={handleToggle}>{navbarOpen ? "Close" : "Open"}
+          onClick={handleToggle}>{navbarOpen ? <MenuDown/> : <MenuUp/>}
           </button>
+  
          </div>
          </div>
          </nav>   
@@ -198,23 +134,27 @@ const MenuNavbar = (props) => {
          <button id="loggaUt" 
           style={{marginRight:"1rem"}}
           className={`nav_button ${navbarOpen ? "open_navButton" : ""}`}
-          onClick={() =>setLogInOpen(true)}>
-          LOGGA IN
+          onClick={() => setLogInOpen(!logInOpen)}>
+          {logInOpen ? "STÄNG": "LOGGA IN"}
           </button>
-          <Modal  open={logInOpen} onClose={() => setLogInOpen(false)}>
+
+          <Modal  open={logInOpen}>
+          <button 
+          className="module_login"
+          onClick={() => setLogInOpen(!logInOpen)}>STÄNG LOGIN</button>
           <LoginForm></LoginForm> 
           </Modal>   
-     
+
+
           
           <button id="checkout" className="nav_button"><BsBag></BsBag></button>
 
           <button id="hamburger"  
           className={`nav_button ${navbarOpen ? "open_navButton" : ""}`}
-          onClick={handleToggle}>{navbarOpen ? "Close" : "Open"}
+          onClick={handleToggle}>{navbarOpen ? <MenuDown/> :<MenuUp/>}
           </button>
          </div>
           
-      
          </div>
          </nav>   
       </>

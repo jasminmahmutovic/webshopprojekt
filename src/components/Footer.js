@@ -26,7 +26,7 @@ const Footer = (props) => {
             <li>Gift cards & Coupons</li>
           </ul>
           <ul>
-            <li> <button onClick={() => setIsOpen(true)}>Contact</button></li>
+            <li> <button onClick={() => setIsOpen(!isOpen)}>Contact</button></li>
             <li>About Us</li>
             <li>Terms & Conditions</li>
           </ul>

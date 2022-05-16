@@ -34,11 +34,11 @@ const ContactUs = (props) => {
          <IoMailOutline></IoMailOutline>
      </div>
          <div className='content_wrapper'>
-         <input name="firstname" placeholder='Förnamn' onChange={handleInput}></input>
+         <input name="firstname" placeholder='Förnamn' onChange={handleInput} required></input>
          <input name="lastname" placeholder='Efternamn' onChange={handleInput}></input>
-         <input name="mail" placeholder='Mail' onChange={handleInput}></input>
+         <input name="mail" placeholder='Mail' onChange={handleInput} required></input>
          <input type="file"></input>
-         <textarea name="textarea" placeholder="skriv ditt ärende här" onChange={handleInput}></textarea>
+         <textarea name="textarea" placeholder="skriv ditt ärende här" onChange={handleInput} required></textarea>
          <button className='button_form' onClick={sendingEmail}>Skicka</button>
          <button className='button_form' onClick={closeMail}>Stäng</button>
          </div>  
