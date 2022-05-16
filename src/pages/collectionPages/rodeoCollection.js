@@ -1,20 +1,20 @@
 import './rodeoCollection.scss';
-import headerRodeo from '../assets/images/collection_posters/RODEO/rodeoText.png';
-import girlTrailor from '../assets/images/collection_posters/RODEO/girlTrailor.jpg';
-import leatherCoatGirl from '../assets/images/collection_posters/RODEO/leatherCoatGirl.jpg';
-import cocaColaGirl from '../assets/images/collection_posters/RODEO/cocaColaGirl.jpg';
-import womanInBlouse from '../assets/images/collection_posters/RODEO/womanBlouse.jpg';
-import womanInRedTop from '../assets/images/collection_posters/RODEO/redTopWoman.jpg';
-import motorBikeGirl from '../assets/images/collection_posters/RODEO/motorbikeGirl.jpg';
-import blacknwhite1 from '../assets/images/collection_posters/RODEO/blacknwhiteGirl.jpg';
-import blacknwhite2 from '../assets/images/collection_posters/RODEO/manJeanOutfit.jpg';
-import blacknwhite3 from '../assets/images/collection_posters/RODEO/blacknwhiteGirl2.jpg';
-import manWhiteTop from '../assets/images/collection_posters/RODEO/manWhiteTop.jpg';
-import rocknrollGirl from '../assets/images/collection_posters/RODEO/rocknrollGirl.jpg';
-import guyCar from '../assets/images/collection_posters/RODEO/guyCar.jpg';
-import girlJeansOutfit from '../assets/images/collection_posters/RODEO/girlJeansOutfit.jpg';
-import girlCar from '../assets/images/collection_posters/RODEO/girlCar.jpg';
-import cowGirl from '../assets/images/collection_posters/RODEO/cowGirl.jpg';
+import headerRodeo from '../../assets/images/collection_posters/RODEO/rodeoText.png';
+import girlTrailor from '../../assets/images/collection_posters/RODEO/girlTrailor.jpg';
+import leatherCoatGirl from '../../assets/images/collection_posters/RODEO/leatherCoatGirl.jpg';
+import cocaColaGirl from '../../assets/images/collection_posters/RODEO/cocaColaGirl.jpg';
+import womanInBlouse from '../../assets/images/collection_posters/RODEO/womanBlouse.jpg';
+import womanInRedTop from '../../assets/images/collection_posters/RODEO/redTopWoman.jpg';
+import motorBikeGirl from '../../assets/images/collection_posters/RODEO/motorbikeGirl.jpg';
+import blacknwhite1 from '../../assets/images/collection_posters/RODEO/blacknwhiteGirl.jpg';
+import blacknwhite2 from '../../assets/images/collection_posters/RODEO/manJeanOutfit.jpg';
+import blacknwhite3 from '../../assets/images/collection_posters/RODEO/blacknwhiteGirl2.jpg';
+import manWhiteTop from '../../assets/images/collection_posters/RODEO/manWhiteTop.jpg';
+import rocknrollGirl from '../../assets/images/collection_posters/RODEO/rocknrollGirl.jpg';
+import guyCar from '../../assets/images/collection_posters/RODEO/guyCar.jpg';
+import girlJeansOutfit from '../../assets/images/collection_posters/RODEO/girlJeansOutfit.jpg';
+import girlCar from '../../assets/images/collection_posters/RODEO/girlCar.jpg';
+import cowGirl from '../../assets/images/collection_posters/RODEO/cowGirl.jpg';
 
 
 const RodeoCollection = () => {
