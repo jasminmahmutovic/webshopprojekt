@@ -1,9 +1,8 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import About from "./pages/about.js";
-import ArcadiaCollection from "./pages/arcadiaCollection.js";
 import Checkout from "./pages/checkout.js";
 import Login from "./pages/login.js";
-import Main from "./pages/main.js";
+import Main from "./pages/main/main.js";
 import MyAccount from "./pages/myaccount.js";
 import Products from "./pages/products.js";
 import Register from "./pages/register.js";
@@ -13,16 +12,17 @@ import Skirtsdresses from  "./pages/productpages/skirtsdresses";
 import Tops from  "./pages/productpages/tops";
 import Shirts from  "./pages/productpages/shirts";
 import ShowInDom from "./ShowInDom";
-import RodeoCollection from './pages/rodeoCollection.js';
-import StreetCredCollection from './pages/streetCredCollection';
-
-
+import ScrollToTop from "./scrollToTop.js";
+import ArcadiaCollection from './pages/collectionPages/arcadiaCollection.js';
+import StreetCredCollection from './pages/collectionPages/streetCredCollection.js';
+import RodeoCollection from './pages/collectionPages/rodeoCollection.js';
 
 //Kopierade över och gjorde om våra routes från föregående kurs.
 function App() {
   return (
   <>
   <BrowserRouter>
+  <ScrollToTop />
   <Routes>
     <Route path="/" element={ <ShowInDom />}>
       <Route index element={<Main />}/>
