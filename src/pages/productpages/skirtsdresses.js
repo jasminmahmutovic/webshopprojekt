@@ -60,8 +60,9 @@ const containerRightSide = {
     height: "100%",
     display: "grid",
     gridTemplateColumns: "auto auto 1fr",
-    gridGap: "80px",
+    gridGap: "15rem",
     marginTop: "2rem",
+    marginLeft: "15rem",
     padding: "5px",
 }
 
