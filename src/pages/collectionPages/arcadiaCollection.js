@@ -1,21 +1,21 @@
 
 //styling imports
 import './arcadiaCollection.scss';
-import header from '../assets/images/collection_posters/ARCADIA_CLUB/arcadiaText.png';
-import guyDreads from '../assets/images/collection_posters/ARCADIA_CLUB/guyDreads.jpg';
-import girl1 from '../assets/images/collection_posters/ARCADIA_CLUB/girlBlackHair.jpg';
-import girl2 from '../assets/images/collection_posters/ARCADIA_CLUB/girlLollipop.jpg';
-import discoMan from '../assets/images/collection_posters/ARCADIA_CLUB/discoMan.jpg';
-import hawaiiBoy from '../assets/images/collection_posters/ARCADIA_CLUB/hawaiiBoy.jpg';
-import gameGirl from '../assets/images/collection_posters/ARCADIA_CLUB/gameGirl.jpg';
-import arcadeGirl from '../assets/images/collection_posters/ARCADIA_CLUB/arcadeGirl.jpg';
-import shoesGirl from '../assets/images/collection_posters/ARCADIA_CLUB/shoesGirl.jpg';
-import sweaterGirl from '../assets/images/collection_posters/ARCADIA_CLUB/sweaterGirl.jpg';
-import neonGirl from '../assets/images/collection_posters/ARCADIA_CLUB/neonGirl.jpg';
-import bikeGirl from '../assets/images/collection_posters/ARCADIA_CLUB/girlBike.jpg';
-import discoGirl from '../assets/images/collection_posters/ARCADIA_CLUB/discoGirl.jpg';
-import girlLeatherPants from '../assets/images/collection_posters/ARCADIA_CLUB/girlLeatherPants.jpg';
-import bgGirl from '../assets/images/collection_posters/ARCADIA_CLUB/threeGirls.png';
+import header from '../../assets/images/collection_posters/ARCADIA_CLUB/arcadiaText.png';
+import guyDreads from '../../assets/images/collection_posters/ARCADIA_CLUB/guyDreads.jpg';
+import girl1 from '../../assets/images/collection_posters/ARCADIA_CLUB/girlBlackHair.jpg';
+import girl2 from '../../assets/images/collection_posters/ARCADIA_CLUB/girlLollipop.jpg';
+import discoMan from '../../assets/images/collection_posters/ARCADIA_CLUB/discoMan.jpg';
+import hawaiiBoy from '../../assets/images/collection_posters/ARCADIA_CLUB/hawaiiBoy.jpg';
+import gameGirl from '../../assets/images/collection_posters/ARCADIA_CLUB/gameGirl.jpg';
+import arcadeGirl from '../../assets/images/collection_posters/ARCADIA_CLUB/arcadeGirl.jpg';
+import shoesGirl from '../../assets/images/collection_posters/ARCADIA_CLUB/shoesGirl.jpg';
+import sweaterGirl from '../../assets/images/collection_posters/ARCADIA_CLUB/sweaterGirl.jpg';
+import neonGirl from '../../assets/images/collection_posters/ARCADIA_CLUB/neonGirl.jpg';
+import bikeGirl from '../../assets/images/collection_posters/ARCADIA_CLUB/girlBike.jpg';
+import discoGirl from '../../assets/images/collection_posters/ARCADIA_CLUB/discoGirl.jpg';
+import girlLeatherPants from '../../assets/images/collection_posters/ARCADIA_CLUB/girlLeatherPants.jpg';
+import bgGirl from '../../assets/images/collection_posters/ARCADIA_CLUB/threeGirls.png';
 
 const ArcadiaCollection = () => {
 

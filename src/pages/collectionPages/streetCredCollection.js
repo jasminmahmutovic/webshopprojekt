@@ -1,17 +1,17 @@
 //styling imports
 import './streetCredCollection.scss';
-import headerStreet from '../assets/images/collection_posters/STREET_CRED/streetcredText.png';
-import guyOverall from '../assets/images/collection_posters/STREET_CRED/guyOverall.jpg';
-import redSuit from '../assets/images/collection_posters/STREET_CRED/redSuit.jpg';
-import girlRedJacket from '../assets/images/collection_posters/STREET_CRED/girlRedJacket.jpg';
-import redSweaterGirl from '../assets/images/collection_posters/STREET_CRED/redSweaterGirl.jpg';
-import radioGuy from '../assets/images/collection_posters/STREET_CRED/guyRadio.jpg';
-import shortsGirl from '../assets/images/collection_posters/STREET_CRED/shortsGirl.jpg';
-import twoguys from '../assets/images/collection_posters/STREET_CRED/twoGuysYellow.jpg';
-import girlInCap from '../assets/images/collection_posters/STREET_CRED/blueGirl.jpg';
-import girlInOrange from '../assets/images/collection_posters/STREET_CRED/orangeNglasses.jpg';
-import guyEyes from '../assets/images/collection_posters/STREET_CRED/guyEyes.jpg';
-import girlMoped from '../assets/images/collection_posters/STREET_CRED/girlMoped.jpg';
+import headerStreet from '../../assets/images/collection_posters/STREET_CRED/streetcredText.png';
+import guyOverall from '../../assets/images/collection_posters/STREET_CRED/guyOverall.jpg';
+import redSuit from '../../assets/images/collection_posters/STREET_CRED/redSuit.jpg';
+import girlRedJacket from '../../assets/images/collection_posters/STREET_CRED/girlRedJacket.jpg';
+import redSweaterGirl from '../../assets/images/collection_posters/STREET_CRED/redSweaterGirl.jpg';
+import radioGuy from '../../assets/images/collection_posters/STREET_CRED/guyRadio.jpg';
+import shortsGirl from '../../assets/images/collection_posters/STREET_CRED/shortsGirl.jpg';
+import twoguys from '../../assets/images/collection_posters/STREET_CRED/twoGuysYellow.jpg';
+import girlInCap from '../../assets/images/collection_posters/STREET_CRED/blueGirl.jpg';
+import girlInOrange from '../../assets/images/collection_posters/STREET_CRED/orangeNglasses.jpg';
+import guyEyes from '../../assets/images/collection_posters/STREET_CRED/guyEyes.jpg';
+import girlMoped from '../../assets/images/collection_posters/STREET_CRED/girlMoped.jpg';
 
 const StreetCredCollection = () => {
 

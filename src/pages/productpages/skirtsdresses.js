@@ -2,12 +2,12 @@ import React from "react";
 import Card from 'react-bootstrap/Card';
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
-import PantsHeader from "../../assets/images/Produkt_headers/byxor.png";
-import PantsExample from "../../assets/images/KATEGORIER/BYXOR/toa-heftiba-LSYrpn4vy-4-unsplash.jpg";
+import SkirtsdressesHeader from "../../assets/images/Produkt_headers/klänningar&skjolar.png";
+import SkirtsdressesExample from "../../assets/images/KATEGORIER/KLÄNNINGAR&SKJOLAR/stow-kelly-1Aei0n1AboQ-unsplash.jpg";
 import FilterIcon from "../../assets/icons/filter.png";
 
 
-const pantsHeader = {
+const skirtsdressesHeader = {
     width: "100%",
     height: "auto",
 }
@@ -77,12 +77,11 @@ const filterStyle = {
     flexDirection: "row",
     fontWeight: "bold",
 }
-
 const Pants = () => {
     return (
         <div style={{width:"auto", height:"auto"}}>
-            <div style={pantsHeader}>
-                <img src={PantsHeader} style={{width: "100%", height:"20vh", objectFit: "cover"}} alt="pants header" />
+            <div style={skirtsdressesHeader}>
+                <img src={SkirtsdressesHeader} style={{width: "100%", height:"auto", objectFit: "cover"}} alt="Skirts and dresses header" />
             </div>
             <div style={container}>
             <div style={sidebar}>
@@ -269,8 +268,8 @@ const Pants = () => {
                 </div>
             </div>
             <div style={containerRightSide}>
-                <Card style={{ width: '15rem'}}>
-                <Card.Img variant="top" src={PantsExample} />
+                <Card style={{ width: '15rem' }}>
+                <Card.Img variant="top" src={SkirtsdressesExample} />
                 <Card.Body>
                 <Card.Text>
                     1000:-
@@ -279,7 +278,7 @@ const Pants = () => {
                 </Card.Body>
                 </Card>
                 <Card style={{ width: '15rem' }}>
-                <Card.Img variant="top" src={PantsExample} />
+                <Card.Img variant="top" src={SkirtsdressesExample} />
                 <Card.Body>
                 <Card.Text>
                     1000:-
@@ -288,7 +287,7 @@ const Pants = () => {
                 </Card.Body>
                 </Card>
                 <Card style={{ width: '15rem' }}>
-                <Card.Img variant="top" src={PantsExample} />
+                <Card.Img variant="top" src={SkirtsdressesExample} />
                 <Card.Body>
                 <Card.Text>
                     1000:-
@@ -297,7 +296,7 @@ const Pants = () => {
                 </Card.Body>
                 </Card>
                 <Card style={{ width: '15rem' }}>
-                <Card.Img variant="top" src={PantsExample} />
+                <Card.Img variant="top" src={SkirtsdressesExample} />
                 <Card.Body>
                 <Card.Text>
                     1000:-
@@ -306,7 +305,7 @@ const Pants = () => {
                 </Card.Body>
                 </Card>
                 <Card style={{ width: '15rem' }}>
-                <Card.Img variant="top" src={PantsExample} />
+                <Card.Img variant="top" src={SkirtsdressesExample} />
                 <Card.Body>
                 <Card.Text>
                     1000:-
@@ -315,7 +314,7 @@ const Pants = () => {
                 </Card.Body>
                 </Card>
                 <Card style={{ width: '15rem' }}>
-                <Card.Img variant="top" src={PantsExample} />
+                <Card.Img variant="top" src={SkirtsdressesExample} />
                 <Card.Body>
                 <Card.Text>
                     1000:-
