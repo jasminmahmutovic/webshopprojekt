@@ -14,12 +14,13 @@ const shirtsHeader = {
 const sidebar = {
     marginTop: "10px",
     padding: "2rem",
-    width: "10%",
     height: "auto",
     display: "flex",
     flexDirection: "column",
     alignItems: "center",
     backgroundColor: "#E1FFA3",
+    position: "absolute",
+    left: "50px",
 }
 
 const colorGroup = {
@@ -47,18 +48,19 @@ const colorGroupRightSide = {
 const container = {
     width: "100%",
     height: "100%",
+    position: "relative",
     display: "flex",
     flexDirection: "row",
+    justifyContent: "center",
     backgroundColor: "#E1FFA3"
 }
 
 const containerRightSide = {
-    width: "90%",
     height: "100%",
     display: "grid",
-    gridTemplateColumns: "auto auto auto",
-    gridGap: "10px",
-    marginLeft: "10rem",
+    gridTemplateColumns: "auto auto 1fr",
+    gridGap: "80px",
+    marginTop: "2rem",
     padding: "5px",
 }
 
