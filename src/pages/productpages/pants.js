@@ -58,12 +58,13 @@ const container = {
 
 const containerRightSide = {
     height: "100%",
+    width: "100%",
     display: "grid",
-    gridTemplateColumns: "auto auto 1fr",
-    gridGap: "15rem",
+    gridTemplateColumns: "repeat(auto-fit, minmax(240px, 1fr))",
+    gridGap: "50px",
     marginTop: "2rem",
-    marginLeft: "15rem",
     padding: "5px",
+    margin: "2rem 2rem 3rem 25rem"
 }
 
 const filterIconStyle = {
