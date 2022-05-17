@@ -10,11 +10,16 @@ const UserProvider = ({children}) => {
   const [user, setUser] = useState({
     firstname: "", 
     lastname: "",
-    password: "",
     mail: "",
     adress: "",
     city: "",
     zipCode: "",
+
+    username:"",
+    password: "",
+
+    textarea: "", 
+    file: "",
   });
 
  

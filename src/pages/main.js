@@ -2,8 +2,13 @@
 // import { useNavigate } from "react-router-dom";
 
 const Main = () => {
+
+    const dummystyle= {
+        height:"100vh"
+    }
+
     return(
-        <p>Main</p>
+        <p style={dummystyle}>Main</p>
     )
 };
 

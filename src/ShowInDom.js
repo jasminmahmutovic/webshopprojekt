@@ -2,14 +2,16 @@ import React from 'react'
 import { Outlet } from 'react-router-dom'
 import MenuNavbar from './components/MenuNavbar'
 import Admin from './pages/admin'
+import Footer from './components/Footer'
+
 
 const showInDom = () => {
     
     return (
         <div>
-           <MenuNavbar></MenuNavbar>
-            <Outlet />
-            <Admin/>
+         <MenuNavbar/>
+         <Outlet />
+         <Footer></Footer>
         </div>
     )
 }

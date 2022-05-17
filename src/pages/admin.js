@@ -1,24 +1,58 @@
 // import { useContext } from "react";
 // import { useNavigate } from "react-router-dom";
 
-import './admin.scss';
+import { useState} from "react";
+
+import './admin.css';
 
 const Admin = () => {
+    const [image, setImage] = useState('');
+    const [title, setTitle] = useState('');
+    const [price, setPrice] = useState(0);
+    const [color, setColor] = useState('Röd');
+    const [size1, setSizeOne] = useState('Not avaliable');
+    const [size2, setSizeTwo] = useState('Not avaliable');
+    const [size3, setSizeThree] = useState('Not avaliable');
+    const [size4, setSizeFour] = useState('Not avaliable');
+    const [size5, setSizeFive] = useState('Not avaliable');
+    const [size6, setSizeSix] = useState('Not avaliable');
+    const [size7, setSizeSeven] = useState('Not avaliable');
+    const [size8, setSizeEight] = useState('Not avaliable');
+    const [size9, setSizeNine] = useState('Not avaliable');
+    const [category, setCategory] = useState('');
+    const [chosenCategory, setChosenCategory] = useState('Byxor');
+    
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        const produkt = {image, title, price, color, size1, size2, size3, size4, size5, size6, size7, size8, size9, category, chosenCategory };
+        fetch('http://localhost:3000/products', {
+            method: 'POST',
+            headers: {"Content-Type": "application/json"},
+            body: JSON.stringify(produkt)
+        }).then(() => {
+            alert('En ny produkt är tillagd')
+        })
+    }
+
+
     return (
         <div className= "admin-wrapper">
 
-        <h1>ADMIN</h1>
+        <h1 className="myAdminTitle">ADMIN</h1>
         <h4>Var vänlig fyll i formuläret för att skapa ett nytt föremål och/eller kategori</h4>
         
-        <form className='admin-form'>
+        <form onSubmit={handleSubmit} className='admin-form'>
+
             <div className="admin-section">
-                <label for="bild"> 
+                <label  for="bild"> 
                 <h4>Bild</h4>
                     <input
+                        className="custom-file-button"
                         name="bild"
                         type="file"
                         accept="imgae/png, image/jpeg"
-                        required
+                        value={image}
+                        onchange={(e) => setImage(e.target.value)}
                     />
                 </label>
 
@@ -27,10 +61,13 @@ const Admin = () => {
                     <input
                         name="titel"
                         type="text"
-                        required
+                        value={title}
+                        onChange={(e) => setTitle(e.target.value)}
+                        
                     />
                 </label>
             </div>
+
 
             <div className="admin-section">
                 <label for="pris">
@@ -38,34 +75,37 @@ const Admin = () => {
                     <input
                         name="pris"
                         type="text"
-                        required
+                        value={price}
+                        onChange={(e) => setPrice(e.target.value)}
+                        
                     />
                 </label>
 
                 <label for="color">
-                    <h4>Färg</h4>
+                    <h4 >Färg</h4>
+                    
                     <select
+                        className="custom-select" 
                         name="color"
-                        multiple="multiple"
-                        required
+                        value={color}
+                        onChange={(e) => setColor(e.target.value)}
                     >
-                        <option value="röd">Röd</option>
-                        <option value="orange">Orange</option>
-                        <option value="gul">Gul</option>
-                        <option value="grön">Grön</option>
-                        <option value="rosa">Rosa</option>
-                        <option value="blå">Blå</option>
-                        <option value="vit">Vit</option>
-                        <option value="grå">Grå</option>
-                        <option value="svart">Svart</option>
-                        <option value="brun">Brun</option>
-                        <option value="multi">Multi</option>
+                        <option value="Röd">Röd</option>
+                        <option value="Orange">Orange</option>
+                        <option value="Gul">Gul</option>
+                        <option value="Grön">Grön</option>
+                        <option value="Rosa">Rosa</option>
+                        <option value="Blå">Blå</option>
+                        <option value="Vit">Vit</option>
+                        <option value="Grå">Grå</option>
+                        <option value="Svart">Svart</option>
+                        <option value="Brun">Brun</option>
+                        <option value="Multi">Multi</option>
                     </select>
                 </label>
             </div>
 
-            
-                
+ 
                 <div>
                 <label><h4>Storlek/Storlekar</h4></label>
                     <div className='admin-multi'>
@@ -73,74 +113,83 @@ const Admin = () => {
                         <label className='check'>
                             3XS
                         <input
-                            multiple="multiple"
                             type="checkbox"
-                            required
+                            value='3XS'
+                            onChange={(e) => setSizeOne(e.target.value)}
+                            
                         />
                         </label>
                         <label className='check'>
                             2XS
                         <input
-                            multiple="multiple"
+                            value='2XS'
+                            onChange={(e) => setSizeTwo(e.target.value)}
                             type="checkbox"
-                            required
+                            
                         />
                         </label>
                         <label className='check'>
                             XS
                         <input
-                            multiple="multiple"
+                            value='XS'
+                            onChange={(e) => setSizeThree(e.target.value)}
                             type="checkbox"
-                            required
+                            
                         />
                         </label>
                         <label className='check'>
                             S
                         <input
-                            multiple="multiple"
+                            value='S'
+                            onChange={(e) => setSizeFour(e.target.value)}
                             type="checkbox"
-                            required
+                            
                         />
                         </label>
                         <label className='check'>
                             M
                         <input
-                            multiple="multiple"
+                            value='M'
+                            onChange={(e) => setSizeFive(e.target.value)}
                             type="checkbox"
-                            required
+                            
                         />
                         </label>
 
                         <label className='check'>
                             L
                         <input
-                            multiple="multiple"
+                            value='L'
+                            onChange={(e) => setSizeSix(e.target.value)}
                             type="checkbox"
-                            required
+                            
                         />
                         </label>
                         <label className='check'>
                             XL
                         <input
-                            multiple="multiple"
+                            value='XL'
+                            onChange={(e) => setSizeSeven(e.target.value)}
                             type="checkbox"
-                            required
+                            
                         />
                         </label>
                         <label className='check'>
                             2XL
                         <input
-                            multiple="multiple"
+                            value='2XL'
+                            onChange={(e) => setSizeEight(e.target.value)}
                             type="checkbox"
-                            required
+                            
                         />
                         </label>
                         <label className='check'>
                             3XL
                         <input
-                            multiple="multiple"
+                            value='3XL'
+                            onChange={(e) => setSizeNine(e.target.value)}
                             type="checkbox"
-                            required
+                            
                         />
                         </label>
                         
@@ -148,40 +197,48 @@ const Admin = () => {
                 </div>
                 
 
-                
-
                 <div className="admin-section">
                     <label>
                         <h4>Kategori</h4>
                         <input
+                            value={category}
+                            onChange={(e) => setCategory(e.target.value)}
                             type="text"
-                            required
+                            
                         ></input>
                     </label>
 
-                    <p>OR</p>
+                    <p className="or"><u>OR</u></p>
 
                     <label>
                         <h4>Välj Kategori</h4>
                         <select
-                            multiple="multiple"
-                            required 
+                        class="custom-select"
+                            value={chosenCategory}
+                            onChange={(e) => setChosenCategory(e.target.value)}
+                             
                         >
-                            <option value="byxor">Byxor</option>
-                            <option value="toppar">Toppar</option>
-                            <option value="klänningarochkjolar">Klänningar och kjolar</option>
-                            <option value="skjortor">Skjortor</option>
-                            <option value="ytterkläder">Ytterkläder</option>
+                            <option value="Byxor">Byxor</option>
+                            <option value="Toppar">Toppar</option>
+                            <option value="Klänningar och kjolar">Klänningar och kjolar</option>
+                            <option value="Skjortor">Skjortor</option>
+                            <option value="Ytterkläder">Ytterkläder</option>
                         </select>
                     </label>
                 </div>
 
+                <button className="skapaBtn">Skapa produkt</button>
         </form>
-
-        <button>Skapa</button>
 
     </div>
     )
 }
 
 export default Admin;
+
+/* <p>{ title }</p>
+<p>{ price }</p>
+<p>{ color }</p>
+<p>{size1} {size2} {size3} {size4} {size5} {size6} {size7} {size8} {size9}</p>
+<p>{category}</p>
+<p>{chosenCategory}</p>*/
