@@ -45,6 +45,7 @@ nav{
 
 
 .drop_shop{
+    z-index: 1000;
     position: absolute;
     width: 100%;
     display: flex;
@@ -115,6 +116,7 @@ form{
 
 nav{
     &.showMenu{
+        z-index: 10000;
         height: 100vh;
         justify-content: flex-start;
         position: fixed;

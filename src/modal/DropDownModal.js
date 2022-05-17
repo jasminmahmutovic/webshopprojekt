@@ -6,7 +6,7 @@ const DropDownModal = ({open, children}) => {
 
   return (
 
-    <div > 
+    <div style={{zIndex:"10000"}}> 
         {children}
     </div>
   )

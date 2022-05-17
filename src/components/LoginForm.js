@@ -50,7 +50,6 @@ const LoginForm = () => {
      
     userInlog.forEach((value) => {
       if(value.username === user.usernameInput && value.password === user.passwordInput){
-        alert("inloggad")
         setLoggedIn(true)
         navigate("main")
         setError("")
@@ -62,7 +61,7 @@ const LoginForm = () => {
 
       superUser.forEach((value) => {   
         if(value.username === user.usernameInput && value.password === user.passwordInput ){
-          alert("SUPERUSER")
+          alert("välkommen SUPERUSER, du navigeras om till admin")
           navigate("about")
           setError("")
         } 

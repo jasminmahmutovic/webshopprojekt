@@ -7,7 +7,7 @@ const Modal = ({open, children}) => {
   if(!open) return null;
 
   return (
-    <div >
+    <div style={{zIndex:"10000"}} >
         {children}
     </div>
 
