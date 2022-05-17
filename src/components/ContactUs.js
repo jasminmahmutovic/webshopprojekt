@@ -10,7 +10,7 @@ import {IoMailOutline} from "react-icons/io5";
 const ContactUs = (props) => {
 
   const { user, setUser } = useContext(UserContext)
-  const [emailOpen, setEmailOpen] = useState(false)
+  // const [emailOpen, setEmailOpen] = useState(false)
 
 
 
@@ -23,9 +23,6 @@ const ContactUs = (props) => {
     setUser({...user, [e.target.name]: e.target.value });
   };
 
-  const closeMail = () => {
-    setEmailOpen(!emailOpen)
-  }
 
   return (
     <div>
@@ -40,7 +37,6 @@ const ContactUs = (props) => {
          <input type="file"></input>
          <textarea name="textarea" placeholder="skriv ditt ärende här" onChange={handleInput} required></textarea>
          <button className='button_form' onClick={sendingEmail}>Skicka</button>
-         <button className='button_form' onClick={closeMail}>Stäng</button>
          </div>  
      </form>
     </div>

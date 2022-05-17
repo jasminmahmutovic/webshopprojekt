@@ -75,7 +75,7 @@ const LoginForm = () => {
     <div>
      <form  
       onSubmit={handleSubmit}
-     className='contact_form' style={{width:"375px", minHeight:"507px"}}>
+     className='contact_form' style={{width:"375px", minHeight:"507px" }}>
      <div className='round_thing'>
     <BsPerson></BsPerson>
      </div>

@@ -159,7 +159,7 @@ const MenuNavbar = (props) => {
           style={{marginRight:"1rem"}}
           className={`nav_button ${navbarOpen ? "open_navButton" : ""}`}
           onClick={() => setLogInOpen(!logInOpen)}>
-          {logInOpen ? "STÄNG": "LOGGA IN"}
+          {logInOpen ? "STÄNG LOGGA IN": "LOGGA IN"}
           </button>
 
           <Modal  open={logInOpen}>

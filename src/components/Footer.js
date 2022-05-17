@@ -1,6 +1,7 @@
 import React from 'react'
 import ContactUs from './ContactUs'
 import Modal from '../modal/Modal'
+import { Link } from "react-router-dom";
 import { useState } from 'react'
 
 //style
@@ -21,17 +22,25 @@ const Footer = (props) => {
         <div className="brand_logo"><p>COOL FASHION</p></div>
         <div className="footer_links">
           <ul>
-            <li>My Account</li>
-            <li>Shipping & order</li>
-            <li>Gift cards & Coupons</li>
+            <p>Shop</p>
+            <Link to="#">Mitt konto</Link>
+            <Link to="#">Handla & Beställa</Link>
+            <Link to="#">Presentkort & Rabatter</Link>
           </ul>
           <ul>
-            <li> <button onClick={() => setIsOpen(!isOpen)}>Contact</button></li>
-            <li>About Us</li>
-            <li>Terms & Conditions</li>
+          <p>Konto</p>
+            <Link to="#" className='footer_button' onClick={() => setIsOpen(!isOpen)}>{isOpen ? "Stäng kontakt": "Kontakta oss"}</Link>
+            <Link to="#">Om oss</Link>
+            <Link to="#">Villkor</Link>
           </ul>
         </div>
-        <div className="footer_subscribe"> Här är ett formulär</div>
+        <div className="footer_subscribe">
+        <form>
+          <p>Få de senaste nyheterna och erbjudanden</p>
+          <input placeholder='Skriv din mail..' />
+          <button>FÖLJ OSS</button>
+        </form>
+        </div>
       </footer>
     </div>
   )
