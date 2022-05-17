@@ -9,6 +9,10 @@ import Search from "./Search";
 import DropDownModal from "../modal/DropDownModal";
 import Modal from '../modal/Modal';
 
+//Bootstrap
+import {LinkContainer} from 'react-router-bootstrap'
+import NavDropdown from 'react-bootstrap/NavDropdown'
+
 //Styling
 import "./scss/MenuNavbar.scss"
 import LoginForm from "./LoginForm.js";

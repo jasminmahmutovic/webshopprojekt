@@ -226,4 +226,18 @@ width: fit-content;
 
 
 
+//bootstrap take away styling
 
+a.dropdown-item.active{
+    background-color: unset;
+    &hoover{
+        background-color: unset;
+    }
+}
+
+a.dropdown-item{
+    width: fit-content;
+    &hoover{
+        background-color: unset;
+    }
+}
