@@ -61,11 +61,11 @@ const MenuNavbar = (props) => {
 
           <DropDownModal className='dropDown' open={shopIsOpen}>
             <div className={`drop_shop ${navbarOpen ? "showdrop" : ""}`}>
-              <Link to="#">Byxor</Link>
-              <Link to="#">Toppar</Link>
-              <Link to="#">Klänningar & kjolar</Link>
-              <Link to="#">Skjortor</Link>
-              <Link to="#">ytterkläder</Link>
+              <Link to="/pants">Byxor</Link>
+              <Link to="/tops">Toppar</Link>
+              <Link to="/skirtsdresses">Klänningar & kjolar</Link>
+              <Link to="/shirts">Skjortor</Link>
+              <Link to="/outerwear">ytterkläder</Link>
             </div>
           </DropDownModal>
          </div>
@@ -118,11 +118,11 @@ const MenuNavbar = (props) => {
 
           <DropDownModal className='dropDown' open={shopIsOpen}>
             <div className={`drop_shop ${navbarOpen ? "showdrop" : ""}`}>
-              <Link to="#">Byxor</Link>
-              <Link to="#">Toppar</Link>
-              <Link to="#">Klänningar & kjolar</Link>
-              <Link to="#">Skjortor</Link>
-              <Link to="#">ytterkläder</Link>
+              <Link to="/pants">Byxor</Link>
+              <Link to="/tops">Toppar</Link>
+              <Link to="/skirtsdresses">Klänningar & kjolar</Link>
+              <Link to="/shirts">Skjortor</Link>
+              <Link to="/outerwear">ytterkläder</Link>
             </div>
           </DropDownModal>
          </div>
