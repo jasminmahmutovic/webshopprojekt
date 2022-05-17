@@ -27,6 +27,7 @@ function App() {
     <Route path="/" element={ <ShowInDom />}>
       <Route index element={<Main />}/>
       <Route path="main" element={ <Main />} />
+      <Route path="main/:username" element={ <Main />} />
       <Route path="login" element={ <Login />} />
       <Route path="products" element={ <Products />} />
       <Route path="pants" element={ <Pants />} />
