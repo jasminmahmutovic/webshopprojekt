@@ -4,6 +4,7 @@
 import LatestCollections from './latestCollections';
 import './main.scss';
 import ShopByCategory from './shopByCategory';
+import arrowDownIcon from '../../assets/icons/arrowDown.png';
 
 
 const Main = () => {
@@ -14,6 +15,7 @@ const Main = () => {
             <div className='hero'>{/* HERO */}
                 <div className='hero-overlay'>
                     <h1 className='hero-text'>SLOGAN</h1>
+                    <img src={arrowDownIcon} alt="arrow icon" />
                 </div>
             </div>
 

@@ -5,6 +5,7 @@ import Form from 'react-bootstrap/Form';
 import SkirtsdressesHeader from "../../assets/images/Produkt_headers/klänningar&skjolar.png";
 import SkirtsdressesExample from "../../assets/images/KATEGORIER/KLÄNNINGAR&SKJOLAR/stow-kelly-1Aei0n1AboQ-unsplash.jpg";
 import FilterIcon from "../../assets/icons/filter.png";
+import Checkbox from "../../components/Checkbox";
 
 
 const skirtsdressesHeader = {
@@ -130,80 +131,44 @@ const Pants = () => {
                         </h4>
                         <div style={colorGroup}>
                             <div style={colorGroupLeftSide}>
-                            <Form>
-                            {['checkbox'].map((type) => (
-                        <div key={`default-${type}`} className="mb-3">
-                        <Form.Check 
-                            type={type}
-                            id={`default-${type}`}
-                            label={`Röd`}
-                        />
-                        <Form.Check 
-                            type={type}
-                            id={`default-${type}`}
-                            label={`Orange`}
-                        />
-                        <Form.Check 
-                            type={type}
-                            id={`default-${type}`}
-                            label={`Gul`}
-                        />
-                        <Form.Check 
-                            type={type}
-                            id={`default-${type}`}
-                            label={`Grön`}
-                        />
-                        <Form.Check 
-                            type={type}
-                            id={`default-${type}`}
-                            label={`Rosa`}
-                        />
-                        <Form.Check 
-                            type={type}
-                            id={`default-${type}`}
-                            label={`Lila`}
-                        />
-                        </div>
-                            ))}
-                        </Form>
+                            <Checkbox color="#D10000">
+                                    Röd
+                                </Checkbox>
+                                <Checkbox color="#E36D00">
+                                    Orange
+                                </Checkbox>
+                                <Checkbox color="#DFC900">
+                                    Gul
+                                </Checkbox>
+                                <Checkbox color="#01890E">
+                                    Grön
+                                </Checkbox>
+                                <Checkbox color="#D7009B">
+                                    Rosa
+                                </Checkbox>
+                                <Checkbox color="#6100DD">
+                                    Lila
+                                </Checkbox>
                             </div>
                             <div style={colorGroupRightSide}>
-                            <Form>
-                            {['checkbox'].map((type) => (
-                        <div key={`default-${type}`} className="mb-3">
-                        <Form.Check 
-                            type={type}
-                            id={`default-${type}`}
-                            label={`Blå`}
-                        />
-                        <Form.Check 
-                            type={type}
-                            id={`default-${type}`}
-                            label={`Vit`}
-                        />
-                        <Form.Check 
-                            type={type}
-                            id={`default-${type}`}
-                            label={`Grå`}
-                        />
-                        <Form.Check 
-                            type={type}
-                            id={`default-${type}`}
-                            label={`Svart`}
-                        />
-                        <Form.Check 
-                            type={type}
-                            id={`default-${type}`}
-                            label={`Brun`}
-                        />
-                        <Form.Check 
-                            type={type}
-                            id={`default-${type}`}
-                            label={`Multi`}
-                        />
-                        </div>
-                            ))}
-                        </Form>
+                            <Checkbox color="#0065AE">
+                                    Blå
+                                </Checkbox>
+                                <Checkbox color="#FFFFFF">
+                                    Vit
+                                </Checkbox>
+                                <Checkbox color="#828282">
+                                    Grå
+                                </Checkbox>
+                                <Checkbox color="#000000">
+                                    Svart
+                                </Checkbox>
+                                <Checkbox color="#482115">
+                                    Brun
+                                </Checkbox>
+                                <Checkbox color="#C4C4C4">
+                                    Multi
+                                </Checkbox>
                             </div>
                             </div>
                             <hr />

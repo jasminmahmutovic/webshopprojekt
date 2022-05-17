@@ -10,8 +10,7 @@ import {IoMailOutline} from "react-icons/io5";
 const ContactUs = (props) => {
 
   const { user, setUser } = useContext(UserContext)
-  const [emailOpen, setEmailOpen] = useState(false)
-
+  // const [emailOpen, setEmailOpen] = useState(false)
 
 
 
@@ -23,9 +22,6 @@ const ContactUs = (props) => {
     setUser({...user, [e.target.name]: e.target.value });
   };
 
-  const closeMail = () => {
-    setEmailOpen(!emailOpen)
-  }
 
   return (
     <div>
@@ -34,13 +30,12 @@ const ContactUs = (props) => {
          <IoMailOutline></IoMailOutline>
      </div>
          <div className='content_wrapper'>
-         <input name="firstname" placeholder='Förnamn' onChange={handleInput} required></input>
-         <input name="lastname" placeholder='Efternamn' onChange={handleInput}></input>
-         <input name="mail" placeholder='Mail' onChange={handleInput} required></input>
+         <input value={user.firstname} name="firstname" placeholder='Förnamn' onChange={handleInput} required></input>
+         <input value={user.lastname} name="lastname" placeholder='Efternamn' onChange={handleInput}></input>
+         <input value={user.email} name="mail" placeholder='Mail' onChange={handleInput} required></input>
          <input type="file"></input>
          <textarea name="textarea" placeholder="skriv ditt ärende här" onChange={handleInput} required></textarea>
          <button className='button_form' onClick={sendingEmail}>Skicka</button>
-         <button className='button_form' onClick={closeMail}>Stäng</button>
          </div>  
      </form>
     </div>

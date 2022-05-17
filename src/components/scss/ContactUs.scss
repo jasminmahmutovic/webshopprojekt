@@ -1,7 +1,7 @@
 @import "../../index.scss";
 
 
-.contact_form{
+.contact_form {
     border:1px solid $hover-link;
     position: absolute;
     background: rgba(0, 0, 0, 0.75);
@@ -13,7 +13,7 @@
     width: 40rem;
     height: fit-content;
     left: 50%;
-    top: 50%;
+    top: 250%;
     transform: translate(-50%,-50%);
     @media screen and (max-width: 700px) {
             max-width: 21rem;
@@ -75,8 +75,6 @@
     flex-direction: column;
     align-self: center;
 }
-
-
 
 
 
