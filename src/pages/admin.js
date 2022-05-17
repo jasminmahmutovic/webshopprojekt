@@ -7,7 +7,7 @@ import './admin.css';
 
 const Admin = () => {
     const [image, setImage] = useState('');
-    const [title, setTitle] = useState('');
+    const [title, setTitle] = useState('Title');
     const [price, setPrice] = useState(0);
     const [color, setColor] = useState('Röd');
     const [size1, setSizeOne] = useState('Not avaliable');
@@ -19,7 +19,7 @@ const Admin = () => {
     const [size7, setSizeSeven] = useState('Not avaliable');
     const [size8, setSizeEight] = useState('Not avaliable');
     const [size9, setSizeNine] = useState('Not avaliable');
-    const [category, setCategory] = useState('');
+    const [category, setCategory] = useState('Category');
     const [chosenCategory, setChosenCategory] = useState('Byxor');
     
     const handleSubmit = (e) => {
@@ -30,7 +30,7 @@ const Admin = () => {
             headers: {"Content-Type": "application/json"},
             body: JSON.stringify(produkt)
         }).then(() => {
-            alert({produkt})
+            alert("En ny produkt är tillagd " + " | " + " Titel: " + produkt.title + " | " + " Färg: " + produkt.color + " | " + " Storlek: " + produkt.size1 + " " + produkt.size2 + " " + produkt.size3 + " " +  produkt.size4 + " " +  produkt.size5 + " " +  produkt.size6 + " " +  produkt.size7 + " " +  produkt.size8 + " " +  produkt.size9 + " | " + " Kategori: " + produkt.category + " " + produkt.chosenCategory + " | " + " Pris: " + produkt.price )
         })
     }
 
@@ -111,86 +111,95 @@ const Admin = () => {
                     <div className='admin-multi'>
                         
                         <label className='check'>
-                            3XS
+                            
                         <input
                             type="checkbox"
                             value='3XS'
                             onChange={(e) => setSizeOne(e.target.value)}
                             
                         />
+                        <span className="sizeP">3XS</span>
                         </label>
                         <label className='check'>
-                            2XS
+                            
                         <input
                             value='2XS'
                             onChange={(e) => setSizeTwo(e.target.value)}
                             type="checkbox"
                             
                         />
+                        <span className="sizeP">2XS</span>
                         </label>
                         <label className='check'>
-                            XS
+                            
                         <input
                             value='XS'
                             onChange={(e) => setSizeThree(e.target.value)}
                             type="checkbox"
                             
                         />
+                        <span className="sizeP">XS</span>
                         </label>
                         <label className='check'>
-                            S
+                            
                         <input
                             value='S'
                             onChange={(e) => setSizeFour(e.target.value)}
                             type="checkbox"
                             
                         />
+                        <span className="sizeP">S</span>
                         </label>
                         <label className='check'>
-                            M
+                            
                         <input
                             value='M'
                             onChange={(e) => setSizeFive(e.target.value)}
                             type="checkbox"
                             
                         />
+                        <span className="sizeP">M</span>
                         </label>
 
                         <label className='check'>
-                            L
+                            
                         <input
                             value='L'
                             onChange={(e) => setSizeSix(e.target.value)}
                             type="checkbox"
                             
                         />
+                        <span className="sizeP">L</span>
                         </label>
                         <label className='check'>
-                            XL
+                           
                         <input
                             value='XL'
                             onChange={(e) => setSizeSeven(e.target.value)}
                             type="checkbox"
                             
                         />
+                         <span className="sizeP">XL</span>
                         </label>
                         <label className='check'>
-                            2XL
+                            
                         <input
                             value='2XL'
                             onChange={(e) => setSizeEight(e.target.value)}
                             type="checkbox"
                             
                         />
+                        <span className="sizeP">2XL</span>
                         </label>
                         <label className='check'>
-                            3XL
+                            
                         <input
                             value='3XL'
                             onChange={(e) => setSizeNine(e.target.value)}
                             type="checkbox"
                             
                         />
+                        <span className="sizeP">3XL</span>
                         </label>
                         
                     </div>
