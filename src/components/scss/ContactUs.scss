@@ -13,8 +13,7 @@
     width: 40rem;
     height: fit-content;
     left: 50%;
-    // top: 123%;
-    top: 50%;
+    top: 250%;
     transform: translate(-50%,-50%);
     @media screen and (max-width: 700px) {
             max-width: 21rem;
@@ -76,8 +75,6 @@
     flex-direction: column;
     align-self: center;
 }
-
-
 
 
 

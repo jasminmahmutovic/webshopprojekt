@@ -5,6 +5,7 @@ import { useNavigate } from "react-router-dom";
 
 
 //STYLING - inline styling + ContactUs.scss
+import "./MenuNavbar.js"
 
 import {BsPerson } from "react-icons/bs";
 
@@ -14,6 +15,7 @@ const LoginForm = () => {
 
   const { user, setUser, setLoggedIn } = useContext(UserContext)
   const [error, setError] = useState('');
+
 
 
   const userInlog = [
@@ -43,10 +45,12 @@ const LoginForm = () => {
     setUser({...user, [e.target.name]: e.target.value });
   }
   
-  
+
    
   const handleSubmit = (e) => {
     e.preventDefault();
+
+  
      
     userInlog.forEach((value) => {
       if(value.username === user.usernameInput && value.password === user.passwordInput){
@@ -61,8 +65,9 @@ const LoginForm = () => {
 
       superUser.forEach((value) => {   
         if(value.username === user.usernameInput && value.password === user.passwordInput ){
+          setLoggedIn(true)
           alert("välkommen SUPERUSER, du navigeras om till admin")
-          navigate("about")
+          navigate("admin")
           setError("")
         } 
     })
@@ -75,7 +80,7 @@ const LoginForm = () => {
     <div>
      <form  
       onSubmit={handleSubmit}
-     className='contact_form' style={{width:"375px", minHeight:"507px" }}>
+     className='contact_form' id="login_form" style={{width:"375px", minHeight:"507px" }}>
      <div className='round_thing'>
     <BsPerson></BsPerson>
      </div>

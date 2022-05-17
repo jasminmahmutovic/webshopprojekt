@@ -14,7 +14,6 @@ const ContactUs = (props) => {
 
 
 
-
   const sendingEmail = () =>{
      alert(`Tack för ditt mail ${user.firstname} ${user.lastname}, vi svarar vanligtvis inom en arbetsdag.`)
   }
@@ -31,9 +30,9 @@ const ContactUs = (props) => {
          <IoMailOutline></IoMailOutline>
      </div>
          <div className='content_wrapper'>
-         <input name="firstname" placeholder='Förnamn' onChange={handleInput} required></input>
-         <input name="lastname" placeholder='Efternamn' onChange={handleInput}></input>
-         <input name="mail" placeholder='Mail' onChange={handleInput} required></input>
+         <input value={user.firstname} name="firstname" placeholder='Förnamn' onChange={handleInput} required></input>
+         <input value={user.lastname} name="lastname" placeholder='Efternamn' onChange={handleInput}></input>
+         <input value={user.email} name="mail" placeholder='Mail' onChange={handleInput} required></input>
          <input type="file"></input>
          <textarea name="textarea" placeholder="skriv ditt ärende här" onChange={handleInput} required></textarea>
          <button className='button_form' onClick={sendingEmail}>Skicka</button>

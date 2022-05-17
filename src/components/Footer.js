@@ -2,7 +2,9 @@ import React from 'react'
 import ContactUs from './ContactUs'
 import Modal from '../modal/Modal'
 import { Link } from "react-router-dom";
-import { useState } from 'react'
+import { useState, useContext } from 'react'
+import { UserContext } from "../context/UserContext";
+
 
 //style
 import "./scss/Footer.scss"
@@ -10,7 +12,17 @@ import "./scss/Footer.scss"
 const Footer = (props) => {
   
   const [isOpen, setIsOpen] = useState(false)
+  const [message, setMessage] = useState("")
+  const { user, setUser} = useContext(UserContext)
 
+   
+  const handleInput = (e) =>{
+    setUser({...user, [e.target.name]: e.target.value });
+  }
+
+  const handleSubmit = () =>{
+    alert("Du följer nu oss, som tack har vi skickat ett mail med 10% rabatt")
+  }
 
   return (
     <div>
@@ -35,10 +47,15 @@ const Footer = (props) => {
           </ul>
         </div>
         <div className="footer_subscribe">
-        <form>
+        <form onSubmit={handleSubmit}>
           <p>Få de senaste nyheterna och erbjudanden</p>
-          <input placeholder='Skriv din mail..' />
-          <button>FÖLJ OSS</button>
+          <input 
+          onChange={handleInput}
+          name="email"
+          value={user.email}
+          placeholder='Skriv din mail..' />
+          <button type="submit">FÖLJ OSS</button>
+          <p>{message}</p>
         </form>
         </div>
       </footer>
