@@ -1,0 +1,59 @@
+
+body {
+    background-color: #E1FFA3;
+    color: black;
+}
+
+.admin-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding-top: 1rem
+
+}
+
+h1 {
+    font-weight: bold;
+    margin-bottom: 3rem;
+}
+
+
+
+.admin-form {
+    width: 30%;
+    margin-top: 2rem;
+}
+
+.admin-section {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding-bottom: 0.5rem;
+
+}
+
+label {
+    display: flex;
+    flex-direction: column;
+    margin: 0.5rem;
+   }
+
+.admin-multi {
+    display: flex;
+    flex-direction: row;
+    width: 70%;
+    flex-wrap: wrap;
+    padding-bottom: 1rem;
+}
+
+
+
+.check {
+    margin-right: 2rem;
+}
+
+
+
+ 
