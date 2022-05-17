@@ -2,7 +2,7 @@
 
 .shop-by-category-div {
     background: linear-gradient(to bottom, #E1FFA3 55%, black 45%);
-    height: 43rem;
+    max-height: 100%;
     width: 100%;
 }
 
@@ -16,8 +16,8 @@
 .category-header h1 {
     font-weight: bold;
     color: black;
-    margin: 5rem 0;
-    font-size: 5rem;
+    margin: 6vw 0;
+    font-size: 5vw;
 }
 
 .category-images {
@@ -30,16 +30,18 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: 15rem;
-    height: 25rem;
+    // width: 15rem;
+    // height: 25rem;
+
 }
 
 
 
 .category-wrapper b {
     color: white;
-    font-size: 1.25rem;
+    font-size: 1.20vw;
     margin-top: 5px;
+    margin-bottom: 15px;
     cursor: pointer;
     transition: .4s;
 }
@@ -51,18 +53,25 @@
 .category-image {
     position: relative;
     overflow: hidden;
-    width: 15rem;
-    height: 22rem;
+    // width: 15rem;
+    // height: 25rem;
+    width: 15vw;
+    height: 25rem;
+    //max-height: 42vh;
 }
 
 
 .category-image img {
-    width: 15rem;
-    height: 22rem;
+    // width: 15rem;
+    // height: 25rem;
+    width: 15vw;
+    height: 25rem;
     object-fit: cover;
     cursor: pointer;
     transition: all .4s linear;
 }
+
+
 
 .category-wrapper:hover .category-image img,.category-image:hover img {
     transform: scale(1.03);
@@ -94,6 +103,73 @@
     color: #a3ff77;
     text-align: center;
     border-bottom: 1px solid #a3ff77;
-    padding: 5px;
+    //padding: 5px;
     width: 100%;
+    font-size: 1vw;
+}
+
+
+//MEDIA QUERIES
+
+@media only screen and (max-width: 1536px) {
+    .category-image {
+        height: 22rem;
+    }
+    .category-image img {
+        height: 22rem;
+    }
+}
+
+@media only screen and (max-width: 1366px) {
+    .category-image {
+        height: 20rem;
+    }
+    .category-image img {
+        height: 20rem;
+    }
+}
+
+@media only screen and (max-width: 1134px) {
+    .category-image {
+        height: 17rem;
+    }
+    .category-image img {
+        height: 17rem;
+    }
+}
+
+@media only screen and (max-width: 414px) {
+    .shop-by-category-div {
+        height: 11.8rem;
+    }
+    .category-image {
+        height: 6rem;
+    }
+    .category-image img {
+        height: 6rem;
+    }
+}
+
+@media only screen and (max-width: 375px) {
+    .shop-by-category-div {
+        height: 11rem;
+    }
+    .category-image {
+        height: 5.5rem;
+    }
+    .category-image img {
+        height: 5.5rem;
+    }
+}
+
+@media only screen and (max-width: 360px) {
+    .shop-by-category-div {
+        height: 9.7rem;
+    }
+    .category-image {
+        height: 4.5rem;
+    }
+    .category-image img {
+        height: 4.5rem;
+    }
 }
