@@ -9,6 +9,10 @@ import Search from "./Search";
 import DropDownModal from "../modal/DropDownModal";
 import Modal from '../modal/Modal';
 
+//Bootstrap
+import {LinkContainer} from 'react-router-bootstrap'
+import NavDropdown from 'react-bootstrap/NavDropdown'
+
 //Styling
 import "./scss/MenuNavbar.scss"
 import LoginForm from "./LoginForm.js";
@@ -61,11 +65,21 @@ const MenuNavbar = (props) => {
 
           <DropDownModal className='dropDown' open={shopIsOpen}>
             <div className={`drop_shop ${navbarOpen ? "showdrop" : ""}`}>
-              <Link to="#">Byxor</Link>
-              <Link to="#">Toppar</Link>
-              <Link to="#">Klänningar & kjolar</Link>
-              <Link to="#">Skjortor</Link>
-              <Link to="#">ytterkläder</Link>
+            <LinkContainer to="/pants">
+                      <NavDropdown.Item>Byxor</NavDropdown.Item>
+                  </LinkContainer>
+                  <LinkContainer to="/shirts">
+                    <NavDropdown.Item>Skjortor</NavDropdown.Item>
+                  </LinkContainer>
+                  <LinkContainer to="/outerwear">
+                    <NavDropdown.Item>Outerwear</NavDropdown.Item>
+                  </LinkContainer>
+                  <LinkContainer to="/skirtsdresses">
+                    <NavDropdown.Item>Klänningar & Kjolar</NavDropdown.Item>
+                  </LinkContainer>
+                  <LinkContainer to="/tops">
+                    <NavDropdown.Item>Tops</NavDropdown.Item>
+                  </LinkContainer>
             </div>
           </DropDownModal>
          </div>
@@ -118,11 +132,21 @@ const MenuNavbar = (props) => {
 
           <DropDownModal className='dropDown' open={shopIsOpen}>
             <div className={`drop_shop ${navbarOpen ? "showdrop" : ""}`}>
-              <Link to="#">Byxor</Link>
-              <Link to="#">Toppar</Link>
-              <Link to="#">Klänningar & kjolar</Link>
-              <Link to="#">Skjortor</Link>
-              <Link to="#">ytterkläder</Link>
+            <LinkContainer to="/pants">
+                      <NavDropdown.Item>Byxor</NavDropdown.Item>
+                  </LinkContainer>
+                  <LinkContainer to="/shirts">
+                    <NavDropdown.Item>Skjortor</NavDropdown.Item>
+                  </LinkContainer>
+                  <LinkContainer to="/outerwear">
+                    <NavDropdown.Item>Outerwear</NavDropdown.Item>
+                  </LinkContainer>
+                  <LinkContainer to="/skirtsdresses">
+                    <NavDropdown.Item>Klänningar & Kjolar</NavDropdown.Item>
+                  </LinkContainer>
+                  <LinkContainer to="/tops">
+                    <NavDropdown.Item>Tops</NavDropdown.Item>
+                  </LinkContainer>
             </div>
           </DropDownModal>
          </div>
