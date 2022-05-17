@@ -95,29 +95,29 @@ const Pants = () => {
                             fontSize: "1.5rem",
                             fontWeight: "bold",
                         }}>
-                        Price Range</h4>
+                        Pris</h4>
                         <Form>
                             {['checkbox'].map((type) => (
                         <div key={`default-${type}`} className="mb-3">
                         <Form.Check 
                             type={type}
                             id={`default-${type}`}
-                            label={`$10 - $20`}
+                            label={`10kr - 20kr`}
                         />
                         <Form.Check 
                             type={type}
                             id={`default-${type}`}
-                            label={`$20 - $30`}
+                            label={`20kr - 30kr`}
                         />
                         <Form.Check 
                             type={type}
                             id={`default-${type}`}
-                            label={`$30 - $40`}
+                            label={`30kr - 40kr`}
                         />
                         <Form.Check 
                             type={type}
                             id={`default-${type}`}
-                            label={`$40 - $50`}
+                            label={`40kr - 50kr`}
                         />
                         </div>
                             ))}
@@ -127,7 +127,7 @@ const Pants = () => {
                             fontSize: "1.5rem",
                             fontWeight: "bold",
                         }}>
-                            Color
+                            Färg
                         </h4>
                         <div style={colorGroup}>
                             <div style={colorGroupLeftSide}>
@@ -137,7 +137,7 @@ const Pants = () => {
                         <Form.Check 
                             type={type}
                             id={`default-${type}`}
-                            label={`Red`}
+                            label={`Röd`}
                         />
                         <Form.Check 
                             type={type}
@@ -147,22 +147,22 @@ const Pants = () => {
                         <Form.Check 
                             type={type}
                             id={`default-${type}`}
-                            label={`Yellow`}
+                            label={`Gul`}
                         />
                         <Form.Check 
                             type={type}
                             id={`default-${type}`}
-                            label={`Green`}
+                            label={`Grön`}
                         />
                         <Form.Check 
                             type={type}
                             id={`default-${type}`}
-                            label={`Pink`}
+                            label={`Rosa`}
                         />
                         <Form.Check 
                             type={type}
                             id={`default-${type}`}
-                            label={`Purple`}
+                            label={`Lila`}
                         />
                         </div>
                             ))}
@@ -175,27 +175,27 @@ const Pants = () => {
                         <Form.Check 
                             type={type}
                             id={`default-${type}`}
-                            label={`Blue`}
+                            label={`Blå`}
                         />
                         <Form.Check 
                             type={type}
                             id={`default-${type}`}
-                            label={`White`}
+                            label={`Vit`}
                         />
                         <Form.Check 
                             type={type}
                             id={`default-${type}`}
-                            label={`Grey`}
+                            label={`Grå`}
                         />
                         <Form.Check 
                             type={type}
                             id={`default-${type}`}
-                            label={`Black`}
+                            label={`Svart`}
                         />
                         <Form.Check 
                             type={type}
                             id={`default-${type}`}
-                            label={`Brown`}
+                            label={`Brun`}
                         />
                         <Form.Check 
                             type={type}
@@ -212,7 +212,7 @@ const Pants = () => {
                             fontSize: "1.5rem",
                             fontWeight: "bold",
                         }}>
-                            Sizes
+                            Storlek
                         </h4>
                             <Form>
                             {['checkbox'].map((type) => (
