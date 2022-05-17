@@ -30,7 +30,7 @@ const Admin = () => {
             headers: {"Content-Type": "application/json"},
             body: JSON.stringify(produkt)
         }).then(() => {
-            alert('En ny produkt är tillagd')
+            alert({produkt})
         })
     }
 
