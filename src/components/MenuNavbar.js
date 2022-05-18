@@ -54,7 +54,7 @@ const MenuNavbar = (props) => {
       <nav  className={`menuNav ${navbarOpen ? " showMenu" : ""}`} > 
          <div className={`innerNav ${navbarOpen ? "showInner" : ""}`} > 
 
-         <button className="nav_button">COOL SHOP</button>
+         <button className="nav_button">COOL FASHION</button>
 
          <div style={{height:"1.5rem"}}>
          <button id="shop" 
@@ -111,7 +111,7 @@ const MenuNavbar = (props) => {
       <nav  className={`menuNav ${navbarOpen ? "showMenu" : ""}`} > 
          <div className={`innerNav ${navbarOpen ? "showInner" : ""}`} > 
 
-         <button className="nav_button">COOL SHOP</button>
+         <button className="nav_button">COOL FASHION</button>
 
          <div style={{height:"1.5rem"}}>
          <button id="shop" 
