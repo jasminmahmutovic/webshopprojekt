@@ -14,7 +14,6 @@ const outerwearHeader = {
 
 const sidebar = {
     marginTop: "10px",
-    padding: "2rem",
     height: "auto",
     display: "flex",
     flexDirection: "column",

@@ -15,7 +15,6 @@ const pantsHeader = {
 
 const sidebar = {
     marginTop: "10px",
-    padding: "2rem",
     height: "auto",
     display: "flex",
     flexDirection: "column",
@@ -83,7 +82,7 @@ const Pants = () => {
     return (
         <div style={{width:"auto", height:"auto"}}>
             <div style={pantsHeader}>
-                <img src={PantsHeader} style={{width: "100%", height:"20vh", objectFit: "cover"}} alt="pants header" />
+                <img src={PantsHeader} style={{width: "100%", height:"auto", objectFit: "cover"}} alt="pants header" />
             </div>
             <div style={container}>
             <div style={sidebar}>
