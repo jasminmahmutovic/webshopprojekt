@@ -7,7 +7,6 @@ import { Link } from "react-router-dom";
 //Components
 import Search from "./Search";
 import DropDownModal from "../modal/DropDownModal";
-import Modal from '../modal/Modal';
 
 //Bootstrap
 // import {LinkContainer} from 'react-router-bootstrap'
@@ -15,7 +14,7 @@ import Modal from '../modal/Modal';
 
 //Styling
 import "./scss/MenuNavbar.scss"
-import LoginForm from "./LoginForm.js";
+
 //ICON
 import { BsBag } from "react-icons/bs";
 import { MenuDown } from "react-bootstrap-icons";
@@ -28,17 +27,8 @@ const MenuNavbar = (props) => {
 
   const [shopIsOpen, shopSetIsOpen] = useState(false) //dropdown till shop
   const [yourAccountOpen, accountSetIsOpen] = useState(false) //dropdown "mitt konto"
-  const [logInOpen, setLogInOpen] = useState(false) // logga in 
   const [navbarOpen, setNavbarOpen] = useState(false) //hamburgermeny
   
-
-
-
-  const handleToggle = () => {
-    setNavbarOpen(!navbarOpen)
-    setLogInOpen(!logInOpen)
-
-  }
   
   const handleLogOut = () => {
     setLoggedIn(false);
@@ -54,7 +44,7 @@ const MenuNavbar = (props) => {
       <nav  className={`menuNav ${navbarOpen ? " showMenu" : ""}`} > 
          <div className={`innerNav ${navbarOpen ? "showInner" : ""}`} > 
 
-         <button className="nav_button">COOL FASHION</button>
+         <button className="nav_button" onClick={() => navigate("/")}>COOL FASHION</button>
 
          <div style={{height:"1.5rem"}}>
          <button id="shop" 
@@ -94,7 +84,7 @@ const MenuNavbar = (props) => {
           <button id="checkout" className="nav_button"><BsBag></BsBag></button>
           <button id="hamburger"  
           className={`nav_button ${navbarOpen ? "open_navButton" : ""}`}
-          onClick={handleToggle}>{navbarOpen ? <MenuDown/> : <MenuUp/>}
+          onClick={() =>  setNavbarOpen(!navbarOpen)}>{navbarOpen ? <MenuDown/> : <MenuUp/>}
           </button>
   
          </div>
@@ -111,7 +101,7 @@ const MenuNavbar = (props) => {
       <nav  className={`menuNav ${navbarOpen ? "showMenu" : ""}`} > 
          <div className={`innerNav ${navbarOpen ? "showInner" : ""}`} > 
 
-         <button className="nav_button">COOL FASHION</button>
+         <button className="nav_button" onClick={() => navigate("/")}>COOL FASHION</button>
 
          <div style={{height:"1.5rem"}}>
          <button id="shop" 
@@ -137,25 +127,16 @@ const MenuNavbar = (props) => {
 
          <button id="loggaUt" 
           style={{marginRight:"1rem"}}
-          className={`nav_button ${navbarOpen ? "open_navButton" : ""}`}
-          onClick={() => setLogInOpen(!logInOpen)}>
-          {logInOpen ? "STÄNG LOGGA IN": "LOGGA IN"}
-          </button>
+          className="nav_button"
+          onClick={() => navigate("login")}>
+           LOGGA IN
+         </button>
 
-          <Modal  open={logInOpen}>
-          <button 
-          className="module_login"
-          onClick={() => setLogInOpen(!logInOpen)}>STÄNG LOGIN</button>
-          <LoginForm></LoginForm> 
-          </Modal>   
-
-
-          
           <button id="checkout" className="nav_button"><BsBag></BsBag></button>
 
           <button id="hamburger"  
           className={`nav_button ${navbarOpen ? "open_navButton" : ""}`}
-          onClick={handleToggle}>{navbarOpen ? <MenuDown/> :<MenuUp/>}
+          onClick={() => setNavbarOpen(!navbarOpen)}>{navbarOpen ? <MenuDown/> :<MenuUp/>}
           </button>
          </div>
           

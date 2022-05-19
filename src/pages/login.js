@@ -1,13 +1,23 @@
-// import { useContext } from "react";
-// import { useNavigate } from "react-router-dom";
+import LoginForm from "../components/LoginForm.js";
+
+//style
+import Background from "../assets/images/stor_bakgrundCollage/loggaIn_regSida.png"
 
 const Login = () => {
+    
+    const wrapperLogin = {
+        height:"100vh",
+        backgroundImage:`url(${Background})`
+       }
+   
+
     return(
-        <p>Login</p>
+        <div style={wrapperLogin}>
+        <LoginForm></LoginForm>
+     </div>
     )
 };
 
 export default Login;
 
 
-//Sidan som är till för LOGIN!

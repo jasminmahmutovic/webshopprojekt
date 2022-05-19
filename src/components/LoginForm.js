@@ -55,7 +55,6 @@ const LoginForm = () => {
     userInlog.forEach((value) => {
       if(value.username === user.usernameInput && value.password === user.passwordInput){
         setLoggedIn(true)
-        navigate("main")
         setError("")
       } else{
         setError("Användarnamn eller löseonrd är felaktigt...")

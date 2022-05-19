@@ -17,6 +17,7 @@ import ArcadiaCollection from './pages/collectionPages/arcadiaCollection.js';
 import StreetCredCollection from './pages/collectionPages/streetCredCollection.js';
 import RodeoCollection from './pages/collectionPages/rodeoCollection.js';
 import Admin from "./pages/admin.js";
+import EmailAdmin from "./pages/EmailAdmin.js";
 
 //Kopierade över och gjorde om våra routes från föregående kurs.
 function App() {
@@ -28,7 +29,6 @@ function App() {
     <Route path="/" element={ <ShowInDom />}>
       <Route index element={<Main />}/>
       <Route path="main" element={ <Main />} />
-      <Route path="main/:username" element={ <Main />} />
       <Route path="login" element={ <Login />} />
       <Route path="products" element={ <Products />} />
       <Route path="pants" element={ <Pants />} />
@@ -43,7 +43,8 @@ function App() {
       <Route path="arcadia" element={ <ArcadiaCollection /> } />
       <Route path="rodeo" element={ <RodeoCollection /> } />
       <Route path="streetCred" element={ <StreetCredCollection />} />
-      <Route path="Admin" element={<Admin />} />
+      <Route path="login/Admin" element={<Admin />} />
+      <Route path="EmailAdmin" element={<EmailAdmin />} />
     </Route>
   </Routes>
   </BrowserRouter>
