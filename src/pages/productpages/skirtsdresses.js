@@ -1,92 +1,22 @@
 import React from "react";
 import Card from 'react-bootstrap/Card';
 import Button from 'react-bootstrap/Button';
-import Form from 'react-bootstrap/Form';
 import SkirtsdressesHeader from "../../assets/images/Produkt_headers/klänningar&skjolar.png";
 import SkirtsdressesExample from "../../assets/images/KATEGORIER/KLÄNNINGAR&SKJOLAR/stow-kelly-1Aei0n1AboQ-unsplash.jpg";
 import FilterIcon from "../../assets/icons/filter.png";
 import Checkbox from "../../components/Checkbox";
+import "./productStyles.css";
 
-
-const skirtsdressesHeader = {
-    width: "100%",
-    height: "auto",
-}
-
-const sidebar = {
-    marginTop: "10px",
-    height: "auto",
-    display: "flex",
-    flexDirection: "column",
-    alignItems: "center",
-    backgroundColor: "#E1FFA3",
-    position: "absolute",
-    left: "50px",
-}
-
-const colorGroup = {
-    width: "auto",
-    height: "auto",
-    display: "flex",
-    gap: "15px",
-    flexDirection: "row",
-}
-
-const colorGroupLeftSide = {
-    width: "auto",
-    height: "auto",
-    display: "flex",
-    flexDirection: "column",
-}
-
-const colorGroupRightSide = {
-    width: "auto",
-    height: "auto",
-    display: "flex",
-    flexDirection: "column",
-}
-
-const container = {
-    width: "100%",
-    height: "100%",
-    position: "relative",
-    display: "flex",
-    flexDirection: "row",
-    justifyContent: "center",
-    backgroundColor: "#E1FFA3"
-}
-
-const containerRightSide = {
-    height: "100%",
-    width: "100%",
-    display: "grid",
-    gridTemplateColumns: "repeat(auto-fit, minmax(240px, 1fr))",
-    gridGap: "50px",
-    marginTop: "2rem",
-    padding: "5px",
-    margin: "2rem 2rem 3rem 25rem"
-}
-
-const filterIconStyle = {
-    width: "50px",
-    height: "50px",
-}
-
-const filterStyle = {
-    display: "flex",
-    flexDirection: "row",
-    fontWeight: "bold",
-}
 const Pants = () => {
     return (
         <div style={{width:"auto", height:"auto"}}>
-            <div style={skirtsdressesHeader}>
+            <div className="header">
                 <img src={SkirtsdressesHeader} style={{width: "100%", height:"auto", objectFit: "cover"}} alt="Skirts and dresses header" />
             </div>
-            <div style={container}>
-            <div style={sidebar}>
-                    <h1 style={filterStyle}>
-                        <img src={FilterIcon} alt="Filter icon" style={filterIconStyle} />
+            <div className="containerStyle">
+            <div className="sidebar">
+                    <h1 className="filterStyle">
+                        <img src={FilterIcon} alt="Filter icon" className="filterIconStyle" />
                             FILTER
                     </h1>
                     <br />
@@ -94,33 +24,21 @@ const Pants = () => {
                         <h4 style={{
                             fontSize: "1.5rem",
                             fontWeight: "bold",
-                        }}>Pris</h4>
-                        <Form>
-                            {['checkbox'].map((type) => (
-                        <div key={`default-${type}`} className="mb-3">
-                        <Form.Check 
-                            type={type}
-                            id={`default-${type}`}
-                            label={`10kr - 20kr`}
-                        />
-                        <Form.Check 
-                            type={type}
-                            id={`default-${type}`}
-                            label={`20kr - 30kr`}
-                        />
-                        <Form.Check 
-                            type={type}
-                            id={`default-${type}`}
-                            label={`30kr - 40kr`}
-                        />
-                        <Form.Check 
-                            type={type}
-                            id={`default-${type}`}
-                            label={`40kr - 50kr`}
-                        />
-                        </div>
-                            ))}
-                        </Form>
+                        }}>
+                            Pris Klasser
+                        </h4>
+                            <Checkbox color="white">
+                                10kr - 20kr
+                            </Checkbox>
+                            <Checkbox color="white">
+                                20kr - 30kr
+                            </Checkbox>
+                            <Checkbox color="white">
+                                30kr - 40kr
+                            </Checkbox>
+                            <Checkbox color="white">
+                                40kr - 50kr
+                            </Checkbox>
                             <hr />
                         <h4 style={{
                             fontSize: "1.5rem",
@@ -128,9 +46,9 @@ const Pants = () => {
                         }}>
                             Färg
                         </h4>
-                        <div style={colorGroup}>
-                            <div style={colorGroupLeftSide}>
-                            <Checkbox color="#D10000">
+                        <div className="colorGroup">
+                            <div className="colorGroupLeftSide">
+                                <Checkbox color="#D10000">
                                     Röd
                                 </Checkbox>
                                 <Checkbox color="#E36D00">
@@ -149,8 +67,8 @@ const Pants = () => {
                                     Lila
                                 </Checkbox>
                             </div>
-                            <div style={colorGroupRightSide}>
-                            <Checkbox color="#0065AE">
+                            <div className="colorGroupRightSide">
+                                <Checkbox color="#0065AE">
                                     Blå
                                 </Checkbox>
                                 <Checkbox color="#FFFFFF">
@@ -177,63 +95,40 @@ const Pants = () => {
                         }}>
                             Storlek
                         </h4>
-                            <Form>
-                            {['checkbox'].map((type) => (
-                        <div key={`default-${type}`} className="mb-3">
-                        <Form.Check 
-                            type={type}
-                            id={`default-${type}`}
-                            label={`3XS`}
-                        />
-                        <Form.Check 
-                            type={type}
-                            id={`default-${type}`}
-                            label={`2XS`}
-                        />
-                        <Form.Check 
-                            type={type}
-                            id={`default-${type}`}
-                            label={`XS`}
-                        />
-                        <Form.Check 
-                            type={type}
-                            id={`default-${type}`}
-                            label={`S`}
-                        />
-                        <Form.Check 
-                            type={type}
-                            id={`default-${type}`}
-                            label={`M`}
-                        />
-                        <Form.Check 
-                            type={type}
-                            id={`default-${type}`}
-                            label={`L`}
-                        />
-                        <Form.Check 
-                            type={type}
-                            id={`default-${type}`}
-                            label={`XL`}
-                        />
-                        <Form.Check 
-                            type={type}
-                            id={`default-${type}`}
-                            label={`2XL`}
-                        />
-                        <Form.Check 
-                            type={type}
-                            id={`default-${type}`}
-                            label={`3XL`}
-                        />
-                        </div>
-                            ))}
-                        </Form>
+                        <Checkbox color="white">
+                            3XS
+                        </Checkbox>
+                        <Checkbox color="white">
+                            2XS
+                        </Checkbox>
+                        <Checkbox color="white">
+                            XS
+                        </Checkbox>
+                        <Checkbox color="white">
+                            S
+                        </Checkbox>
+                        <Checkbox color="white">
+                            M
+                        </Checkbox>
+                        <Checkbox color="white">
+                            L
+                        </Checkbox>
+                        <Checkbox color="white">
+                            XL
+                        </Checkbox>
+                        <Checkbox color="white">
+                            2XL
+                        </Checkbox>
+                        <Checkbox color="white">
+                            3XL
+                        </Checkbox>
                 </div>
             </div>
-            <div style={containerRightSide}>
+            <div className="containerRightSide">
                 <Card style={{ width: '15rem' }}>
                 <Card.Img variant="top" src={SkirtsdressesExample} />
                 <Card.Body>
+                <Card.Title>Skirt or dress</Card.Title>
                 <Card.Text>
                     1000:-
                 </Card.Text>
@@ -243,6 +138,7 @@ const Pants = () => {
                 <Card style={{ width: '15rem' }}>
                 <Card.Img variant="top" src={SkirtsdressesExample} />
                 <Card.Body>
+                <Card.Title>Skirt or dress</Card.Title>
                 <Card.Text>
                     1000:-
                 </Card.Text>
@@ -252,6 +148,7 @@ const Pants = () => {
                 <Card style={{ width: '15rem' }}>
                 <Card.Img variant="top" src={SkirtsdressesExample} />
                 <Card.Body>
+                <Card.Title>Skirt or dress</Card.Title>
                 <Card.Text>
                     1000:-
                 </Card.Text>
@@ -261,6 +158,7 @@ const Pants = () => {
                 <Card style={{ width: '15rem' }}>
                 <Card.Img variant="top" src={SkirtsdressesExample} />
                 <Card.Body>
+                <Card.Title>Skirt or dress</Card.Title>
                 <Card.Text>
                     1000:-
                 </Card.Text>
@@ -270,6 +168,7 @@ const Pants = () => {
                 <Card style={{ width: '15rem' }}>
                 <Card.Img variant="top" src={SkirtsdressesExample} />
                 <Card.Body>
+                <Card.Title>Skirt or dress</Card.Title>
                 <Card.Text>
                     1000:-
                 </Card.Text>
@@ -279,6 +178,7 @@ const Pants = () => {
                 <Card style={{ width: '15rem' }}>
                 <Card.Img variant="top" src={SkirtsdressesExample} />
                 <Card.Body>
+                <Card.Title>Skirt or dress</Card.Title>
                 <Card.Text>
                     1000:-
                 </Card.Text>
