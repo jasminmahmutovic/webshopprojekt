@@ -16,10 +16,10 @@ import ScrollToTop from "./scrollToTop.js";
 import ArcadiaCollection from './pages/collectionPages/arcadiaCollection.js';
 import StreetCredCollection from './pages/collectionPages/streetCredCollection.js';
 import RodeoCollection from './pages/collectionPages/rodeoCollection.js';
-import Admin from "./pages/admin.js";
-import EmailAdmin from "./pages/EmailAdmin.js";
+import Admin from "./pages/admin/admin.js";
+import EmailAdmin from "./pages/admin/EmailAdmin.js";
+import AddProduct from "./pages/admin/AddProduct.js";
 
-//Kopierade över och gjorde om våra routes från föregående kurs.
 function App() {
   return (
   <>
@@ -44,7 +44,8 @@ function App() {
       <Route path="rodeo" element={ <RodeoCollection /> } />
       <Route path="streetCred" element={ <StreetCredCollection />} />
       <Route path="login/Admin" element={<Admin />} />
-      <Route path="EmailAdmin" element={<EmailAdmin />} />
+      <Route path="emailAdmin" element={<EmailAdmin />} />
+      <Route path="addProduct" element={<AddProduct />} />
     </Route>
   </Routes>
   </BrowserRouter>

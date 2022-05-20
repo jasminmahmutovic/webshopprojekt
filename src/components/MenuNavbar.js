@@ -129,6 +129,8 @@ const MenuNavbar = (props) => {
            LOGGA IN
          </button>
 
+
+
           <button id="checkout" className="nav_button"><BsBag></BsBag></button>
 
           <button id="hamburger"  

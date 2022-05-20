@@ -1,0 +1,77 @@
+
+
+.emailWrapper{
+height: 100vh;
+display: flex;
+align-items: center;
+justify-content: center;
+}
+
+
+.outerDiv{
+    width: 900px;
+    height: 709px;
+    display: flex;
+    border: 1px solid black;
+
+    .left{
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        .emailInformation{
+            border-bottom: 1px solid black;
+            display: flex;
+            height: 4rem;
+            .logo{
+                display: flex;
+                align-items: center;
+                flex:1;
+                background-color: grey;
+            }
+            .userinformation{
+    
+                flex:2;
+                display: flex;
+                align-items: center;
+                background-color: yellow;
+            }
+        }
+    }
+
+    .right{
+        border-left:1px solid black;
+        flex: 2;
+        display: flex;
+        flex-direction: column;
+        background-color: pink;
+        .emailName{
+            display: flex;
+            padding-left: 1rem;
+            padding-right: 1rem;
+            align-items: center;
+            flex: none;
+            height: 4rem;
+        }
+        .emailBody{
+            padding: 1rem;
+            flex: 1;
+        }
+        .emailFile{
+            display: flex;
+            align-items: center;
+            flex: none;
+            height: 4rem;
+            padding-left: 1rem;
+            padding-right: 1rem;
+            .file{
+                display: flex;
+                align-items: center;
+                width:240px;
+                height: 55px;
+                background-color:#B4B4B4;
+                border-radius: 5px;
+            }
+        }
+    }
+}
+

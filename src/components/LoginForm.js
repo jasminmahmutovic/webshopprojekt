@@ -107,7 +107,7 @@ const LoginForm = () => {
          <button
           style={{width:"70%", backgroundColor:"black"}} 
           className='button_form'>SKAPA KONTO</button>
-          <p className="error" style={{fontSize:"12px"}}> {error} </p>
+          <p className="error" style={{fontSize:"12px", color:"white"}}> {error} </p>
          </div>  
      </form>
     </div>
