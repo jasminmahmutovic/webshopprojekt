@@ -180,6 +180,20 @@ nav {
   }
 }
 
+#checkout {
+  position: relative;
+  text-align: center;
+  color: white;
+}
+
+#checkout > p {
+  font-size: .8rem;
+  position: absolute;
+  top: 60%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
 #hamburger {
   margin-left: 1rem;
   &.open_navButton {

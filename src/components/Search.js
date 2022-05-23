@@ -2,6 +2,7 @@ import React from 'react'
 import { useState } from 'react';
 
 import { BsSearch } from "react-icons/bs";
+import './scss/Search.scss';
 
 
 const Search = () => {
@@ -19,9 +20,10 @@ const Search = () => {
 
   return (
     <div>
-     <form> 
-        <i><BsSearch></BsSearch></i>
+     <form className='form-wrapper'> 
+        <i className='search-icon'><BsSearch></BsSearch></i>
         <input 
+        className='search-input'
         type="text"
         placeholder="Sök..."
         value={searchTerm}
