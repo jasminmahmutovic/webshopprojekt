@@ -13,6 +13,7 @@ const EmailAdmin = (props) => {
   let slicethis = user.textarea;
   let slicedMail = slicethis.substring(0, 10);
 
+
   return (
     <div style={{ display: "flex" }}>
       <NavbarAdmin></NavbarAdmin>
@@ -47,6 +48,13 @@ const EmailAdmin = (props) => {
               <p style={{ fontSize: "14px" }}></p> {user.file}
             </div>
           </div> */}
+          <div className="answerWrapper">
+          <form onSubmit={() => alert("Ditt svar är skickat")}>
+            <input placeholder="svars rubrik" />
+            <textarea></textarea>
+            <button type="submit">Skicka svar</button>
+          </form>
+          </div>
           </div>
         </div>
       </div>

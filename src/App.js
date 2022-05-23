@@ -19,6 +19,7 @@ import RodeoCollection from "./pages/collectionPages/rodeoCollection.js";
 import Admin from "./pages/admin/admin.js";
 import EmailAdmin from "./pages/admin/EmailAdmin.js";
 import AddProduct from "./pages/admin/AddProduct.js";
+import ChangeProducts from "./pages/admin/ChangeProducts.js";
 
 function App() {
   return (
@@ -31,21 +32,25 @@ function App() {
             <Route path="main" element={<Main />} />
             <Route path="login" element={<Login />} />
             <Route path="products" element={<Products />} />
+            <Route path="about" element={<About />} />
+            <Route path="checkout" element={<Checkout />}></Route>
+            <Route path="myaccount" element={<MyAccount />} />
+            <Route path="register" element={<Register />} />
+            {/* Categories */}
             <Route path="pants" element={<Pants />} />
             <Route path="outerwear" element={<Outerwear />} />
             <Route path="skirtsdresses" element={<Skirtsdresses />} />
             <Route path="tops" element={<Tops />} />
             <Route path="shirts" element={<Shirts />} />
-            <Route path="about" element={<About />} />
-            <Route path="checkout" element={<Checkout />}></Route>
-            <Route path="myaccount" element={<MyAccount />} />
-            <Route path="register" element={<Register />} />
+             {/* blog/inspiration */}
             <Route path="arcadia" element={<ArcadiaCollection />} />
             <Route path="rodeo" element={<RodeoCollection />} />
             <Route path="streetCred" element={<StreetCredCollection />} />
+            {/* admin */}
             <Route path="admin" element={<Admin />} />
             <Route path="emailAdmin" element={<EmailAdmin />} />
             <Route path="addProduct" element={<AddProduct />} />
+            <Route path="changeProduct" element={<ChangeProducts/>} />
           </Route>
         </Routes>
       </BrowserRouter>

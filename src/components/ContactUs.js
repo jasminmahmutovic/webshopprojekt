@@ -11,10 +11,20 @@ const ContactUs = () => {
 
   const sendingEmail = (e) => {
     e.preventDefault();
+    
     alert(
       `Tack för ditt mail ${user.firstname} ${user.lastname}, vi svarar vanligtvis inom en arbetsdag.`
     );
     setIsOpen(!isOpen);
+
+    // fetch('http://localhost:3000/emailAdmin/', {
+    //   method: 'Post',
+    //   headers: {"content-type": "application/json"},
+    //   body:JSON.stringify(user)
+    // }.then(() =>{
+    //   console.log("added email");
+    // }))
+
   };
 
   const handleInput = (e) => {

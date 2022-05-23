@@ -78,3 +78,23 @@
     }
   }
 }
+
+
+.answerWrapper{
+  form{
+  margin:auto;
+  margin-bottom: 5px;
+  display: flex;
+  flex-direction:column; 
+  width:95%;
+  textarea{
+    height:8rem;
+    padding:5px;
+    margin-top:5px
+  }
+  button{
+    padding:5px;
+    margin-top:5px
+  }
+ }
+}

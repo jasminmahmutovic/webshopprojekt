@@ -16,10 +16,11 @@ const NavbarAdmin = () => {
         <button onClick={() => Navigate("/addProduct/")} className="adminLink">
           Lägg till produkt
         </button>
+        <button onClick={() => Navigate("/changeProduct/")} className="adminLink">
+          Redigera produkter</button>
         <button onClick={() => Navigate("/emailAdmin/")} className="adminLink">
           Email
         </button>
-        <button className="adminLink">2</button>
         <button className="adminLink">3</button>
       </div>
     </div>
