@@ -33,15 +33,15 @@ const ChangeProducts = () => {
   
 
     return (
-
+  
       <div className='wrapperChangeProducts'>
         <NavbarAdmin></NavbarAdmin>
-
+         
         <div className='wrapperAccordin'>
           <Accordion defaultActiveKey="0">
           <Card>
             <Card.Header>
-              <ContextAwareToggle eventKey="0">Produkt 1</ContextAwareToggle>
+              <ContextAwareToggle eventKey="0">Produkt 1--</ContextAwareToggle>
             </Card.Header>
             <Accordion.Collapse eventKey="0">
               <Card.Body>Hello! I'm the body</Card.Body>

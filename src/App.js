@@ -20,6 +20,7 @@ import Admin from "./pages/admin/admin.js";
 import EmailAdmin from "./pages/admin/EmailAdmin.js";
 import AddProduct from "./pages/admin/AddProduct.js";
 import ChangeProducts from "./pages/admin/ChangeProducts.js";
+import UpdateFrontAdmin from "./pages/admin/UpdateFrontAdmin.js";
 
 function App() {
   return (
@@ -51,6 +52,8 @@ function App() {
             <Route path="emailAdmin" element={<EmailAdmin />} />
             <Route path="addProduct" element={<AddProduct />} />
             <Route path="changeProduct" element={<ChangeProducts/>} />
+            <Route path="updateFront" element={<UpdateFrontAdmin/>} />
+
           </Route>
         </Routes>
       </BrowserRouter>

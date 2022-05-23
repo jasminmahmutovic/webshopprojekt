@@ -18,6 +18,10 @@ const NavbarAdmin = () => {
         </button>
         <button onClick={() => Navigate("/changeProduct/")} className="adminLink">
           Redigera produkter</button>
+        
+          <button onClick={() => Navigate("/updateFront/")} className="adminLink">
+          Uppdatera framsidans layout </button>
+
         <button onClick={() => Navigate("/emailAdmin/")} className="adminLink">
           Email
         </button>
@@ -26,5 +30,6 @@ const NavbarAdmin = () => {
     </div>
   );
 };
+
 
 export default NavbarAdmin;
