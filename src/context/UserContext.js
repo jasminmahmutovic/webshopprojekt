@@ -2,31 +2,28 @@ import { createContext, useState } from "react";
 
 export const UserContext = createContext();
 
-const UserProvider = ({children}) => {
- 
+const UserProvider = ({ children }) => {
   const [loggedIn, setLoggedIn] = useState(false);
-
+  const [isOpen, setIsOpen] = useState(false);
 
   const [user, setUser] = useState({
-    firstname: "", 
+    firstname: "",
     lastname: "",
     mail: "",
     adress: "",
     city: "",
     zipCode: "",
-
-    username:"",
+    username: "",
     password: "",
-
-    textarea: "", 
+    textarea: "",
     file: "",
   });
 
- 
-  
   return (
     <>
-      <UserContext.Provider value={{ loggedIn, setLoggedIn, user, setUser, }}>
+      <UserContext.Provider
+        value={{ loggedIn, setLoggedIn, user, setUser, isOpen, setIsOpen }}
+      >
         {children}
       </UserContext.Provider>
     </>

@@ -1,27 +1,29 @@
-import React from 'react'
-import { Link } from 'react-router-dom'
-
-
-
-import { useState } from 'react'
+import React from "react";
+import { useNavigate } from "react-router-dom";
 
 //Style
-import "../scss/adminNavbar.scss"
+import "../scss/adminNavbar.scss";
 
 const NavbarAdmin = () => {
-
+  const Navigate = useNavigate();
 
   return (
-    <div className='navbarAdmin'>
-        <div className='Admin'><h1>ADMIN</h1></div>
-        <div className='wrapperLinks'>
-        <Link className='adminLink' to="addProduct">Lägg till produkt</Link>
-        <Link className='adminLink' to="#">Redigera produkt</Link>
-        <Link className='adminLink' to="#">Mail inkorg</Link>
-        <Link className='adminLink' to="#">Uppdatera kategori</Link> 
-        </div>
+    <div className="navbarAdmin">
+      <div className="Admin">
+        <h1>ADMIN</h1>
+      </div>
+      <div className="wrapperLinks">
+        <button onClick={() => Navigate("/addProduct/")} className="adminLink">
+          Lägg till produkt
+        </button>
+        <button onClick={() => Navigate("/emailAdmin/")} className="adminLink">
+          Email
+        </button>
+        <button className="adminLink">2</button>
+        <button className="adminLink">3</button>
+      </div>
     </div>
-  )
-}
+  );
+};
 
-export default NavbarAdmin
+export default NavbarAdmin;
