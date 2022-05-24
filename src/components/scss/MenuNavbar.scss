@@ -184,6 +184,9 @@ nav {
   position: relative;
   text-align: center;
   color: white;
+  &:hover {
+    color: $hover-link;
+  }
 }
 
 #checkout > p {
@@ -192,6 +195,9 @@ nav {
   top: 60%;
   left: 50%;
   transform: translate(-50%, -50%);
+&:hover {
+  color: $hover-link;
+}
 }
 
 #hamburger {
