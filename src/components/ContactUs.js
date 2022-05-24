@@ -17,14 +17,6 @@ const ContactUs = () => {
     );
     setIsOpen(!isOpen);
 
-    // fetch('http://localhost:3000/emailAdmin/', {
-    //   method: 'Post',
-    //   headers: {"content-type": "application/json"},
-    //   body:JSON.stringify(user)
-    // }.then(() =>{
-    //   console.log("added email");
-    // }))
-
   };
 
   const handleInput = (e) => {
@@ -58,7 +50,11 @@ const ContactUs = () => {
             onChange={handleInput}
             required
           ></input>
-          <input type="file"></input>
+          <input type="file"
+           name="file"
+           placeholder="upload file"
+           onChange={handleInput}
+          ></input>
           <textarea
             name="textarea"
             placeholder="skriv ditt ärende här"
