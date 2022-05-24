@@ -91,7 +91,7 @@ const Checkout = () => {
               {/* shipping card */}
               <div className="shipping-card-div">
                 <div className="banner">
-                  <b className="banner-text">FRAKT ADRESS</b>
+                  <b className="banner-text">FRAKTADRESS</b>
                 </div>
 
                 <div className="shipping-card-wrapper">
