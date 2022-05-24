@@ -1,0 +1,100 @@
+.emailWrapper {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: 5rem;
+}
+
+.outerDiv {
+  background-color: white;
+  width: 900px;
+  height: 709px;
+  display: flex;
+  border: 1px solid black;
+
+  .left {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    .emailInformation {
+      border-bottom: 1px solid black;
+      display: flex;
+      height: 4rem;
+      .logo {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex: 1;
+        svg {
+          font-size: 41px;
+          color: #a9a9a9;
+        }
+      }
+      .userinformation {
+        flex: 2;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        p {
+          margin: 0;
+        }
+      }
+    }
+  }
+
+  .right {
+    border-left: 1px solid black;
+    flex: 2;
+    display: flex;
+    flex-direction: column;
+    .emailName {
+      display: flex;
+      padding-left: 1rem;
+      padding-right: 1rem;
+      align-items: center;
+      flex: none;
+      height: 4rem;
+    }
+    .emailBody {
+      padding: 1rem;
+      flex: 1;
+    }
+    .emailFile {
+      display: flex;
+      align-items: center;
+      flex: none;
+      height: 4rem;
+      padding-left: 1rem;
+      padding-right: 1rem;
+      .file {
+        display: flex;
+        align-items: center;
+        width: 240px;
+        height: 55px;
+        background-color: #b4b4b4;
+        border-radius: 5px;
+      }
+    }
+  }
+}
+
+
+.answerWrapper{
+  form{
+  margin:auto;
+  margin-bottom: 5px;
+  display: flex;
+  flex-direction:column; 
+  width:95%;
+  textarea{
+    height:8rem;
+    padding:5px;
+    margin-top:5px
+  }
+  button{
+    padding:5px;
+    margin-top:5px
+  }
+ }
+}

@@ -1,0 +1,95 @@
+.admin-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding-top: 3rem;
+    padding-bottom: 6rem;
+
+}
+
+.myAdminTitle {
+    font-weight: bold;
+    margin-bottom: 2rem;
+}
+
+
+
+.admin-form {
+    width: 35%;
+    margin-top: 2rem;
+}
+
+.admin-section {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 0.5rem;
+
+}
+
+label {
+    display: flex;
+    flex-direction: column;
+    margin: 0.5rem;
+   }
+
+.admin-multi {
+    display: flex;
+    flex-direction: row;
+    width: 70%;
+    flex-wrap: wrap;
+    padding-bottom: 1rem;
+}
+
+
+
+.check {
+    margin-right: 2rem;
+}
+
+
+::-webkit-file-upload-button {
+    background-color: black;
+    color:white;
+    border-radius: 3px;
+    padding: 3px;
+    width: 100px;
+    margin-right: 10px;
+}
+
+input {
+    padding: 3px;
+    border-radius: 3px;
+}
+
+select {
+    width: 191px;
+    height: 34px;
+    padding: 3px;
+    border-radius: 3px;
+}
+
+.or {
+    padding-top: 50px;
+    font-size: 16px;
+
+}
+
+.skapaBtn {
+    margin-top: 3rem;
+    width: 100%;
+    height: 50px;
+    background-color: black;
+    color:#A3FF77;
+    text-transform: uppercase;
+    font-size: 20px;
+    border-radius: 5px;
+}
+
+.sizeP {
+    display: inline-block;
+    padding-left: 10px
+}

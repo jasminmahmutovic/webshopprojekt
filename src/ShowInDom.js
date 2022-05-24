@@ -1,13 +1,16 @@
 import React from 'react'
 import { Outlet } from 'react-router-dom'
-import Navbar from "./components/Navbar"
+import MenuNavbar from './components/MenuNavbar'
+import Footer from './components/Footer'
+
 
 const showInDom = () => {
     
     return (
         <div>
-            <Navbar/>
-            <Outlet />
+         <MenuNavbar/>
+         <Outlet />
+         <Footer></Footer>
         </div>
     )
 }
