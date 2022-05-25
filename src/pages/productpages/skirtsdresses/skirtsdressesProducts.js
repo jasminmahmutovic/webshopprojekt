@@ -2,7 +2,7 @@ import SDImg from "../../../assets/images/KATEGORIER/KLÄNNINGAR&SKJOLAR/stow-ke
 
 const skirtsdressesProducts = [
     { 
-        id: "1", 
+        id: "19", 
         Title: "Lorem", 
         Price: 10, 
         Color: "White", 
@@ -10,7 +10,7 @@ const skirtsdressesProducts = [
         img: {SDImg}
     },
     { 
-        id: "2", 
+        id: "20", 
         Title: "Lorem", 
         Price: 20, 
         Color: "Black", 
@@ -18,7 +18,7 @@ const skirtsdressesProducts = [
         img: {SDImg}
     },
     { 
-        id: "3", 
+        id: "21", 
         Title: "Lorem", 
         Price: 30, 
         Color: "Blue", 
@@ -26,7 +26,7 @@ const skirtsdressesProducts = [
         img: {SDImg}
     },
     { 
-        id: "4", 
+        id: "22", 
         Title: "Lorem", 
         Price: 40, 
         Color: "Orange", 
@@ -34,7 +34,7 @@ const skirtsdressesProducts = [
         img: {SDImg}
     },
     { 
-        id: "5", 
+        id: "23", 
         Title: "Lorem", 
         Price: 50, 
         Color: "Red", 
@@ -42,7 +42,7 @@ const skirtsdressesProducts = [
         img: {SDImg}
     },
     { 
-        id: "6", 
+        id: "24", 
         Title: "Lorem", 
         Price: 44, 
         Color: "Purple", 

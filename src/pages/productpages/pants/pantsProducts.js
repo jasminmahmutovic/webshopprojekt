@@ -2,7 +2,7 @@ import PantsImg from "../../../assets/images/KATEGORIER/BYXOR/toa-heftiba-LSYrpn
 
 const pantsProducts = [
     { 
-        id: "1", 
+        id: "7", 
         Title: "Lorem", 
         Price: 10, 
         Color: "White", 
@@ -10,7 +10,7 @@ const pantsProducts = [
         img: {PantsImg}
     },
     { 
-        id: "2", 
+        id: "8", 
         Title: "Lorem", 
         Price: 20, 
         Color: "Black", 
@@ -18,7 +18,7 @@ const pantsProducts = [
         img: {PantsImg}
     },
     { 
-        id: "3", 
+        id: "9", 
         Title: "Lorem", 
         Price: 30, 
         Color: "Blue", 
@@ -26,7 +26,7 @@ const pantsProducts = [
         img: {PantsImg}
     },
     { 
-        id: "4", 
+        id: "10", 
         Title: "Lorem", 
         Price: 40, 
         Color: "Orange", 
@@ -34,7 +34,7 @@ const pantsProducts = [
         img: {PantsImg}
     },
     { 
-        id: "5", 
+        id: "11", 
         Title: "Lorem", 
         Price: 50, 
         Color: "Red", 
@@ -42,7 +42,7 @@ const pantsProducts = [
         img: {PantsImg}
     },
     { 
-        id: "6", 
+        id: "12", 
         Title: "Lorem", 
         Price: 44, 
         Color: "Purple", 

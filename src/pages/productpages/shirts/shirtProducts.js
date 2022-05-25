@@ -2,7 +2,7 @@ import ShirtImg from "../../../assets/images/KATEGORIER/SKJORTOR/stow-kelly-WGy0
 
 const shirtsProducts = [
     { 
-        id: "1", 
+        id: "13", 
         Title: "Lorem", 
         Price: 10, 
         Color: "White", 
@@ -10,7 +10,7 @@ const shirtsProducts = [
         img: {ShirtImg}
     },
     { 
-        id: "2", 
+        id: "14", 
         Title: "Lorem", 
         Price: 20, 
         Color: "Black", 
@@ -18,7 +18,7 @@ const shirtsProducts = [
         img: {ShirtImg}
     },
     { 
-        id: "3", 
+        id: "15", 
         Title: "Lorem", 
         Price: 30, 
         Color: "Blue", 
@@ -26,7 +26,7 @@ const shirtsProducts = [
         img: {ShirtImg}
     },
     { 
-        id: "4", 
+        id: "16", 
         Title: "Lorem", 
         Price: 40, 
         Color: "Orange", 
@@ -34,7 +34,7 @@ const shirtsProducts = [
         img: {ShirtImg}
     },
     { 
-        id: "5", 
+        id: "17", 
         Title: "Lorem", 
         Price: 50, 
         Color: "Red", 
@@ -42,7 +42,7 @@ const shirtsProducts = [
         img: {ShirtImg}
     },
     { 
-        id: "6", 
+        id: "18", 
         Title: "Lorem", 
         Price: 44, 
         Color: "Purple", 

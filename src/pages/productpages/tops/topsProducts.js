@@ -2,7 +2,7 @@ import topsImg from "../../../assets/images/KATEGORIER/TOPPAR/connor-botts-9-5t1
 
 const topsProducts = [
     { 
-        id: "1", 
+        id: "25", 
         Title: "Lorem", 
         Price: 10, 
         Color: "White", 
@@ -10,7 +10,7 @@ const topsProducts = [
         img: {topsImg}
     },
     { 
-        id: "2", 
+        id: "26", 
         Title: "Lorem", 
         Price: 20, 
         Color: "Black", 
@@ -18,7 +18,7 @@ const topsProducts = [
         img: {topsImg}
     },
     { 
-        id: "3", 
+        id: "27", 
         Title: "Lorem", 
         Price: 30, 
         Color: "Blue", 
@@ -26,7 +26,7 @@ const topsProducts = [
         img: {topsImg}
     },
     { 
-        id: "4", 
+        id: "28", 
         Title: "Lorem", 
         Price: 40, 
         Color: "Orange", 
@@ -34,7 +34,7 @@ const topsProducts = [
         img: {topsImg}
     },
     { 
-        id: "5", 
+        id: "29", 
         Title: "Lorem", 
         Price: 50, 
         Color: "Red", 
@@ -42,7 +42,7 @@ const topsProducts = [
         img: {topsImg}
     },
     { 
-        id: "6", 
+        id: "30", 
         Title: "Lorem", 
         Price: 44, 
         Color: "Purple", 
