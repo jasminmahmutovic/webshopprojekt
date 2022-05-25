@@ -1,0 +1,27 @@
+
+.wrapperEverything{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    align-items: center;
+}
+
+.wrapperChangeProducts{
+    padding:2rem;
+    width: fit-content;
+    display: flex;
+    flex-direction: column;
+    flex-wrap:wrap;
+    background-color: white;
+    height: 50rem;
+}
+
+
+.wrapperRubrik, .wrapperAlPictures{
+    display: flex;
+}
+
+.rowOne{
+    display: flex;
+    flex-direction: column;
+}
