@@ -24,7 +24,7 @@ const DisplayProds = (props) => {
     return (
         <>
             <Card style={{ width: '15rem'}} key={product.id}>
-                <Card.Img variant="top" src={product.img} alt={product.title} />
+                <Card.Img variant="top" src={product.img} alt={product.title} style={{margin: "0"}} />
                     <Card.Body>
                         <Card.Title>{product.title}</Card.Title>
                             <Card.Text>
