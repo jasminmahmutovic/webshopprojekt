@@ -1,54 +1,54 @@
 import ShirtImg from "../../../assets/images/KATEGORIER/SKJORTOR/stow-kelly-WGy0P9bJZcM-unsplash.jpg";
 
-const shirtsProducts = [
+const products = [
     { 
-        id: "13", 
-        Title: "Lorem", 
-        Price: 10, 
-        Color: "White", 
-        Storlek: "XS", 
-        img: {ShirtImg}
+        id: 13, 
+        title: "Lorem", 
+        price: 10, 
+        color: "White", 
+        storlek: "XS", 
+        img: ShirtImg
     },
     { 
-        id: "14", 
-        Title: "Lorem", 
-        Price: 20, 
-        Color: "Black", 
-        Storlek: "S", 
-        img: {ShirtImg}
+        id: 14, 
+        title: "Lorem", 
+        price: 20, 
+        color: "Black", 
+        storlek: "S", 
+        img: ShirtImg
     },
     { 
-        id: "15", 
-        Title: "Lorem", 
-        Price: 30, 
-        Color: "Blue", 
-        Storlek: "M", 
-        img: {ShirtImg}
+        id: 15, 
+        title: "Lorem", 
+        price: 30, 
+        color: "Blue", 
+        storlek: "M", 
+        img: ShirtImg
     },
     { 
-        id: "16", 
-        Title: "Lorem", 
-        Price: 40, 
-        Color: "Orange", 
-        Storlek: "L", 
-        img: {ShirtImg}
+        id: 16, 
+        title: "Lorem", 
+        price: 40, 
+        color: "Orange", 
+        storlek: "L", 
+        img: ShirtImg
     },
     { 
-        id: "17", 
-        Title: "Lorem", 
-        Price: 50, 
-        Color: "Red", 
-        Storlek: "XL", 
-        img: {ShirtImg}
+        id: 17, 
+        title: "Lorem", 
+        price: 50, 
+        color: "Red", 
+        storlek: "XL", 
+        img: ShirtImg
     },
     { 
-        id: "18", 
-        Title: "Lorem", 
-        Price: 44, 
-        Color: "Purple", 
-        Storlek: "XXL", 
-        img: {ShirtImg}
+        id: 18, 
+        title: "Lorem", 
+        price: 44, 
+        color: "Purple", 
+        storlek: "XXL", 
+        img: ShirtImg
     },
 ]
 
-export default shirtsProducts;
+export default products;

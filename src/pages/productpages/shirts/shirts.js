@@ -1,14 +1,19 @@
 import React from "react";
-import Card from 'react-bootstrap/Card';
-import Button from 'react-bootstrap/Button';
+import { useState, useEffect } from "react";
+import products from "./shirtProducts";
+import DisplayProducts from "../displayProducts";
 import ShirtsHeader from "../../../assets/images/Produkt_headers/skjortor.png";
-import ShirtsExample from "../../../assets/images/KATEGORIER/SKJORTOR/stow-kelly-WGy0P9bJZcM-unsplash.jpg";
 import FilterIcon from "../../../assets/icons/filter.png";
 import Checkbox from "../../../components/Checkbox";
 import "../pageStyles/productStyles.css";
-// import shirtsProducts from "./shirtProducts";
 
 const Shirts = () => {
+    const [items, setItems] = useState([]);
+
+    useEffect(() => {
+        setItems(products);
+    }, []);
+
     return (
         <div style={{width:"auto", height:"auto"}}>
             <div className="header">
@@ -126,66 +131,9 @@ const Shirts = () => {
                 </div>
             </div>
             <div className="containerRightSide">
-                <Card style={{ width: '15rem' }}>
-                <Card.Img variant="top" src={ShirtsExample} />
-                <Card.Body>
-                <Card.Title>Shirt</Card.Title>
-                <Card.Text>
-                    1000:-
-                </Card.Text>
-                <Button variant="primary">Köp</Button>
-                </Card.Body>
-                </Card>
-                <Card style={{ width: '15rem' }}>
-                <Card.Img variant="top" src={ShirtsExample} />
-                <Card.Body>
-                <Card.Title>Shirt</Card.Title>
-                <Card.Text>
-                    1000:-
-                </Card.Text>
-                <Button variant="primary">Köp</Button>
-                </Card.Body>
-                </Card>
-                <Card style={{ width: '15rem' }}>
-                <Card.Img variant="top" src={ShirtsExample} />
-                <Card.Body>
-                <Card.Title>Shirt</Card.Title>
-                <Card.Text>
-                    1000:-
-                </Card.Text>
-                <Button variant="primary">Köp</Button>
-                </Card.Body>
-                </Card>
-                <Card style={{ width: '15rem' }}>
-                <Card.Img variant="top" src={ShirtsExample} />
-                <Card.Body>
-                <Card.Title>Shirt</Card.Title>
-                <Card.Text>
-                    1000:-
-                </Card.Text>
-                <Button variant="primary">Köp</Button>
-                </Card.Body>
-                </Card>
-                <Card style={{ width: '15rem' }}>
-                <Card.Img variant="top" src={ShirtsExample} />
-                <Card.Body>
-                <Card.Title>Shirt</Card.Title>
-                <Card.Text>
-                    1000:-
-                </Card.Text>
-                <Button variant="primary">Köp</Button>
-                </Card.Body>
-                </Card>
-                <Card style={{ width: '15rem' }}>
-                <Card.Img variant="top" src={ShirtsExample} />
-                <Card.Body>
-                <Card.Title>Shirt</Card.Title>
-                <Card.Text>
-                    1000:-
-                </Card.Text>
-                <Button variant="primary">Köp</Button>
-                </Card.Body>
-                </Card>
+            {items.map((item) => (
+                <DisplayProducts key={item.id} product={item} />
+            ))}
                 </div>  
                 </div>  
             </div>

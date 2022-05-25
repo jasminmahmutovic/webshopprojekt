@@ -1,14 +1,20 @@
 import React from "react";
-import Card from 'react-bootstrap/Card';
-import Button from 'react-bootstrap/Button';
+import { useState, useEffect } from "react";
+import products from "./topsProducts";
+import DisplayProducts from "../displayProducts";
 import TopsHeader from "../../../assets/images/Produkt_headers/toppar.png";
-import TopsExample from "../../../assets/images/KATEGORIER/TOPPAR/connor-botts-9-5t1Jldx_U-unsplash.jpg";
 import FilterIcon from "../../../assets/icons/filter.png";
 import Checkbox from "../../../components/Checkbox";
 import "../pageStyles/productStyles.css";
-// import topsProducts from "./topsProducts";
 
 const Tops = () => {
+    const [items, setItems] = useState([]);
+
+    useEffect(() => {
+        setItems(products);
+    }, []);
+
+
     return (
         <div style={{width:"auto", height:"auto"}}>
             <div className="header">
@@ -126,66 +132,9 @@ const Tops = () => {
                 </div>
             </div>
             <div className="containerRightSide">
-                <Card style={{ width: '15rem' }}>
-                <Card.Img variant="top" src={TopsExample} />
-                <Card.Body>
-                <Card.Title>Topp</Card.Title>
-                <Card.Text>
-                    1000:-
-                </Card.Text>
-                <Button variant="primary">Köp</Button>
-                </Card.Body>
-                </Card>
-                <Card style={{ width: '15rem' }}>
-                <Card.Img variant="top" src={TopsExample} />
-                <Card.Body>
-                <Card.Title>Topp</Card.Title>
-                <Card.Text>
-                    1000:-
-                </Card.Text>
-                <Button variant="primary">Köp</Button>
-                </Card.Body>
-                </Card>
-                <Card style={{ width: '15rem' }}>
-                <Card.Img variant="top" src={TopsExample} />
-                <Card.Body>
-                <Card.Title>Topp</Card.Title>
-                <Card.Text>
-                    1000:-
-                </Card.Text>
-                <Button variant="primary">Köp</Button>
-                </Card.Body>
-                </Card>
-                <Card style={{ width: '15rem'}}>
-                <Card.Img variant="top" src={TopsExample} />
-                <Card.Body>
-                <Card.Title>Topp</Card.Title>
-                <Card.Text>
-                    1000:-
-                </Card.Text>
-                <Button variant="primary">Köp</Button>
-                </Card.Body>
-                </Card>
-                <Card style={{ width: '15rem' }}>
-                <Card.Img variant="top" src={TopsExample} />
-                <Card.Body>
-                <Card.Title>Topp</Card.Title>
-                <Card.Text>
-                    1000:-
-                </Card.Text>
-                <Button variant="primary">Köp</Button>
-                </Card.Body>
-                </Card>
-                <Card style={{ width: '15rem' }}>
-                <Card.Img variant="top" src={TopsExample} />
-                <Card.Body>
-                <Card.Title>Topp</Card.Title>
-                <Card.Text>
-                    1000:-
-                </Card.Text>
-                <Button variant="primary">Köp</Button>
-                </Card.Body>
-                </Card>
+            {items.map((item) => (
+                <DisplayProducts key={item.id} product={item} />
+            ))}
                 </div>  
                 </div>  
             </div>

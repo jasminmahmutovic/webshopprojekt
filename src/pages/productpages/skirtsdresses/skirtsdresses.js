@@ -1,14 +1,19 @@
 import React from "react";
-import Card from 'react-bootstrap/Card';
-import Button from 'react-bootstrap/Button';
+import { useState, useEffect } from "react";
+import products from "./skirtsdressesProducts";
+import DisplayProducts from "../displayProducts";
 import SkirtsdressesHeader from "../../../assets/images/Produkt_headers/klänningar&skjolar.png";
-import SkirtsdressesExample from "../../../assets/images/KATEGORIER/KLÄNNINGAR&SKJOLAR/stow-kelly-1Aei0n1AboQ-unsplash.jpg";
 import FilterIcon from "../../../assets/icons/filter.png";
 import Checkbox from "../../../components/Checkbox";
 import "../pageStyles/productStyles.css";
-// import skirtsdressesProducts from "./skirtsdressesProducts";
 
 const Skirtsdresses = () => {
+    const [items, setItems] = useState([]);
+
+    useEffect(() => {
+        setItems(products);
+    }, []);
+
     return (
         <div style={{width:"auto", height:"auto"}}>
             <div className="header">
@@ -126,66 +131,9 @@ const Skirtsdresses = () => {
                 </div>
             </div>
             <div className="containerRightSide">
-                <Card style={{ width: '15rem' }}>
-                <Card.Img variant="top" src={SkirtsdressesExample} />
-                <Card.Body>
-                <Card.Title>Skirt or dress</Card.Title>
-                <Card.Text>
-                    1000:-
-                </Card.Text>
-                <Button variant="primary">Köp</Button>
-                </Card.Body>
-                </Card>
-                <Card style={{ width: '15rem' }}>
-                <Card.Img variant="top" src={SkirtsdressesExample} />
-                <Card.Body>
-                <Card.Title>Skirt or dress</Card.Title>
-                <Card.Text>
-                    1000:-
-                </Card.Text>
-                <Button variant="primary">Köp</Button>
-                </Card.Body>
-                </Card>
-                <Card style={{ width: '15rem' }}>
-                <Card.Img variant="top" src={SkirtsdressesExample} />
-                <Card.Body>
-                <Card.Title>Skirt or dress</Card.Title>
-                <Card.Text>
-                    1000:-
-                </Card.Text>
-                <Button variant="primary">Köp</Button>
-                </Card.Body>
-                </Card>
-                <Card style={{ width: '15rem' }}>
-                <Card.Img variant="top" src={SkirtsdressesExample} />
-                <Card.Body>
-                <Card.Title>Skirt or dress</Card.Title>
-                <Card.Text>
-                    1000:-
-                </Card.Text>
-                <Button variant="primary">Köp</Button>
-                </Card.Body>
-                </Card>
-                <Card style={{ width: '15rem' }}>
-                <Card.Img variant="top" src={SkirtsdressesExample} />
-                <Card.Body>
-                <Card.Title>Skirt or dress</Card.Title>
-                <Card.Text>
-                    1000:-
-                </Card.Text>
-                <Button variant="primary">Köp</Button>
-                </Card.Body>
-                </Card>
-                <Card style={{ width: '15rem' }}>
-                <Card.Img variant="top" src={SkirtsdressesExample} />
-                <Card.Body>
-                <Card.Title>Skirt or dress</Card.Title>
-                <Card.Text>
-                    1000:-
-                </Card.Text>
-                <Button variant="primary">Köp</Button>
-                </Card.Body>
-                </Card>
+            {items.map((item) => (
+                <DisplayProducts key={item.id} product={item} />
+            ))}
                 </div>  
                 </div>  
             </div>

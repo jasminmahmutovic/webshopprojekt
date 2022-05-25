@@ -1,54 +1,54 @@
 import topsImg from "../../../assets/images/KATEGORIER/TOPPAR/connor-botts-9-5t1Jldx_U-unsplash.jpg";
 
-const topsProducts = [
+const products = [
     { 
-        id: "25", 
-        Title: "Lorem", 
-        Price: 10, 
-        Color: "White", 
-        Size: "XS", 
-        img: {topsImg}
+        id: 25, 
+        title: "Lorem", 
+        price: 10, 
+        color: "White", 
+        size: "XS", 
+        img: topsImg
     },
     { 
-        id: "26", 
-        Title: "Lorem", 
-        Price: 20, 
-        Color: "Black", 
-        Size: "S", 
-        img: {topsImg}
+        id: 26, 
+        title: "Lorem", 
+        price: 20, 
+        color: "Black", 
+        size: "S", 
+        img: topsImg
     },
     { 
-        id: "27", 
-        Title: "Lorem", 
-        Price: 30, 
-        Color: "Blue", 
-        Size: "M", 
-        img: {topsImg}
+        id: 27, 
+        title: "Lorem", 
+        price: 30, 
+        color: "Blue", 
+        size: "M", 
+        img: topsImg
     },
     { 
-        id: "28", 
-        Title: "Lorem", 
-        Price: 40, 
-        Color: "Orange", 
-        Size: "L", 
-        img: {topsImg}
+        id: 28, 
+        title: "Lorem", 
+        price: 40, 
+        color: "Orange", 
+        size: "L", 
+        img: topsImg
     },
     { 
-        id: "29", 
-        Title: "Lorem", 
-        Price: 50, 
-        Color: "Red", 
-        Size: "XL", 
-        img: {topsImg}
+        id: 29, 
+        title: "Lorem", 
+        price: 50, 
+        color: "Red", 
+        size: "XL", 
+        img: topsImg
     },
     { 
-        id: "30", 
-        Title: "Lorem", 
-        Price: 44, 
-        Color: "Purple", 
-        Size: "XXL", 
-        img: {topsImg}
+        id: 30, 
+        title: "Lorem", 
+        price: 44, 
+        color: "Purple", 
+        size: "XXL", 
+        img: topsImg
     },
 ]
 
-export default topsProducts;
+export default products;
