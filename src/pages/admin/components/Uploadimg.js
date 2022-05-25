@@ -1,6 +1,9 @@
 import React, {useState} from 'react'
 import ImageUploading from "react-images-uploading";
 
+//Style
+import "../scss/uploadingImg.scss"
+
 
 const Uploadimg = () => {
 
@@ -35,15 +38,16 @@ const Uploadimg = () => {
             {imageList.map((image, index) => (
               <div key={index} className="image-item">
                 <div className="image-item__btn-wrapper">
-                  <button onClick={() => onImageUpdate(index)}>Byt bild</button>
-                  <button onClick={() => onImageRemove(index)}>Ta bort bild</button>
+                  <button className='buttonImg' onClick={() => onImageUpdate(index)}>Byt bild</button>
+                  <button className='buttonImg' onClick={() => onImageRemove(index)}>Ta bort bild</button>
                 </div>
                 <img src={image["data_url"]} alt="" width="230" />
               </div>
             ))}
           
             <button
-              style={isDragging ? { color: "red" } : undefined}
+              className='buttonImg'
+              style={isDragging ? { backgroundColor:"#A3FF77", color:"black" } : undefined}
               onClick={onImageUpload}
               {...dragProps}
             >
