@@ -1,13 +1,14 @@
 import React from "react";
 import Card from 'react-bootstrap/Card';
 import Button from 'react-bootstrap/Button';
-import OuterwearHeader from "../../assets/images/Produkt_headers/ytterkläder.png";
-import OuterwearExample from "../../assets/images/KATEGORIER/YTTERKLÄDER/joshua-rondeau-fm1od4mv3Ls-unsplash(1).jpg";
-import FilterIcon from "../../assets/icons/filter.png";
-import Checkbox from "../../components/Checkbox";
-import "./productStyles.css";
+import OuterwearHeader from "../../../assets/images/Produkt_headers/ytterkläder.png";
+import OuterwearExample from "../../../assets/images/KATEGORIER/YTTERKLÄDER/joshua-rondeau-fm1od4mv3Ls-unsplash(1).jpg";
+import FilterIcon from "../../../assets/icons/filter.png";
+import Checkbox from "../../../components/Checkbox";
+import "../pageStyles/productStyles.css";
+// import outerwearProducts from "./outerwearProducts";
 
-const Pants = () => {
+const Outerwear = () => {
     return (
         <div style={{width:"auto", height:"auto"}}>
             <div className="header">
@@ -191,4 +192,4 @@ const Pants = () => {
     )
 };
 
-export default Pants;
+export default Outerwear;
