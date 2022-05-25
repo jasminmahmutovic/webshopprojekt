@@ -1,0 +1,36 @@
+@import "../../../index.scss";
+
+.buttonImg{
+    background-color: black;
+    color:$hover-link;
+    border-radius:5px;
+    padding:5px;
+    max-width: 12rem;
+    height: fit-content;
+}
+
+img{
+    margin-top:1rem;
+    margin-bottom: 1rem;
+}
+
+.image-item__btn-wrapper{
+    display: flex;
+    justify-content: space-between;
+}
+
+.changePictures{
+    margin:1rem;
+}
+
+.confirmMessage{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 20rem;
+    height: 5rem;
+    border: 1px solid black;
+    p{
+        margin:0;
+    }
+}

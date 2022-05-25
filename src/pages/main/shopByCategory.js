@@ -5,9 +5,27 @@ import klänning_kjolar from '../../assets/images/KATEGORIER/klänning_kjol.jpg'
 import skjortor from '../../assets/images/KATEGORIER/skjortor.jpg'
 import ytterkläder from '../../assets/images/KATEGORIER/ytterkläder.jpg'
 import { useNavigate } from 'react-router-dom'
+//för att ändra rubrikerna
+import { useContext, useState } from 'react'
+import { ImageContext } from '../../context/ImageContext'
+
 
 const ShopByCategory = () => {
   const navigate = useNavigate()
+
+  const { headline } = useContext(ImageContext);
+  
+  const [originalHeadline] = useState({
+    headlineOrg1: headline.headline1 || "BYXOR",
+    headlineOrg2: headline.headline2 ||  "TOPPAR",
+    headlineOrg3: headline.headline3 || "KLÄNNINGAR & KJOLAR",
+    headlineOrg4: headline.headline4 || "SKJORTOR",
+    headlineOrg5: headline.headline5 || "YTTERKLÄDER",
+   
+  })
+
+
+
 
   return (
     <>
@@ -25,7 +43,7 @@ const ShopByCategory = () => {
                 <p>VISA BYXOR</p>
               </figcaption>
             </div>
-            <b>BYXOR</b>
+            <b>{originalHeadline.headlineOrg1}</b>
           </div>
 
           <div onClick={() => navigate('/tops')} className="category-wrapper">
@@ -35,7 +53,7 @@ const ShopByCategory = () => {
                 <p>VISA TOPPAR</p>
               </figcaption>
             </div>
-            <b>TOPPAR</b>
+            <b>{originalHeadline.headlineOrg2}</b>
           </div>
 
           <div
@@ -48,7 +66,7 @@ const ShopByCategory = () => {
                 <p> VISA KLÄNNINGAR & KJOLAR</p>
               </figcaption>
             </div>
-            <b>KLÄNNINGAR & KJOLAR</b>
+            <b> <b>{originalHeadline.headlineOrg3}</b></b>
           </div>
 
           <div onClick={() => navigate('/shirts')} className="category-wrapper">
@@ -58,7 +76,7 @@ const ShopByCategory = () => {
                 <p>VISA SKJORTOR</p>
               </figcaption>
             </div>
-            <b>SKJORTOR</b>
+            <b> <b>{originalHeadline.headlineOrg4}</b></b>
           </div>
 
           <div
@@ -71,7 +89,7 @@ const ShopByCategory = () => {
                 <p>VISA YTTERKLÄDER</p>
               </figcaption>
             </div>
-            <b>YTTERKLÄDER</b>
+            <b> <b>{originalHeadline.headlineOrg5}</b></b>
           </div>
         </div>
       </div>
