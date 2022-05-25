@@ -1,17 +1,18 @@
 import React from "react";
 import Card from 'react-bootstrap/Card';
 import Button from 'react-bootstrap/Button';
-import PantsHeader from "../../assets/images/Produkt_headers/byxor.png";
-import PantsExample from "../../assets/images/KATEGORIER/BYXOR/toa-heftiba-LSYrpn4vy-4-unsplash.jpg";
-import FilterIcon from "../../assets/icons/filter.png";
-import Checkbox from "../../components/Checkbox";
-import "./productStyles.css";
+import SkirtsdressesHeader from "../../../assets/images/Produkt_headers/klänningar&skjolar.png";
+import SkirtsdressesExample from "../../../assets/images/KATEGORIER/KLÄNNINGAR&SKJOLAR/stow-kelly-1Aei0n1AboQ-unsplash.jpg";
+import FilterIcon from "../../../assets/icons/filter.png";
+import Checkbox from "../../../components/Checkbox";
+import "../pageStyles/productStyles.css";
+// import skirtsdressesProducts from "./skirtsdressesProducts";
 
-const Pants = () => {
+const Skirtsdresses = () => {
     return (
         <div style={{width:"auto", height:"auto"}}>
             <div className="header">
-                <img src={PantsHeader} style={{width: "100%", height:"auto", objectFit: "cover"}} alt="pants header" />
+                <img src={SkirtsdressesHeader} style={{width: "100%", height:"auto", objectFit: "cover"}} alt="Skirts and dresses header" />
             </div>
             <div className="containerStyle">
             <div className="sidebar">
@@ -125,10 +126,10 @@ const Pants = () => {
                 </div>
             </div>
             <div className="containerRightSide">
-                <Card style={{ width: '15rem'}}>
-                <Card.Img variant="top" src={PantsExample} />
+                <Card style={{ width: '15rem' }}>
+                <Card.Img variant="top" src={SkirtsdressesExample} />
                 <Card.Body>
-                <Card.Title>Pants</Card.Title>
+                <Card.Title>Skirt or dress</Card.Title>
                 <Card.Text>
                     1000:-
                 </Card.Text>
@@ -136,9 +137,9 @@ const Pants = () => {
                 </Card.Body>
                 </Card>
                 <Card style={{ width: '15rem' }}>
-                <Card.Img variant="top" src={PantsExample} />
+                <Card.Img variant="top" src={SkirtsdressesExample} />
                 <Card.Body>
-                <Card.Title>Pants</Card.Title>
+                <Card.Title>Skirt or dress</Card.Title>
                 <Card.Text>
                     1000:-
                 </Card.Text>
@@ -146,9 +147,9 @@ const Pants = () => {
                 </Card.Body>
                 </Card>
                 <Card style={{ width: '15rem' }}>
-                <Card.Img variant="top" src={PantsExample} />
+                <Card.Img variant="top" src={SkirtsdressesExample} />
                 <Card.Body>
-                <Card.Title>Pants</Card.Title>
+                <Card.Title>Skirt or dress</Card.Title>
                 <Card.Text>
                     1000:-
                 </Card.Text>
@@ -156,9 +157,9 @@ const Pants = () => {
                 </Card.Body>
                 </Card>
                 <Card style={{ width: '15rem' }}>
-                <Card.Img variant="top" src={PantsExample} />
+                <Card.Img variant="top" src={SkirtsdressesExample} />
                 <Card.Body>
-                <Card.Title>Pants</Card.Title>
+                <Card.Title>Skirt or dress</Card.Title>
                 <Card.Text>
                     1000:-
                 </Card.Text>
@@ -166,9 +167,9 @@ const Pants = () => {
                 </Card.Body>
                 </Card>
                 <Card style={{ width: '15rem' }}>
-                <Card.Img variant="top" src={PantsExample} />
+                <Card.Img variant="top" src={SkirtsdressesExample} />
                 <Card.Body>
-                <Card.Title>Pants</Card.Title>
+                <Card.Title>Skirt or dress</Card.Title>
                 <Card.Text>
                     1000:-
                 </Card.Text>
@@ -176,9 +177,9 @@ const Pants = () => {
                 </Card.Body>
                 </Card>
                 <Card style={{ width: '15rem' }}>
-                <Card.Img variant="top" src={PantsExample} />
+                <Card.Img variant="top" src={SkirtsdressesExample} />
                 <Card.Body>
-                <Card.Title>Pants</Card.Title>
+                <Card.Title>Skirt or dress</Card.Title>
                 <Card.Text>
                     1000:-
                 </Card.Text>
@@ -191,4 +192,4 @@ const Pants = () => {
     )
 };
 
-export default Pants;
+export default Skirtsdresses;
