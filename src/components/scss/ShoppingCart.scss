@@ -49,27 +49,33 @@
   height: 84.4vh;
 }
 
+.cart-is-empty p {
+  margin: .5rem;
+}
+
 .products-wrapper {
   padding: 0.5rem;
   border-bottom: 1px solid #444;
   display: flex;
   position: relative;
   width: 100%;
+  margin-top: .5rem;
 }
 
 .products-wrapper:last-child {
   border-bottom: 0;
 }
 
-//right side
-.img-product {
+
+.img-productera {
   width: 7rem;
-  height: 18vh;
-  background-color: grey;
+  height: 11rem;
   object-fit: cover;
-  margin-right: 0.5rem;
+  margin: 0;
+  margin-top: -5px;
 }
 
+//right side
 .product-right-info {
   display: flex;
   flex: 1;
@@ -90,7 +96,7 @@
 }
 
 .title-n-price p {
-  font-size: 1.2vw;
+  font-size: 1.2rem;
 }
 
 .price-txt {
@@ -116,11 +122,11 @@
 }
 
 .size-txt {
-  font-size: 1.2vw;
+  font-size: 1.2rem;
 }
 
 .qty-txt {
-  font-size: 1.2vw;
+  font-size: 1.2rem;
 }
 
 .remove-product {
@@ -128,14 +134,16 @@
   bottom: -5px;
   right: 0.7rem;
   text-decoration: underline;
-  font-size: 1.1vw;
+  font-size: 1.1rem;
   color: #444;
+  cursor: pointer;
 }
 
 .totalPrice-toCheckout-div {
   position: absolute;
   bottom: 0px;
   width: 100%;
+  height: 7rem;
 }
 
 .totalPrice-toCheckout-div button {
@@ -153,19 +161,28 @@
   display: flex;
   justify-content: space-between;
   width: 100%;
-  padding: 0.7vw;
+  padding: 0.7rem;
   border-top: 1px solid #444;
   align-items: center;
-  height: 2.5vw;
+  height: 2.5rem;
   margin-top: .5rem;
 }
 
 // MEDIA QUERIES
-@media only screen and (max-width: 0px) {
+@media only screen and (max-width: 1536px) {
   .underlay {
-    width: 75vw;
+    width: 70vw;
   }
   .shopping-container {
-    width: 25vw;
+    width: 30vw;
+  }
+}
+
+@media only screen and (max-width: 414px) {
+  .underlay {
+    width: 0vw;
+  }
+  .shopping-container {
+    width: 100vw;
   }
 }
