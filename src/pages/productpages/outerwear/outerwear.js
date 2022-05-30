@@ -1,25 +1,31 @@
-import React from 'react'
-import { useState, useEffect } from 'react'
-import products from './outerwearProducts'
-import DisplayProducts from '../displayProducts'
-import OuterwearHeader from '../../../assets/images/Produkt_headers/ytterkläder.png'
-import FilterIcon from '../../../assets/icons/filter.png'
-import Checkbox from '../../../components/Checkbox'
-import '../pageStyles/productStyles.css'
+import React from "react";
+import { useState, useEffect } from "react";
+import products from "./outerwearProducts";
+import DisplayProducts from "../displayProducts";
+import OuterwearHeader from "../../../assets/images/Produkt_headers/ytterkläder.png";
+import FilterIcon from "../../../assets/icons/filter.png";
+import Checkbox from "../../../components/Checkbox";
+import "../pageStyles/productStyles.css";
 
 const Outerwear = () => {
-  const [items, setItems] = useState([])
+  const [items, setItems] = useState([]);
 
   useEffect(() => {
-    setItems(products)
-  }, [])
+    setItems(products);
+  }, []);
 
   return (
-    <div style={{ width: 'auto', height: 'auto' }}>
+    <div style={{ width: "auto", height: "auto" }}>
       <div className="header">
         <img
           src={OuterwearHeader}
-          style={{ width: '100%', height: 'auto', objectFit: 'cover' }}
+          style={{
+            width: "100%",
+            height: "auto",
+            objectFit: "cover",
+            marginTop: "0",
+            marginBottom: "0",
+          }}
           alt="outerwear header"
         />
       </div>
@@ -37,8 +43,8 @@ const Outerwear = () => {
           <div>
             <h4
               style={{
-                fontSize: '1.5rem',
-                fontWeight: 'bold',
+                fontSize: "1.5rem",
+                fontWeight: "bold",
               }}
             >
               Pris Klasser
@@ -50,8 +56,8 @@ const Outerwear = () => {
             <hr />
             <h4
               style={{
-                fontSize: '1.5rem',
-                fontWeight: 'bold',
+                fontSize: "1.5rem",
+                fontWeight: "bold",
               }}
             >
               Färg
@@ -77,8 +83,8 @@ const Outerwear = () => {
             <hr />
             <h4
               style={{
-                fontSize: '1.5rem',
-                fontWeight: 'bold',
+                fontSize: "1.5rem",
+                fontWeight: "bold",
               }}
             >
               Storlek
@@ -101,7 +107,7 @@ const Outerwear = () => {
         </div>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default Outerwear
+export default Outerwear;

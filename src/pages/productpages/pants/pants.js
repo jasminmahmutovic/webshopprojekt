@@ -19,7 +19,7 @@ const Pants = () => {
       <div className="header">
         <img
           src={PantsHeader}
-          style={{ width: '100%', height: 'auto', objectFit: 'cover' }}
+          style={{ width: '100%', height: 'auto', objectFit: 'cover', marginTop: "0", marginBottom: "0" }}
           alt="pants header"
         />
       </div>
