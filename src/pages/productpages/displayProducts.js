@@ -32,7 +32,7 @@ const DisplayProds = (props) => {
   return (
     <>
       <Card style={{ width: "15rem" }} key={product.id}>
-      <Carousel>
+      <Carousel interval={null}>
               <Carousel.Item>
                 <img
                     style={{marginTop: "0", marginBottom: "0"}}
