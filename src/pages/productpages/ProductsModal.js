@@ -28,7 +28,7 @@ const ProductsModal = (props) => {
     <div className="bg-underlay" onClick={() => handleClose()}>
       <div className="modal-container">
         <div className="product-modal-left">
-          <Carousel className="carousel-div">
+          <Carousel className="carousel-div" class="carousel carousel-dark slide">
             <Carousel.Item className="modal-img-div">
               <img src={product.img[0].img} alt={product.title} />
             </Carousel.Item>

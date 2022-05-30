@@ -1,7 +1,6 @@
 import React from 'react'
 import Card from 'react-bootstrap/Card'
 import Button from 'react-bootstrap/Button'
-import { Modal } from 'react-bootstrap'
 import { useContext } from 'react'
 import { CartContext } from '../../context/CartContext'
 import { Carousel } from 'react-bootstrap'
@@ -31,34 +30,34 @@ const DisplayProds = (props) => {
   }
 
   return (
-      <>
+    <>
       {show && <ProductsModal product={product} setShow={setShow} setCart={setCart} cart={cart} />}
-          
-          <Card style={{ width: '15rem' }} key={product.id}>
-        <Carousel>
-          <Carousel.Item>
-            <img
-              style={{ marginTop: '0', marginBottom: '0' }}
-              className="d-block w-100"
-              src={product.img[0].img}
-              alt={product.title}
-            />
-          </Carousel.Item>
-          <Carousel.Item>
-            <img
-              className="d-block w-100"
-              src={product.img[1].img}
-              alt={product.title}
-            />
-          </Carousel.Item>
-          <Carousel.Item>
-            <img
-              className="d-block w-100"
-              src={product.img[2].img}
-              alt={product.title}
-            />
-          </Carousel.Item>
-        </Carousel>
+
+      <Card style={{ width: "15rem" }} key={product.id}>
+      <Carousel interval={null}>
+              <Carousel.Item>
+                <img
+                    style={{marginTop: "0", marginBottom: "0"}}
+                  className="d-block w-100"
+                  src={product.img[0].img}
+                  alt={product.title}
+                />
+              </Carousel.Item>
+              <Carousel.Item>
+                <img
+                  className="d-block w-100"
+                  src={product.img[1].img}
+                  alt={product.title}
+                />
+              </Carousel.Item>
+              <Carousel.Item>
+                <img
+                  className="d-block w-100"
+                  src={product.img[2].img}
+                  alt={product.title}
+                />
+              </Carousel.Item>
+            </Carousel>
         <Card.Body>
           <Card.Title>{product.title}</Card.Title>
           <Card.Text>{product.price}:-</Card.Text>
