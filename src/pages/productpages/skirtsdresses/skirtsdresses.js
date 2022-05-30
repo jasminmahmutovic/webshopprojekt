@@ -21,10 +21,10 @@ const Skirtsdresses = () => {
             </div>
             <div className="containerStyle">
             <div className="sidebar">
-                    <h1 className="filterStyle">
+                    <div className="filterStyle">
                         <img src={FilterIcon} alt="Filter icon" className="filterIconStyle" />
-                            FILTER
-                    </h1>
+                            <h1>FILTER</h1>
+                    </div>
                     <br />
                     <div >
                         <h4 style={{
