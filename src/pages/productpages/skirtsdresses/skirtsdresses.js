@@ -17,7 +17,7 @@ const Skirtsdresses = () => {
     return (
         <div style={{width:"auto", height:"auto"}}>
             <div className="header">
-                <img src={SkirtsdressesHeader} style={{width: "100%", height:"auto", objectFit: "cover"}} alt="Skirts and dresses header" />
+                <img src={SkirtsdressesHeader} style={{width: "100%", height:"auto", objectFit: "cover", marginTop: "0", marginBottom: "0"}} alt="Skirts and dresses header" />
             </div>
             <div className="containerStyle">
             <div className="sidebar">

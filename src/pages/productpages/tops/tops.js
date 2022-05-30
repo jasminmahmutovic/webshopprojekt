@@ -19,7 +19,7 @@ const Tops = () => {
       <div className="header">
         <img
           src={TopsHeader}
-          style={{ width: '100%', height: 'auto', objectFit: 'cover' }}
+          style={{ width: '100%', height: 'auto', objectFit: 'cover', marginTop: "0", marginBottom: "0" }}
           alt="Tops header"
         />
       </div>
