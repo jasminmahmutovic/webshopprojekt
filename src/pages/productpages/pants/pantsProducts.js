@@ -6,7 +6,8 @@ const products = [
         title: "Lorem", 
         price: 10, 
         color: "White", 
-        storlek: "XS", 
+        storlek: "XS",
+        description: "Soft pants for you",
         img: PantsImg
     },
     { 
@@ -14,7 +15,8 @@ const products = [
         title: "Lorem", 
         price: 20, 
         color: "Black", 
-        storlek: "S", 
+        storlek: "S",
+        description: "Extreme Soft pants for you", 
         img: PantsImg
     },
     { 
@@ -22,7 +24,8 @@ const products = [
         title: "Lorem", 
         price: 30, 
         color: "Blue", 
-        storlek: "M", 
+        storlek: "M",
+        description: "Mega Soft pants for you", 
         img: PantsImg
     },
     { 
@@ -30,7 +33,8 @@ const products = [
         title: "Lorem", 
         price: 40, 
         color: "Orange", 
-        storlek: "L", 
+        storlek: "L",
+        description: "Super Soft pants for you", 
         img: PantsImg
     },
     { 
@@ -38,7 +42,8 @@ const products = [
         title: "Lorem", 
         price: 50, 
         color: "Red", 
-        storlek: "XL", 
+        storlek: "XL",
+        description: "Very Soft pants for you", 
         img: PantsImg
     },
     { 
@@ -46,7 +51,8 @@ const products = [
         title: "Lorem", 
         price: 44, 
         color: "Purple", 
-        storlek: "XXL", 
+        storlek: "XXL",
+        description: "Extra soft pants for you", 
         img: PantsImg
     },
 ]
