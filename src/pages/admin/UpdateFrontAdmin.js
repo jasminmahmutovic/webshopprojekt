@@ -6,6 +6,7 @@ import { ImageContext } from '../../context/ImageContext';
 //Style
 import "./scss/updatefrontadmin.scss"
 
+
 const UpdateFrontAdmin = () => {
   
   const { headline, setHeadline } = useContext(ImageContext);
@@ -14,6 +15,7 @@ const UpdateFrontAdmin = () => {
   const handleInput = (e) => {
     setHeadline({ ...headline, [e.target.name]: e.target.value });
   }
+
   const handleClick = () => {
     alert("är du säker på att du vill ändra dina bilder")
     setMessage("Dina bilder är nu uppdaterade")
@@ -29,24 +31,8 @@ const UpdateFrontAdmin = () => {
        
       <div className='rowOne'>
         <h2>Valda bilder</h2>
-        <div className='wrapperAlPictures'>
-        <div className='changePictures'>
-       <Uploadingimg></Uploadingimg>
-        </div>
+           <Uploadingimg></Uploadingimg>
 
-        <div className='changePictures'>
-        <Uploadingimg></Uploadingimg>
-        </div>
-        <div className='changePictures'>
-        <Uploadingimg></Uploadingimg>
-        </div>
-        <div className='changePictures'>
-        <Uploadingimg></Uploadingimg>
-        </div>
-        <div className='changePictures'>
-        <Uploadingimg></Uploadingimg>
-        </div>
-        </div>
       </div>
     
     <div className='rowTwo'>

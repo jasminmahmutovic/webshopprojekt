@@ -10,10 +10,11 @@ import { useContext, useState } from 'react'
 import { ImageContext } from '../../context/ImageContext'
 
 
+
 const ShopByCategory = () => {
   const navigate = useNavigate()
 
-  const { headline } = useContext(ImageContext);
+  const { headline, file } = useContext(ImageContext);
   
   const [originalHeadline] = useState({
     headlineOrg1: headline.headline1 || "BYXOR",
@@ -21,14 +22,13 @@ const ShopByCategory = () => {
     headlineOrg3: headline.headline3 || "KLÄNNINGAR & KJOLAR",
     headlineOrg4: headline.headline4 || "SKJORTOR",
     headlineOrg5: headline.headline5 || "YTTERKLÄDER",
-   
   })
-
-
+  
 
 
   return (
     <>
+
       {/* section 1 SHOP BY CATEGORY */}
       <div className="shop-by-category-div">
         <div className="category-header">
@@ -39,6 +39,8 @@ const ShopByCategory = () => {
           <div onClick={() => navigate('/pants')} className="category-wrapper">
             <div className="category-image">
               <img src={byxor} alt="byxor kategori" />
+              <p>BYXOR</p><img src={file.file1} alt="byxor"></img>
+              
               <figcaption>
                 <p>VISA BYXOR</p>
               </figcaption>
