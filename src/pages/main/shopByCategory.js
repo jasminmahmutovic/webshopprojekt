@@ -41,9 +41,14 @@ const ShopByCategory = () => {
           <div onClick={() => navigate('/pants')} className="category-wrapper">
             <div className="category-image">
               <img src={byxor} alt="byxor kategori" />
+<<<<<<< HEAD
               <img src={file.file1.name} alt="byxor kategori" />
 
 
+=======
+              <p>BYXOR</p>
+              <img src={file.file1.name} alt="byxor"></img>
+>>>>>>> 382352310d0a694c3e0ab5ab420a13a827d50e2a
               
               <figcaption>
                 <p>VISA BYXOR</p>

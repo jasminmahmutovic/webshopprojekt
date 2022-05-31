@@ -1,11 +1,7 @@
 .admin-wrapper {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
     padding-top: 3rem;
     padding-bottom: 6rem;
-
+    margin-left: 20%;
 }
 
 .myAdminTitle {
@@ -17,7 +13,7 @@
 
 .admin-form {
     width: 35%;
-    margin-top: 2rem;
+    margin-top: 2rem; 
 }
 
 .admin-section {
@@ -25,9 +21,7 @@
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    align-items: center;
     padding-bottom: 0.5rem;
-
 }
 
 label {
@@ -105,6 +99,7 @@ select {
     padding-left: 10px
 }
 
+<<<<<<< HEAD:src/pages/admin/scss/addproduct.scss
 
 .wrapperListObject{
     display: flex;
@@ -119,3 +114,8 @@ select {
     }
     
 }
+=======
+.product-list-title{
+    margin-top: 50px;
+}
+>>>>>>> 382352310d0a694c3e0ab5ab420a13a827d50e2a:src/pages/admin/scss/addproduct.css

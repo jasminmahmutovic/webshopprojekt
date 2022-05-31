@@ -80,7 +80,7 @@ const Checkout = () => {
                     <div key={item.id} className="product-checkout">
                       <img
                         className="product-img-left"
-                        src={item.img}
+                        src={item.img[0].img}
                         alt={item.title}
                       />
 
