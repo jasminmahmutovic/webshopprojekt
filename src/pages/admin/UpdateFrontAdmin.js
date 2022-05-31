@@ -1,10 +1,11 @@
 import NavbarAdmin from './components/NavbarAdmin'
 import React, {useState, useContext } from 'react';
-import Uploadingimg from "./components/Uploadimg"
 import { ImageContext } from '../../context/ImageContext';
+import Uploadimg from './components/Uploadimg'
 
 //Style
 import "./scss/updatefrontadmin.scss"
+
 
 
 const UpdateFrontAdmin = () => {
@@ -22,7 +23,7 @@ const UpdateFrontAdmin = () => {
   }
 
   return (
-    <div style={{height:"100vh", display:"flex"}}>
+    <div className='wrapperUpdateAdmin' style={{height:"100vh", display:"flex" }}>
     <NavbarAdmin></NavbarAdmin>
     <div className='wrapperEverything'>
     <h1>UPPDATERA PRODUKT KATEGORIER</h1>
@@ -30,13 +31,16 @@ const UpdateFrontAdmin = () => {
     <div className='wrapperChangeProducts'>
        
       <div className='rowOne'>
-        <h2>Valda bilder</h2>
-           <Uploadingimg></Uploadingimg>
-
+        <h2>Du uppdaterar: Bildspel 1 på framsidans loyaut</h2>
+        <p><b>Valda bilder</b></p>
+        <Uploadimg></Uploadimg>
+        {/* <ImagesUpload></ImagesUpload> */}
+       
+        
       </div>
     
     <div className='rowTwo'>
-      <h2>Valda underrubriker till bildspel</h2>
+      <p><b>Valda underrubriker till bildspel</b></p>
         <div className='wrapperRubrik'>
           <div className='rubrikDiv'>
             <p>Rubrik 1</p>
@@ -66,7 +70,7 @@ const UpdateFrontAdmin = () => {
             />
           </div>
           <div  className='rubrikDiv'>
-            <p>Rubrik 1</p>
+            <p>Rubrik 4</p>
             <input     
                name="headline4"
                placeholder="rubrik till bild 4"
@@ -89,7 +93,7 @@ const UpdateFrontAdmin = () => {
       <div className='rowThree'>
       <div className='confirmMessage'><p>{message}</p></div>
       <button 
-      className='buttonImg'
+      className="removeUpdateBtn"
       onClick={handleClick}>SPARA ÄNDRINGAR</button>
       </div>
 

@@ -8,19 +8,20 @@
 
 .outerDiv {
   background-color: white;
-  width: 900px;
-  height: 709px;
+  height: 40rem;
   display: flex;
   border: 1px solid black;
 
   .left {
-    flex: 1;
+    height: 100%;
+    width: 20rem;
     display: flex;
     flex-direction: column;
     .emailInformation {
       border-bottom: 1px solid black;
       display: flex;
       height: 4rem;
+      cursor: pointer;
       .logo {
         display: flex;
         justify-content: center;
@@ -44,8 +45,9 @@
   }
 
   .right {
+    height: 100%;
     border-left: 1px solid black;
-    flex: 2;
+    width: 30rem;
     display: flex;
     flex-direction: column;
     .emailName {
@@ -74,6 +76,8 @@
         height: 55px;
         background-color: #b4b4b4;
         border-radius: 5px;
+        text-align: center;
+        padding:5px;
       }
     }
   }
@@ -97,4 +101,11 @@
     margin-top:5px
   }
  }
+}
+
+
+.iEmail{
+  position: inherit;
+  margin-left:2rem;
+  margin-top:5px;
 }

@@ -27,7 +27,12 @@ const Uploadimg = () => {
     return <img  style={{width:"12rem"}} src={URL.createObjectURL(image4)} alt={image4.name} />;
   };
   const ImageThumb5 = ({ image5 }) => {
-    return <img  style={{width:"12rem"}} src={URL.createObjectURL(image5)} alt={image5.name} />;
+    return (
+      <>
+      <img  style={{width:"12rem"}} src={URL.createObjectURL(image5)} alt={image5.name} />
+      </>
+    )
+   
   };
 
 
