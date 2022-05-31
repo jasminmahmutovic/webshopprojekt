@@ -145,7 +145,7 @@ const AddProduct = () => {
     <div style={{ display: "flex" }}>
       <NavbarAdmin></NavbarAdmin>
       <div className="admin-wrapper" >
-        <h1 className="myAdminTitle">ADMIN: Lägg til produkt</h1>
+        <h1 className="myAdminTitle">ADMIN: Lägg till produkt</h1>
         <h4>
           Var vänlig fyll i formuläret för att skapa ett nytt föremål och/eller
           kategori
@@ -377,7 +377,7 @@ const AddProduct = () => {
           
           <div className="wrapperListObject">
           <p><b>Kategori</b></p>
-          <ul>Vald kategorie:<u>{a.category}</u></ul>
+          <ul>Vald kategori:<u>{a.category}</u></ul>
           <ul>{a.chosenCategory}</ul>
           <label>Ändra Kategori</label>
           <input
