@@ -4,7 +4,7 @@ import './ProductsModal.scss'
 import closeBtn from '../../assets/icons/close_black.png'
 
 const ProductsModal = (props) => {
-  const { setShow, product, setCart, cart } = props
+  const { setShow, product, setCart, cart, setShowToast } = props
 
   const handleClose = () => {
     setShow(false)
@@ -20,12 +20,13 @@ const ProductsModal = (props) => {
         ),
       )
     } else {
+      setShowToast(true)
       setCart([...cart, { ...product, quantity: 1 }])
     }
   }
 
   return (
-    <div className="bg-underlay" onClick={() => handleClose()}>
+    <div className="bg-underlay">
       <div className="modal-container">
         <div className="product-modal-left">
           <Carousel className="carousel-div" class="carousel carousel-dark slide">
