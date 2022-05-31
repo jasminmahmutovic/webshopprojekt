@@ -11,6 +11,8 @@ const DisplayProds = (props) => {
   
   const [show, setShow] = React.useState(false);
 
+  const [rotate, setRotate] = React.useState(false);
+
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
   const { cart, setCart } = useContext(CartContext);
@@ -29,13 +31,27 @@ const DisplayProds = (props) => {
     }
   };
 
+  const rotateImage = {
+    transform: rotate ? 'rotate(90deg)' : 'rotate(0deg)', 
+    transition: 'transform 150ms ease',
+   }
+
   return (
     <>
       <Card style={{ width: "15rem" }} key={product.id}>
+      <div style={{
+                position: "relative",
+                display: "flex",
+                justifyContent: "center"
+              }}>
+              <Button variant="outline-primary" style={{position: "absolute", zIndex:"1000"}} onClick={() => setRotate(!rotate)}>
+            Rotate
+          </Button>
+              </div>
       <Carousel interval={null}>
               <Carousel.Item>
                 <img
-                    style={{marginTop: "0", marginBottom: "0"}}
+                    style={rotateImage}
                   className="d-block w-100"
                   src={product.img[0].img}
                   alt={product.title}
@@ -43,6 +59,7 @@ const DisplayProds = (props) => {
               </Carousel.Item>
               <Carousel.Item>
                 <img
+                  style={rotateImage}
                   className="d-block w-100"
                   src={product.img[1].img}
                   alt={product.title}
@@ -50,6 +67,7 @@ const DisplayProds = (props) => {
               </Carousel.Item>
               <Carousel.Item>
                 <img
+                  style={rotateImage}
                   className="d-block w-100"
                   src={product.img[2].img}
                   alt={product.title}
