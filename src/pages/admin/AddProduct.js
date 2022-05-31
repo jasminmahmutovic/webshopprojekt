@@ -1,5 +1,4 @@
 import React from "react";
-import axios from 'axios';
 
 import { useState } from "react";
 import { ImagesUpload } from "./components/ImagesUpload";
@@ -145,7 +144,7 @@ const AddProduct = () => {
   return (
     <div style={{ display: "flex" }}>
       <NavbarAdmin></NavbarAdmin>
-      <div className="admin-wrapper" style={{ width:"100%" }}>
+      <div className="admin-wrapper" >
         <h1 className="myAdminTitle">ADMIN: Lägg til produkt</h1>
         <h4>
           Var vänlig fyll i formuläret för att skapa ett nytt föremål och/eller

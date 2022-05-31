@@ -74,13 +74,17 @@ select {
 
 .skapaBtn {
     margin-top: 3rem;
-    width: 100%;
     height: 50px;
     background-color: black;
     color:#A3FF77;
     text-transform: uppercase;
     font-size: 20px;
     border-radius: 5px;
+    width: fit-content;
+    margin-bottom: 1rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+
 }
 
 .removeUpdateBtn{
@@ -92,6 +96,9 @@ select {
     text-transform: uppercase;
     font-size: 20px;
     border-radius: 5px;
+    margin-right: 1rem;;
+    padding-left: 1rem;
+    padding-right: 1rem;
 }
 
 .sizeP {
@@ -99,12 +106,12 @@ select {
     padding-left: 10px
 }
 
-<<<<<<< HEAD:src/pages/admin/scss/addproduct.scss
 
 .wrapperListObject{
     display: flex;
     flex-direction: column;
     margin-top:1rem;
+    width: 40%;
 
     ul{
         padding:0;
@@ -114,8 +121,3 @@ select {
     }
     
 }
-=======
-.product-list-title{
-    margin-top: 50px;
-}
->>>>>>> 382352310d0a694c3e0ab5ab420a13a827d50e2a:src/pages/admin/scss/addproduct.css
