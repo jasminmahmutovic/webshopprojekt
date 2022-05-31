@@ -19,7 +19,6 @@ import RodeoCollection from "./pages/collectionPages/rodeoCollection.js";
 import Admin from "./pages/admin/admin.js";
 import EmailAdmin from "./pages/admin/EmailAdmin.js";
 import AddProduct from "./pages/admin/AddProduct.js";
-import ChangeProducts from "./pages/admin/ChangeProducts.js";
 import UpdateFrontAdmin from "./pages/admin/UpdateFrontAdmin.js";
 
 function App() {
@@ -51,7 +50,6 @@ function App() {
             <Route path="admin" element={<Admin />} />
             <Route path="emailAdmin" element={<EmailAdmin />} />
             <Route path="addProduct" element={<AddProduct />} />
-            <Route path="changeProduct" element={<ChangeProducts/>} />
             <Route path="updateFront" element={<UpdateFrontAdmin/>} />
 
           </Route>

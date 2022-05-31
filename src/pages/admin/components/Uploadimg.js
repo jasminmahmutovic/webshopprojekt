@@ -71,9 +71,10 @@ const Uploadimg = () => {
        onChange={handleUpload} />
       {file.file5 && <ImageThumb5 image5={file.file5} />}
       </div>
-
+     
      </div>
     </div>
+    
   )
 }
 

@@ -12,6 +12,9 @@ import { ImageContext } from '../../context/ImageContext'
 
 
 const ShopByCategory = () => {
+   
+  
+
   const navigate = useNavigate()
 
   const { headline, file } = useContext(ImageContext);
@@ -23,7 +26,6 @@ const ShopByCategory = () => {
     headlineOrg4: headline.headline4 || "SKJORTOR",
     headlineOrg5: headline.headline5 || "YTTERKLÄDER",
   })
-  
 
 
   return (
@@ -39,7 +41,9 @@ const ShopByCategory = () => {
           <div onClick={() => navigate('/pants')} className="category-wrapper">
             <div className="category-image">
               <img src={byxor} alt="byxor kategori" />
-              <p>BYXOR</p><img src={file.file1} alt="byxor"></img>
+              <img src={file.file1.name} alt="byxor kategori" />
+
+
               
               <figcaption>
                 <p>VISA BYXOR</p>
