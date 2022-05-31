@@ -52,7 +52,7 @@ const removeProduct = (product) => {
           {cart.map((item => (
             <div key={item.id} className="products-wrapper">
               {/* mappning för produkter */}
-              <img className="img-productera" src={item.img} alt={item.title} />
+              <img className="img-productera" src={item.img[0].img} alt={item.title} />
               <div className="procuct-right-info">
                 <div className="title-n-price">
                   <p>{item.title}</p>
