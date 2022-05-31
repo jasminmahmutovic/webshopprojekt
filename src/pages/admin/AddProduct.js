@@ -133,12 +133,12 @@ const AddProduct = () => {
   //kanpparna i listan
   const deleteList = (e) =>{
     e.preventDefault()
-    setList([])
+    alert("Din produkt är nu raderad")
   }
   
   const saveList = (e) =>{
     e.preventDefault()
-    setMessage("Din produkt är nu uppdaterad")
+    alert("Din produkt är nu uppdaterad")
   }
 
   return (
