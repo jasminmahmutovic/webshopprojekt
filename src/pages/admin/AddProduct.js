@@ -1,27 +1,34 @@
 import React from "react";
+import axios from 'axios';
 
 import { useState } from "react";
+import { FileX } from "react-bootstrap-icons";
 import NavbarAdmin from "./components/NavbarAdmin";
 
 //Styling
 import "./scss/addproduct.css";
 
 const AddProduct = () => {
-  const [image, setImage] = useState("");
+  const [image, setImage] = useState([]);
   const [title, setTitle] = useState("Title");
   const [price, setPrice] = useState(0);
   const [color, setColor] = useState("Röd");
-  const [size1, setSizeOne] = useState("Not avaliable");
-  const [size2, setSizeTwo] = useState("Not avaliable");
-  const [size3, setSizeThree] = useState("Not avaliable");
-  const [size4, setSizeFour] = useState("Not avaliable");
-  const [size5, setSizeFive] = useState("Not avaliable");
-  const [size6, setSizeSix] = useState("Not avaliable");
-  const [size7, setSizeSeven] = useState("Not avaliable");
-  const [size8, setSizeEight] = useState("Not avaliable");
-  const [size9, setSizeNine] = useState("Not avaliable");
-  const [category, setCategory] = useState("Category");
-  const [chosenCategory, setChosenCategory] = useState("Byxor");
+  const [size1, setSizeOne] = useState("3XS: Not avaliable");
+  const [size2, setSizeTwo] = useState("2XS: Not avaliable");
+  const [size3, setSizeThree] = useState("XS: Not avaliable");
+  const [size4, setSizeFour] = useState("S: Not avaliable");
+  const [size5, setSizeFive] = useState("M: Not avaliable");
+  const [size6, setSizeSix] = useState("L: Not avaliable");
+  const [size7, setSizeSeven] = useState("XL: Not avaliable");
+  const [size8, setSizeEight] = useState("2XL: Not avaliable");
+  const [size9, setSizeNine] = useState("3XL: Not avaliable");
+  const [category, setCategory] = useState("");
+
+  const [chosenCategory, setChosenCategory] = useState("");
+  const [isPendig, setIsPending] = useState(false);
+  const [list, setList] = useState([]);
+
+  
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -42,7 +49,28 @@ const AddProduct = () => {
       category,
       chosenCategory,
     };
-    fetch("http://localhost:3000/products", {
+
+    if (image || title || price || color || size1 || size2 || size3 || size4 || size5 || size6 || size7 || size8 || size9 || category || chosenCategory ) {
+    setList((ls)=>[...ls, produkt])
+    setImage("")
+    setTitle("")
+    setColor("")
+    setSizeOne("")
+    setSizeTwo("")
+    setSizeThree("")
+    setSizeFour("")
+    setSizeFive("")
+    setSizeSix("")
+    setSizeSeven("")
+    setSizeEight("")
+    setCategory("")
+    setChosenCategory("")
+  }
+
+    setIsPending(true);
+
+
+    fetch("http://localhost:3000/changeProduct/", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(produkt),
@@ -81,15 +109,18 @@ const AddProduct = () => {
           produkt.chosenCategory +
           " | " +
           " Pris: " +
-          produkt.price
+          produkt.price +
+          "  Se en lista med dina samlade produkter längre ner på sidan."
       );
+      setIsPending(false);
     });
   };
+
 
   return (
     <div style={{ display: "flex" }}>
       <NavbarAdmin></NavbarAdmin>
-      <div className="admin-wrapper" style={{ marginLeft: "5rem" }}>
+      <div className="admin-wrapper">
         <h1 className="myAdminTitle">ADMIN: Lägg til produkt</h1>
         <h4>
           Var vänlig fyll i formuläret för att skapa ett nytt föremål och/eller
@@ -269,18 +300,42 @@ const AddProduct = () => {
             </label>
           </div>
 
-          <button className="skapaBtn">Skapa produkt</button>
+          { ! isPendig && <button className="skapaBtn">Skapa produkt</button>}
+          { isPendig && <button disabled className="skapaBtn">Skapar produkt...</button>}
         </form>
+        <hr></hr>
+        
+        {
+        list.map((a)=> <div>
+          
+          <h1 class="product-list-title"><b>Mina Produkter</b></h1>
+          <h2 class="product-list-title ">{a.title}</h2>
+          <img src={a.image}/>
+          <p><b>Pris</b></p>
+          <ul>{a.price}kr</ul>
+          <p><b>Färger</b></p>
+          <ul>{a.color}</ul>
+          <p><b>Storlekar</b></p>
+          <ul>{a.size1} | {a.size2} | {a.size3} <br/> 
+          {a.size4} | {a.size5} | {a.size6} | <br/> 
+          {a.size7} | {a.size8} | {a.size9}</ul>
+          <p><b>Kategori</b></p>
+          <ul>{a.category}</ul>
+          <ul>{a.chosenCategory}</ul>
+          <hr></hr>
+
+        </div>)
+        }
+
       </div>
-    </div>
+
+        
+      </div>
+    
+
+
   );
 };
 
 export default AddProduct;
 
-/* <p>{ title }</p>
-<p>{ price }</p>
-<p>{ color }</p>
-<p>{size1} {size2} {size3} {size4} {size5} {size6} {size7} {size8} {size9}</p>
-<p>{category}</p>
-<p>{chosenCategory}</p>*/
