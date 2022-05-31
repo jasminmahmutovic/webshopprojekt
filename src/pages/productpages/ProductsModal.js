@@ -9,8 +9,11 @@ const ProductsModal = (props) => {
 
   const [rotate, setRotate] = React.useState(false);
   const rotateImage = {
-    transform: rotate ? "rotate(90deg)" : "rotate(0deg)",
+    // transform: rotate ? "rotate(90deg)" : "rotate(0deg)",
+    width: rotate ? "100%" : "50%",
+    height: rotate ? "500px" : "500px",
     transition: "transform 150ms ease",
+    objectFit: "fill",
   };
 
   const handleClose = () => {
@@ -40,7 +43,8 @@ const ProductsModal = (props) => {
               position: "relative",
               display: "flex",
               justifyContent: "center",
-              width: "100%",
+              width:"100%",
+              maxHeight: "500px",
             }}
           >
             <BsArrowClockwise
@@ -58,6 +62,7 @@ const ProductsModal = (props) => {
             />
 
             <Carousel
+              interval={null}
               className="carousel-div"
               class="carousel carousel-dark slide"
             >
@@ -76,9 +81,7 @@ const ProductsModal = (props) => {
                 />
               </Carousel.Item>
               <Carousel.Item
-                className="
-              modal-img-div"
-              >
+                className="modal-img-div">           
                 <img
                   src={product.img[2].img}
                   alt={product.title}
