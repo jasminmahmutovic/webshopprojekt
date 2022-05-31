@@ -16,7 +16,8 @@
     flex-direction: column;
     flex-wrap:wrap;
     background-color: white;
-    height: 50rem;
+    min-height:fit-content;
+    margin-bottom: 5rem;
 }
 
 
@@ -48,4 +49,5 @@
 
 .rubrikDiv{
  margin:1rem;
+ width: 17rem;
 }
