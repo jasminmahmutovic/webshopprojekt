@@ -10,6 +10,7 @@ const UserProvider = ({ children }) => {
     firstname: "",
     lastname: "",
     mail: "",
+    telephone: "",
     adress: "",
     city: "",
     zipCode: "",

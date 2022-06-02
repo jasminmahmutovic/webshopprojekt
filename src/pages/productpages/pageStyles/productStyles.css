@@ -12,6 +12,22 @@
     align-items: center;
 }
 
+.filterStyle {
+    display: flex;
+    flex-direction: row;
+    font-weight: bold;
+}
+
+.filterIconStyle {
+    width: 50px;
+    height: 50px;
+}
+
+.filterStyle h1 {
+    font-weight: bold;
+    margin-top: 14px;
+}
+
 .colorGroup {
     width: auto;
     height: auto;
@@ -56,13 +72,3 @@
     padding: 5px;
 }
 
-.filterIconStyle {
-    width: 50px;
-    height: 50px;
-}
-
-.filterStyle {
-    display: flex;
-    flex-direction: row;
-    font-weight: bold;
-}

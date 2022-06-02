@@ -65,8 +65,12 @@
   width: 100%;
   height: 28vw;
   background-color: #e1ffa3;
-  overflow-y: scroll;
+  overflow-x: scroll;
   position: relative;
+}
+
+.no-products p {
+  margin: .5rem;
 }
 
 .product-checkout {
@@ -77,12 +81,16 @@
   position: relative;
 }
 
+.product-checkout:last-child {
+  border-bottom: none;
+}
+
 .product-img-left {
   width: 7rem;
   height: 18vh;
   background-color: grey;
   object-fit: cover;
-  margin-right: 0.5rem;
+  margin: 0;
 }
 
 .product-info-right {
@@ -145,6 +153,7 @@
   text-decoration: underline;
   font-size: 1.1vw;
   color: #444;
+  cursor: pointer;
 }
 
 .totalPrice-checkout-div {
@@ -219,10 +228,11 @@
   align-items: center;
 }
 
-.payment-icons-row img {
-  width: 3.5vw;
-  height: 3.3vw;
+.visa-icon  {
+  height: 3.7vw;
+  width: 4vw;
   margin-right: 1rem;
+  margin-top: 19px;
 }
 
 .payment-icon {
@@ -230,13 +240,19 @@
   align-items: center;
   flex-direction: column;
   justify-content: center;
-  margin-bottom: -0.6rem;
+  height: 100%;
+}
+
+.payment-icon img {
+  width: 3.5vw;
+  height: 3.3vw;
+   margin-right: 1rem;
 }
 
 .payment-icon p {
-  font-size: 0.4vw;
-  margin-top: -1.1rem;
-  margin-left: -0.8rem;
+  font-size: 0.5vw;
+  margin-top: -2.1rem;
+  margin-right: 12px;
 }
 
 .first-last-input {
@@ -364,18 +380,9 @@
     height: 4.7vw;
   }
 
-  .payment-icon {
-    display: flex;
-    align-items: center;
-    flex-direction: column;
-    justify-content: center;
-    margin-bottom: -0.6rem;
-  }
-
   .payment-icon p {
     font-size: 0.7vw;
-    margin-top: -1.1rem;
-    margin-left: -0.8rem;
+    margin-left: -0.5rem;
   }
 
   .first-last-input {
@@ -478,6 +485,7 @@
 
       .payment-icon p {
         font-size: 1vw;
+        margin-right: 8px;
       }
     
       .first-last-input {

@@ -6,11 +6,11 @@ import Main from "./pages/main/main.js";
 import MyAccount from "./pages/myaccount.js";
 import Products from "./pages/products.js";
 import Register from "./pages/register.js";
-import Pants from "./pages/productpages/pants";
-import Outerwear from "./pages/productpages/outerwear";
-import Skirtsdresses from "./pages/productpages/skirtsdresses";
-import Tops from "./pages/productpages/tops";
-import Shirts from "./pages/productpages/shirts";
+import Pants from "./pages/productpages/pants/pants";
+import Outerwear from "./pages/productpages/outerwear/outerwear";
+import Skirtsdresses from "./pages/productpages/skirtsdresses/skirtsdresses";
+import Tops from "./pages/productpages/tops/tops";
+import Shirts from "./pages/productpages/shirts/shirts";
 import ShowInDom from "./ShowInDom";
 import ScrollToTop from "./scrollToTop.js";
 import ArcadiaCollection from "./pages/collectionPages/arcadiaCollection.js";
@@ -19,7 +19,6 @@ import RodeoCollection from "./pages/collectionPages/rodeoCollection.js";
 import Admin from "./pages/admin/admin.js";
 import EmailAdmin from "./pages/admin/EmailAdmin.js";
 import AddProduct from "./pages/admin/AddProduct.js";
-import ChangeProducts from "./pages/admin/ChangeProducts.js";
 import UpdateFrontAdmin from "./pages/admin/UpdateFrontAdmin.js";
 
 function App() {
@@ -51,7 +50,6 @@ function App() {
             <Route path="admin" element={<Admin />} />
             <Route path="emailAdmin" element={<EmailAdmin />} />
             <Route path="addProduct" element={<AddProduct />} />
-            <Route path="changeProduct" element={<ChangeProducts/>} />
             <Route path="updateFront" element={<UpdateFrontAdmin/>} />
 
           </Route>

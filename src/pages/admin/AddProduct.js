@@ -1,27 +1,37 @@
 import React from "react";
 
 import { useState } from "react";
+import { ImagesUpload } from "./components/ImagesUpload";
 import NavbarAdmin from "./components/NavbarAdmin";
 
 //Styling
-import "./scss/addproduct.css";
+import "./scss/addproduct.scss";
 
 const AddProduct = () => {
-  const [image, setImage] = useState("");
+  //DEN HÄR är till bilfilen i "lägg till produkter"
+  const [ file, setFile] = useState({
+    file1:"",
+ });
+  const [image, setImage] = useState([]);
   const [title, setTitle] = useState("Title");
   const [price, setPrice] = useState(0);
   const [color, setColor] = useState("Röd");
-  const [size1, setSizeOne] = useState("Not avaliable");
-  const [size2, setSizeTwo] = useState("Not avaliable");
-  const [size3, setSizeThree] = useState("Not avaliable");
-  const [size4, setSizeFour] = useState("Not avaliable");
-  const [size5, setSizeFive] = useState("Not avaliable");
-  const [size6, setSizeSix] = useState("Not avaliable");
-  const [size7, setSizeSeven] = useState("Not avaliable");
-  const [size8, setSizeEight] = useState("Not avaliable");
-  const [size9, setSizeNine] = useState("Not avaliable");
-  const [category, setCategory] = useState("Category");
-  const [chosenCategory, setChosenCategory] = useState("Byxor");
+  const [size1, setSizeOne] = useState("3XS: Not avaliable");
+  const [size2, setSizeTwo] = useState("2XS: Not avaliable");
+  const [size3, setSizeThree] = useState("XS: Not avaliable");
+  const [size4, setSizeFour] = useState("S: Not avaliable");
+  const [size5, setSizeFive] = useState("M: Not avaliable");
+  const [size6, setSizeSix] = useState("L: Not avaliable");
+  const [size7, setSizeSeven] = useState("XL: Not avaliable");
+  const [size8, setSizeEight] = useState("2XL: Not avaliable");
+  const [size9, setSizeNine] = useState("3XL: Not avaliable");
+  const [category, setCategory] = useState("");
+
+  const [chosenCategory, setChosenCategory] = useState("");
+  const [isPendig, setIsPending] = useState(false);
+  const [list, setList] = useState([]);
+
+  const [message, setMessage] = useState("")
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -42,7 +52,28 @@ const AddProduct = () => {
       category,
       chosenCategory,
     };
-    fetch("http://localhost:3000/products", {
+
+    if (file || title || price || color || size1 || size2 || size3 || size4 || size5 || size6 || size7 || size8 || size9 || category || chosenCategory ) {
+    setList((ls)=>[...ls, produkt])
+    setImage("")
+    setTitle("")
+    setColor("")
+    setSizeOne("")
+    setSizeTwo("")
+    setSizeThree("")
+    setSizeFour("")
+    setSizeFive("")
+    setSizeSix("")
+    setSizeSeven("")
+    setSizeEight("")
+    setCategory("")
+    setChosenCategory("")
+  }
+
+    setIsPending(true);
+
+
+    fetch("http://localhost:3000/changeProduct/", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(produkt),
@@ -81,16 +112,40 @@ const AddProduct = () => {
           produkt.chosenCategory +
           " | " +
           " Pris: " +
-          produkt.price
+          produkt.price +
+          "  Se en lista med dina samlade produkter längre ner på sidan."
       );
+      setIsPending(false);
     });
   };
+
+
+//Bilfilen i formuläret
+  function handleUpload(event) {
+    setFile({ ...file, [event.target.name]: event.target.files[0] });
+    console.log(file)
+  }
+
+  const ImageThumb1 = ({ image1 }) => {
+    return <img className='imageUploadImage' style={{width:"12rem"}} src={URL.createObjectURL(image1)} alt={image1.name} />;
+    };
+
+  //kanpparna i listan
+  const deleteList = (e) =>{
+    e.preventDefault()
+    alert("Din produkt är nu raderad")
+  }
+  
+  const saveList = (e) =>{
+    e.preventDefault()
+    alert("Din produkt är nu uppdaterad")
+  }
 
   return (
     <div style={{ display: "flex" }}>
       <NavbarAdmin></NavbarAdmin>
-      <div className="admin-wrapper" style={{ marginLeft: "5rem" }}>
-        <h1 className="myAdminTitle">ADMIN: Lägg til produkt</h1>
+      <div className="admin-wrapper" >
+        <h1 className="myAdminTitle">ADMIN: Lägg till produkt</h1>
         <h4>
           Var vänlig fyll i formuläret för att skapa ett nytt föremål och/eller
           kategori
@@ -99,15 +154,11 @@ const AddProduct = () => {
         <form onSubmit={handleSubmit} className="admin-form">
           <div className="admin-section">
             <label for="bild">
-              <h4>Bild</h4>
-              <input
-                className="custom-file-button"
-                name="bild"
-                type="file"
-                accept="imgae/png, image/jpeg"
-                value={image}
-                onChange={(e) => setImage(e.target.value)}
-              />
+            <input type="file" 
+            accept="image/png, image/jpeg"
+            name="file1" 
+            onChange={handleUpload} />
+            {file.file1 && <ImageThumb1 image1={file.file1} />}
             </label>
 
             <label for="titel">
@@ -268,19 +319,98 @@ const AddProduct = () => {
               </select>
             </label>
           </div>
-
-          <button className="skapaBtn">Skapa produkt</button>
+          <div id="message"></div>
+          { ! isPendig && <button className="skapaBtn">Skapa produkt</button>}
+          { isPendig && <button disabled className="skapaBtn">Skapar produkt...</button>}
         </form>
+        <hr></hr>
+        
+        {
+        list.map((a)=> <div>
+          
+          <h1 class="product-list-title"><b>Mina Produkter</b></h1>
+          <h2 class="product-list-title ">{a.title}</h2>
+          
+          {/* <img src={a.file}/> */}
+          <p><b>Bild</b></p>
+          {file.file1 && <ImageThumb1 image1={file.file1} />}
+          <br></br>
+          <br></br>
+          
+          <div className="wrapperListObject">
+          <p><b>Titel</b></p>
+          <ul>Vald titel:<u>{a.title}</u></ul>
+          <label>Ändra titel:</label>
+          <input placeholder={a.title}>
+          </input>
+          </div>
+          <hr></hr>
+        
+          <div className="wrapperListObject">
+          <p><b>Pris</b></p>
+          <ul>Valt pris:<u>{a.price}</u>kr</ul>
+          <label>Ändra pris</label>
+          <input
+           placeholder={a.price}kr></input>
+          </div>
+          <hr></hr>
+
+          <div className="wrapperListObject">
+          <p><b>Färger</b></p>
+          <ul>Vald färg: <u>{a.color}</u></ul> 
+          <label>Ändra färg</label>
+          <input
+           value={a.color}></input>
+          </div>
+          <hr></hr>
+          
+          <div className="wrapperListObject">
+          <p><b>Storlekar</b></p>
+          <ul>{a.size1} | {a.size2} | {a.size3} <br/> 
+          {a.size4} | {a.size5} | {a.size6} | <br/> 
+          {a.size7} | {a.size8} | {a.size9}</ul>
+          <label>Ändra storlek</label>
+          <input
+           placeholder={a.size1}></input>
+          </div>
+          <hr></hr>
+          
+          <div className="wrapperListObject">
+          <p><b>Kategori</b></p>
+          <ul>Vald kategori:<u>{a.category}</u></ul>
+          <ul>{a.chosenCategory}</ul>
+          <label>Ändra Kategori</label>
+          <input
+           placeholder={a.chosenCategory}></input>
+          </div>
+          <hr></hr>
+
+          <p><b>Lägg Till Bilder</b></p>
+          <ImagesUpload></ImagesUpload>
+          
+          <br></br>
+          <br></br>
+          
+          <i>Vad vill du göra med produkt: {a.title}?</i> 
+          <button style={{width:"15rem", marginRight:"1rem"}} onClick={saveList} className="skapaBtn">Spara ändringar</button>
+          <button style={{width:"15rem"}} className="skapaBtn" onClick={deleteList}>Radera produkt</button>
+           <div><p>{message}</p></div>
+          <hr></hr>
+      
+        </div>)
+        }
+
       </div>
-    </div>
+
+        
+      </div>
+    
+
+
   );
 };
 
 export default AddProduct;
 
-/* <p>{ title }</p>
-<p>{ price }</p>
-<p>{ color }</p>
-<p>{size1} {size2} {size3} {size4} {size5} {size6} {size7} {size8} {size9}</p>
-<p>{category}</p>
-<p>{chosenCategory}</p>*/
+
+

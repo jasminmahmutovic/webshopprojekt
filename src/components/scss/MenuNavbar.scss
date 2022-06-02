@@ -51,6 +51,7 @@ nav {
   top: 3rem;
   left: 0;
   background-color: black;
+  margin-top: -1px;
   a {
     padding: 0.5rem;
     color: white;
@@ -184,6 +185,9 @@ nav {
   position: relative;
   text-align: center;
   color: white;
+  &:hover {
+    color: $hover-link;
+  }
 }
 
 #checkout > p {
@@ -192,6 +196,9 @@ nav {
   top: 60%;
   left: 50%;
   transform: translate(-50%, -50%);
+&:hover {
+  color: $hover-link;
+}
 }
 
 #hamburger {

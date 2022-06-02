@@ -1,24 +1,30 @@
 import React from "react";
-import Card from 'react-bootstrap/Card';
-import Button from 'react-bootstrap/Button';
-import SkirtsdressesHeader from "../../assets/images/Produkt_headers/klänningar&skjolar.png";
-import SkirtsdressesExample from "../../assets/images/KATEGORIER/KLÄNNINGAR&SKJOLAR/stow-kelly-1Aei0n1AboQ-unsplash.jpg";
-import FilterIcon from "../../assets/icons/filter.png";
-import Checkbox from "../../components/Checkbox";
-import "./productStyles.css";
+import { useState, useEffect } from "react";
+import products from "./skirtsdressesProducts";
+import DisplayProducts from "../displayProducts";
+import SkirtsdressesHeader from "../../../assets/images/Produkt_headers/klänningar&skjolar.png";
+import FilterIcon from "../../../assets/icons/filter.png";
+import Checkbox from "../../../components/Checkbox";
+import "../pageStyles/productStyles.css";
 
-const Pants = () => {
+const Skirtsdresses = () => {
+    const [items, setItems] = useState([]);
+
+    useEffect(() => {
+        setItems(products);
+    }, []);
+
     return (
         <div style={{width:"auto", height:"auto"}}>
             <div className="header">
-                <img src={SkirtsdressesHeader} style={{width: "100%", height:"auto", objectFit: "cover"}} alt="Skirts and dresses header" />
+                <img src={SkirtsdressesHeader} style={{width: "100%", height:"auto", objectFit: "cover", marginTop: "0", marginBottom: "0"}} alt="Skirts and dresses header" />
             </div>
             <div className="containerStyle">
             <div className="sidebar">
-                    <h1 className="filterStyle">
+                    <div className="filterStyle">
                         <img src={FilterIcon} alt="Filter icon" className="filterIconStyle" />
-                            FILTER
-                    </h1>
+                            <h1>FILTER</h1>
+                    </div>
                     <br />
                     <div >
                         <h4 style={{
@@ -125,70 +131,13 @@ const Pants = () => {
                 </div>
             </div>
             <div className="containerRightSide">
-                <Card style={{ width: '15rem' }}>
-                <Card.Img variant="top" src={SkirtsdressesExample} />
-                <Card.Body>
-                <Card.Title>Skirt or dress</Card.Title>
-                <Card.Text>
-                    1000:-
-                </Card.Text>
-                <Button variant="primary">Köp</Button>
-                </Card.Body>
-                </Card>
-                <Card style={{ width: '15rem' }}>
-                <Card.Img variant="top" src={SkirtsdressesExample} />
-                <Card.Body>
-                <Card.Title>Skirt or dress</Card.Title>
-                <Card.Text>
-                    1000:-
-                </Card.Text>
-                <Button variant="primary">Köp</Button>
-                </Card.Body>
-                </Card>
-                <Card style={{ width: '15rem' }}>
-                <Card.Img variant="top" src={SkirtsdressesExample} />
-                <Card.Body>
-                <Card.Title>Skirt or dress</Card.Title>
-                <Card.Text>
-                    1000:-
-                </Card.Text>
-                <Button variant="primary">Köp</Button>
-                </Card.Body>
-                </Card>
-                <Card style={{ width: '15rem' }}>
-                <Card.Img variant="top" src={SkirtsdressesExample} />
-                <Card.Body>
-                <Card.Title>Skirt or dress</Card.Title>
-                <Card.Text>
-                    1000:-
-                </Card.Text>
-                <Button variant="primary">Köp</Button>
-                </Card.Body>
-                </Card>
-                <Card style={{ width: '15rem' }}>
-                <Card.Img variant="top" src={SkirtsdressesExample} />
-                <Card.Body>
-                <Card.Title>Skirt or dress</Card.Title>
-                <Card.Text>
-                    1000:-
-                </Card.Text>
-                <Button variant="primary">Köp</Button>
-                </Card.Body>
-                </Card>
-                <Card style={{ width: '15rem' }}>
-                <Card.Img variant="top" src={SkirtsdressesExample} />
-                <Card.Body>
-                <Card.Title>Skirt or dress</Card.Title>
-                <Card.Text>
-                    1000:-
-                </Card.Text>
-                <Button variant="primary">Köp</Button>
-                </Card.Body>
-                </Card>
+            {items.map((item) => (
+                <DisplayProducts key={item.id} product={item} />
+            ))}
                 </div>  
                 </div>  
             </div>
     )
 };
 
-export default Pants;
+export default Skirtsdresses;
