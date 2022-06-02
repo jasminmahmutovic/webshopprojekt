@@ -5,7 +5,7 @@ const mongoose = require("mongoose");
 
 
 //importera alla våra routes
-const submitOrderRouter = require("./src/api/routes/submitOrder");
+const submitOrderRouter = require("./routes/submitOrder");
 
 //implementation of use local .env file
 require("dotenv").config();
