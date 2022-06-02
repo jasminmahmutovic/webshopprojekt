@@ -35,6 +35,7 @@ export const ImagesUpload = () => {
           <div className="upload__image-wrapper">
             <button
               className="skapaBtn"
+              id='skapaBtn'
               style={isDragging ? { color: 'black', backgroundColor:"#A3FF77" } : undefined}
               onClick={onImageUpload}
               {...dragProps}
@@ -47,8 +48,9 @@ export const ImagesUpload = () => {
             onClick={onImageRemoveAll}>Remove all images</button> */}
             {imageList.map((image, index) => (
               <div key={index} className="image-item">
+      
+                <div className="image-item__btn-wrapper" >
                 <img src={image['data_url']} alt="" width="100" />
-                <div className="image-item__btn-wrapper">
                   <button className="removeUpdateBtn" onClick={() => onImageUpdate(index)}>Byt bild</button>
                   <button className="removeUpdateBtn"  onClick={() => onImageRemove(index)}>Radera</button>
                 </div>
