@@ -1,6 +1,6 @@
 const express = require("express");
+const Email = require("../models/Email");
 const EmailRouter = express.Router();
-const Email = require("../models/SubmitOrder");
 
 EmailRouter.post("/neworder", (req, res) => {
     console.log("Order to submit: ", req.body);

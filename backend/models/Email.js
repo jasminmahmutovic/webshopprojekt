@@ -1,6 +1,6 @@
 const mongoose = require("mongoose");
 
-const SubmitOrderSchema = mongoose.Schema({
+const EmailSchema = mongoose.Schema({
   name: {
     type: String,
     required: true,
@@ -22,4 +22,4 @@ const SubmitOrderSchema = mongoose.Schema({
   }
 });
 
-module.exports = mongoose.model("SubmitOrder", SubmitOrderSchema);
+module.exports = mongoose.model("Email", EmailSchema);
