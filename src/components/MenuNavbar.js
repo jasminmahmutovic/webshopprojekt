@@ -85,8 +85,8 @@ const MenuNavbar = (props) => {
               </button>
               <DropDownModal open={yourAccountOpen}>
                 <div className="drop_Login">
-                  <Link to="#">Mina köp</Link>
-                  <Link to="#">Retunera</Link>
+                  <Link to="/myAccount">Mitt Konto</Link>
+                  <Link to="/myAccount">Retunera</Link>
                   <button
                     style={{ marginBottom: '1rem' }}
                     className="nav_button"
@@ -160,7 +160,7 @@ const MenuNavbar = (props) => {
               </button>
 
               {/* SHOPPING CART */}
-              <button onClick={openCart} id="checkout" className="nav_button">
+              <button type="button" onClick={openCart} id="checkout" className="nav_button">
                 <BsBag
                   style={{ width: '1.7rem', height: '1.7rem' }}
                 >

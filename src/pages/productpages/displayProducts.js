@@ -1,12 +1,16 @@
-import React from 'react'
+import React, { useState } from 'react'
 import Card from 'react-bootstrap/Card'
 import Button from 'react-bootstrap/Button'
 import { useContext } from 'react'
 import { CartContext } from '../../context/CartContext'
 import { Carousel } from 'react-bootstrap'
 import ToastMessage from './ToastMessage'
-import { BsArrowClockwise } from "react-icons/bs";
 import ProductsModal from "./ProductsModal";
+
+
+//Styling
+import { BsArrowClockwise } from "react-icons/bs";
+import { BsFillHeartFill } from "react-icons/bs";
 import "./displayProducts.scss";
 
 const DisplayProds = (props) => {
@@ -15,9 +19,13 @@ const DisplayProds = (props) => {
   const [show, setShow] = React.useState(false)
   const [showToast, setShowToast] = React.useState(false)
   const [rotate, setRotate] = React.useState(false);
+  const [heartClicked, setHeartClicked] = useState()
+
+  //From Context
+  const { cart, setCart } = useContext(CartContext);
+  const { heartList, setHeartList } = useContext(CartContext);
 
   const handleShow = () => setShow(true);
-  const { cart, setCart } = useContext(CartContext);
 
   //to not dublicate item, but at the same time add item
   const addProducts = (product) => {
@@ -40,6 +48,24 @@ const DisplayProds = (props) => {
     height: rotate ? "300px" : "300px",
     transition: "transform 150ms ease",
   };
+
+
+ const handlerHeartButton = () => {
+  setHeartClicked(!heartClicked)
+  const exist = heartList.find((x) => x.id === product.id)
+  
+  if (exist) {
+    setHeartList(
+      heartList.map((x) =>
+        x.id === product.id ? { ...exist, quantity: exist.quantity + 1 } : x
+      )
+    );
+  } else {
+    setShowToast(true)
+    setHeartList([...heartList, { ...product, quantity: 1 }])
+  }
+ 
+ }
 
   return (
     <>
@@ -114,6 +140,9 @@ const DisplayProds = (props) => {
             <Button variant="outline-primary" onClick={handleShow}>
               Mer info
             </Button>
+            <button 
+             className={`heartButton ${heartClicked ? 'heartButtonClick' : ''}`}
+            onClick={handlerHeartButton}> <BsFillHeartFill/> </button>
           </div>
         </Card.Body>
       </Card>
