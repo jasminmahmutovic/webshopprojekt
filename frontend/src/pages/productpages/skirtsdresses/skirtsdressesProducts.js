@@ -5,7 +5,7 @@ import SDImg3 from "../../../assets/images/KATEGORIER/KLÄNNINGAR&SKJOLAR/brock-
 const products = [
   {
     id: 19,
-    title: "Lorem",
+    title: "Mini skirt",
     price: 10,
     color: "White",
     size: "XS",
@@ -26,7 +26,7 @@ const products = [
   },
   {
     id: 20,
-    title: "Lorem",
+    title: "Prom skirt",
     price: 20,
     color: "Black",
     size: "S",
@@ -47,7 +47,7 @@ const products = [
   },
   {
     id: 21,
-    title: "Lorem",
+    title: "Skirt of heaven",
     price: 30,
     color: "Blue",
     size: "M",
@@ -68,7 +68,7 @@ const products = [
   },
   {
     id: 22,
-    title: "Lorem",
+    title: "Skirtqueen",
     price: 40,
     color: "Orange",
     size: "L",
@@ -89,7 +89,7 @@ const products = [
   },
   {
     id: 23,
-    title: "Lorem",
+    title: "SlaySkirt",
     price: 50,
     color: "Red",
     size: "XL",
@@ -110,7 +110,7 @@ const products = [
   },
   {
     id: 24,
-    title: "Lorem",
+    title: "Skirt for everyday",
     price: 44,
     color: "Purple",
     size: "XXL",

@@ -1,25 +1,40 @@
-import React from 'react'
-import { useState, useEffect } from 'react'
-import products from './pantsProducts'
-import DisplayProducts from '../displayProducts'
-import PantsHeader from '../../../assets/images/Produkt_headers/byxor.png'
-import FilterIcon from '../../../assets/icons/filter.png'
-import Checkbox from '../../../components/Checkbox'
-import '../pageStyles/productStyles.css'
+import React from "react";
+import { useState, useEffect } from "react";
+import products from "./pantsProducts";
+import DisplayProducts from "../displayProducts";
+import PantsHeader from "../../../assets/images/Produkt_headers/byxor.png";
+import FilterIcon from "../../../assets/icons/filter.png";
+import Checkbox from "../../../components/Checkbox";
+import "../pageStyles/productStyles.css";
+import SearchProducts from "../../../functions/searchProducts/search";
 
 const Pants = () => {
-  const [items, setItems] = useState([])
+  const [items, setItems] = useState([]);
+  const [input, setInput] = useState("");
+  const [open, setOpen] = useState(false);
+
+  const handleInput = (e) => {
+    const lowerCase = e.target.value.toLowerCase();
+    setInput(lowerCase);
+    setOpen(!open);
+  };
 
   useEffect(() => {
-    setItems(products)
-  }, [])
+    setItems(products);
+  }, []);
 
   return (
-    <div style={{ width: 'auto', height: 'auto' }}>
+    <div style={{ width: "auto", height: "auto" }}>
       <div className="header">
         <img
           src={PantsHeader}
-          style={{ width: '100%', height: 'auto', objectFit: 'cover', marginTop: "0", marginBottom: "0" }}
+          style={{
+            width: "100%",
+            height: "auto",
+            objectFit: "cover",
+            marginTop: "0",
+            marginBottom: "0",
+          }}
           alt="pants header"
         />
       </div>
@@ -37,8 +52,20 @@ const Pants = () => {
           <div>
             <h4
               style={{
-                fontSize: '1.5rem',
-                fontWeight: 'bold',
+                fontSize: "1.5rem",
+                fontWeight: "bold",
+              }}
+            >
+              SÖK
+            </h4>
+            <input label="sök" onChange={handleInput} />
+            {open && <SearchProducts input={input} products={products} />}
+          </div>
+          <div>
+            <h4
+              style={{
+                fontSize: "1.5rem",
+                fontWeight: "bold",
               }}
             >
               Pris Klasser
@@ -50,8 +77,8 @@ const Pants = () => {
             <hr />
             <h4
               style={{
-                fontSize: '1.5rem',
-                fontWeight: 'bold',
+                fontSize: "1.5rem",
+                fontWeight: "bold",
               }}
             >
               Färg
@@ -77,8 +104,8 @@ const Pants = () => {
             <hr />
             <h4
               style={{
-                fontSize: '1.5rem',
-                fontWeight: 'bold',
+                fontSize: "1.5rem",
+                fontWeight: "bold",
               }}
             >
               Storlek
@@ -101,7 +128,7 @@ const Pants = () => {
         </div>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default Pants
+export default Pants;

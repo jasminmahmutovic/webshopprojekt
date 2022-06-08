@@ -5,7 +5,7 @@ import OutImg3 from "../../../assets/images/KATEGORIER/YTTERKLÄDER/fabian-alber
 const products = [
   {
     id: 1,
-    title: "Lorem",
+    title: "Baggie outerwear",
     price: 10,
     color: "White",
     size: "XS",
@@ -26,7 +26,7 @@ const products = [
   },
   {
     id: 2,
-    title: "Lorem",
+    title: "Skinny outerwear",
     price: 20,
     color: "Black",
     size: "S",
@@ -48,7 +48,7 @@ const products = [
   },
   {
     id: 3,
-    title: "Lorem",
+    title: "SlimFit Outties",
     price: 30,
     color: "Blue",
     size: "M",
@@ -70,7 +70,7 @@ const products = [
   },
   {
     id: 4,
-    title: "Lorem",
+    title: "For the brave",
     price: 40,
     color: "Orange",
     size: "L",
@@ -92,7 +92,7 @@ const products = [
   },
   {
     id: 5,
-    title: "Lorem",
+    title: "Fantastico",
     price: 50,
     color: "Red",
     size: "XL",
@@ -114,7 +114,7 @@ const products = [
   },
   {
     id: 6,
-    title: "Lorem",
+    title: "Outerwearos",
     price: 44,
     color: "Purple",
     size: "XXL",

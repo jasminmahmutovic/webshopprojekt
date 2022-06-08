@@ -11,7 +11,6 @@ const ProductsModal = (props) => {
   const [outOfStock, setOutOfStock] = React.useState(false);
   const [rotate, setRotate] = React.useState(false);
   const rotateImage = {
-    // transform: rotate ? "rotate(90deg)" : "rotate(0deg)",
     width: rotate ? "100%" : "50%",
     height: rotate ? "500px" : "500px",
     transition: "transform 150ms ease",
@@ -67,6 +66,7 @@ const ProductsModal = (props) => {
                 fontSize: "1.5rem",
                 margin: "0.5rem",
                 borderRadius: "50%",
+                cursor: "pointer",
               }}
               onClick={() => setRotate(!rotate)}
             />
@@ -90,8 +90,7 @@ const ProductsModal = (props) => {
                   style={rotateImage}
                 />
               </Carousel.Item>
-              <Carousel.Item
-                className="modal-img-div">           
+              <Carousel.Item className="modal-img-div">   
                 <img
                   src={product.img[2].img}
                   alt={product.title}

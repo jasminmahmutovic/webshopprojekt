@@ -5,7 +5,7 @@ import topsImg3 from "../../../assets/images/KATEGORIER/TOPPAR/stow-kelly-QwFxRs
 const products = [
   {
     id: 25,
-    title: "Lorem",
+    title: "Crop top",
     price: 10,
     color: "White",
     size: "XS",
@@ -26,7 +26,7 @@ const products = [
   },
   {
     id: 26,
-    title: "Lorem",
+    title: "Top crop",
     price: 20,
     color: "Black",
     size: "S",
@@ -47,7 +47,7 @@ const products = [
   },
   {
     id: 27,
-    title: "Lorem",
+    title: "Crips",
     price: 30,
     color: "Blue",
     size: "M",
@@ -68,7 +68,7 @@ const products = [
   },
   {
     id: 28,
-    title: "Lorem",
+    title: "Blood",
     price: 40,
     color: "Orange",
     size: "L",
@@ -89,7 +89,7 @@ const products = [
   },
   {
     id: 29,
-    title: "Lorem",
+    title: "TipTop",
     price: 50,
     color: "Red",
     size: "XL",
@@ -110,7 +110,7 @@ const products = [
   },
   {
     id: 30,
-    title: "Lorem",
+    title: "Toppen",
     price: 44,
     color: "Purple",
     size: "XXL",

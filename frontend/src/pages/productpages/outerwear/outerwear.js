@@ -6,9 +6,18 @@ import OuterwearHeader from "../../../assets/images/Produkt_headers/ytterkläder
 import FilterIcon from "../../../assets/icons/filter.png";
 import Checkbox from "../../../components/Checkbox";
 import "../pageStyles/productStyles.css";
+import SearchProducts from "../../../functions/searchProducts/search";
 
 const Outerwear = () => {
   const [items, setItems] = useState([]);
+  const [input, setInput] = useState("");
+  const [open, setOpen] = useState(false);
+
+  const handleInput = (e) => {
+    const lowerCase = e.target.value.toLowerCase();
+    setInput(lowerCase);
+    setOpen(!open);
+  };
 
   useEffect(() => {
     setItems(products);
@@ -40,6 +49,18 @@ const Outerwear = () => {
             <h1>FILTER</h1>
           </div>
           <br />
+          <div>
+            <h4
+              style={{
+                fontSize: "1.5rem",
+                fontWeight: "bold",
+              }}
+            >
+              SÖK
+            </h4>
+            <input label="sök" onChange={handleInput} />
+            {open && <SearchProducts input={input} products={products} />}
+          </div>
           <div>
             <h4
               style={{

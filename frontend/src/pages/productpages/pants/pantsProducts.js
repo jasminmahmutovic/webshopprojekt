@@ -5,7 +5,7 @@ import PantsImg3 from "../../../assets/images/KATEGORIER/BYXOR/clodagh-da-paixao
 const products = [
   {
     id: 7,
-    title: "Lorem",
+    title: "Skinny jeans",
     price: 10,
     color: "White",
     storlek: "XS",
@@ -26,7 +26,7 @@ const products = [
   },
   {
     id: 8,
-    title: "Lorem",
+    title: "Slim fit",
     price: 20,
     color: "Black",
     storlek: "S",
@@ -47,7 +47,7 @@ const products = [
   },
   {
     id: 9,
-    title: "Lorem",
+    title: "Baggies",
     price: 30,
     color: "Blue",
     storlek: "M",
@@ -68,7 +68,7 @@ const products = [
   },
   {
     id: 10,
-    title: "Lorem",
+    title: "For the medium ones",
     price: 40,
     color: "Orange",
     storlek: "L",
@@ -89,7 +89,7 @@ const products = [
   },
   {
     id: 11,
-    title: "Lorem",
+    title: "Cool jeans",
     price: 50,
     color: "Red",
     storlek: "XL",
@@ -110,7 +110,7 @@ const products = [
   },
   {
     id: 12,
-    title: "Lorem",
+    title: "Medieval trousers",
     price: 44,
     color: "Purple",
     storlek: "XXL",

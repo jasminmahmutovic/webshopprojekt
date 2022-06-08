@@ -113,6 +113,7 @@ const DisplayProds = (props) => {
               fontSize: "1.5rem",
               margin: "0.5rem",
               borderRadius: "50%",
+              cursor: "pointer",
             }}
             onClick={() => setRotate(!rotate)}
           />

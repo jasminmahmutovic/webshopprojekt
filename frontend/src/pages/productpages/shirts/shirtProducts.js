@@ -5,7 +5,7 @@ import ShirtImg3 from "../../../assets/images/KATEGORIER/SKJORTOR/utopia-by-cho-
 const products = [
   {
     id: 13,
-    title: "Lorem",
+    title: "Linnen shirt",
     price: 10,
     color: "White",
     storlek: "XS",
@@ -26,7 +26,7 @@ const products = [
   },
   {
     id: 14,
-    title: "Lorem",
+    title: "Woodcutter",
     price: 20,
     color: "Black",
     storlek: "S",
@@ -48,7 +48,7 @@ const products = [
   },
   {
     id: 15,
-    title: "Lorem",
+    title: "Nights",
     price: 30,
     color: "Blue",
     storlek: "M",
@@ -70,7 +70,7 @@ const products = [
   },
   {
     id: 16,
-    title: "Lorem",
+    title: "Club",
     price: 40,
     color: "Orange",
     storlek: "L",
@@ -92,7 +92,7 @@ const products = [
   },
   {
     id: 17,
-    title: "Lorem",
+    title: "For the road",
     price: 50,
     color: "Red",
     storlek: "XL",
@@ -114,7 +114,7 @@ const products = [
   },
   {
     id: 18,
-    title: "Lorem",
+    title: "On the plane",
     price: 44,
     color: "Purple",
     storlek: "XXL",
