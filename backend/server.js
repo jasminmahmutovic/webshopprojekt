@@ -2,7 +2,7 @@ const express = require("express");
 const app = express();
 const cors = require("cors");
 const mongoose = require("mongoose");
-
+const path = require("path");
 
 //importera alla våra routes
 const submitOrderRouter = require("./routes/submitOrder");
@@ -15,7 +15,10 @@ app.use(cors());
 app.use(express.json());
 
 //lägg till alla våra routes
-app.use("/api", submitOrderRouter);
+app.use("/api/order/", submitOrderRouter);
+
+//static folder for frontend
+app.use(express.static(path.join(__dirname, "frontend/build")));
 
 mongoose.connect(
   process.env.MONGODB_URI,

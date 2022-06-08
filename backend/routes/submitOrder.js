@@ -4,11 +4,22 @@ const SubmitOrder = require("../models/SubmitOrder");
 
 submitOrderRouter.post("/neworder", (req, res) => {
     console.log("Order to submit: ", req.body);
-    const newNote = new SubmitOrder({
+    const newOrder = new SubmitOrder({
       title: req.body.title,
       color: req.body.color,
+      price: req.body.price,
+      size: req.body.size,
+      firstname: req.body.firstname,
+      lastname: req.body.lastname,
+      email: req.body.email,
+      telephone: req.body.telephone,
+      address: req.body.address,
+      city: req.body.city,
+      zipcode: req.body.zipcode,
     });
-    newNote.save((err) => {
+  
+
+    newOrder.save((err) => {
       if (err) {
         res.status(500).json({
           msg: {
@@ -25,6 +36,7 @@ submitOrderRouter.post("/neworder", (req, res) => {
         });
       }
     });
+
 });
   
 module.exports = submitOrderRouter;

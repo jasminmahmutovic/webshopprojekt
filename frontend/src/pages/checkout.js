@@ -9,7 +9,11 @@ import maestroIcon from '../../src/assets/icons/icons8-maestro-100.png'
 import visaIcon from '../../src/assets/icons/icons8-visa-100.png'
 import mastercardIcon from '../../src/assets/icons/icons8-mastercard-logo-100.png'
 
+const rootURL = "/api/";
+
 const Checkout = () => {
+
+
 
   const { user } = useContext(UserContext)
   const { cart, setCart } = useContext(CartContext)
@@ -49,12 +53,42 @@ const Checkout = () => {
     setAdressInfo({ ...adressInfo, [e.target.name]: e.target.value })
   }
 
-  const submitOrder = (e) => {
-    e.preventDefault()
-    if (cart.length > 0) {
-      alert("Din order är skickad!")
-      //alert(JSON.stringify(adressInfo))
+
+  const submitOrder = async () => {
+    // e.preventDefault()
+    // if (cart.length > 0) {
+    //   alert("Din order är skickad!")
+    //   //alert(JSON.stringify(adressInfo))
+    // }
+
+    // const title = document.getElementById("product-title").value;
+    // const price = document.getElementById("product-price").value;
+    const fname = document.getElementById("firstname-order").value;
+    const lname = document.getElementById("lastname-order").value;
+
+
+    const order = {
+      fname,
+      lname,
+    };
+
+    try {
+      const res = await fetch(`${rootURL}neworder`, {
+        method: "post",
+        body: JSON.stringify(order),
+        headers: {
+          "Content-Type": "application/json",
+        },
+      });
+      const data = await res.json();
+      console.log(data);
+    } catch (error) {
+      console.error("Error: ", error);
     }
+
+    document.getElementById("firstname-order").value = "";
+    document.getElementById("lastname-order").value = "";
+
   }
 
   return (
@@ -86,8 +120,8 @@ const Checkout = () => {
 
                       <div className="procuct-info-right">
                         <div className="title-price">
-                          <p>{item.title}</p>
-                          <p className="price">{item.price}kr</p>
+                          <p value={item.title} id="product-title">{item.title}</p>
+                          <p value={item.price} id="product-price" className="price">{item.price}kr</p>
                         </div>
 
                         <div className="color-size-remove-div">
@@ -121,6 +155,7 @@ const Checkout = () => {
 
                 <div className="shipping-card-wrapper">
                   <input
+                    id="firstname-order"
                     className="first-sec-input"
                     name="firstname"
                     placeholder="Förnamn..."
@@ -130,6 +165,7 @@ const Checkout = () => {
                   />
 
                   <input
+                    id="lastname-order"
                     className="first-sec-input"
                     name="lastname"
                     placeholder="Efternamn..."
@@ -239,7 +275,7 @@ const Checkout = () => {
                     />
                   </div>
 
-                  <button className="make-purchase-btn">SLUTFÖR KÖP</button>
+                  <button type="submit" className="make-purchase-btn">SLUTFÖR KÖP</button>
                 </div>
               </div>
             </div>

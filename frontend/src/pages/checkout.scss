@@ -241,18 +241,24 @@
   flex-direction: column;
   justify-content: center;
   height: 100%;
+  position: relative;
 }
 
 .payment-icon img {
   width: 3.5vw;
   height: 3.3vw;
    margin-right: 1rem;
+   margin-bottom: -2rem;
+   position: inherit;
+   bottom: 15px;
 }
 
 .payment-icon p {
   font-size: 0.5vw;
-  margin-top: -2.1rem;
   margin-right: 12px;
+  margin-top: -2px;
+  position: absolute;
+  top: 2.3rem;
 }
 
 .first-last-input {

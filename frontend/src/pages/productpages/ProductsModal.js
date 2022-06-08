@@ -3,10 +3,12 @@ import { Carousel } from "react-bootstrap";
 import "./ProductsModal.scss";
 import closeBtn from "../../assets/icons/close_black.png";
 import { BsArrowClockwise } from "react-icons/bs";
+import OutOfStock from "./outOfStock";
 
 const ProductsModal = (props) => {
   const { setShow, product, setCart, cart, setShowToast } = props;
 
+  const [outOfStock, setOutOfStock] = React.useState(false);
   const [rotate, setRotate] = React.useState(false);
   const rotateImage = {
     // transform: rotate ? "rotate(90deg)" : "rotate(0deg)",
@@ -28,14 +30,21 @@ const ProductsModal = (props) => {
         cart.map((x) =>
           x.id === product.id ? { ...exist, quantity: exist.quantity + 1 } : x
         )
-      );
+      )
+    } else if (product.quantity === 0) { 
+      setOutOfStock(true)
     } else {
       setShowToast(true)
       setCart([...cart, { ...product, quantity: 1 }])
     }
   };
 
+  //check products that are no longer in stock
+  const stock = product.quantity === 0;
+
   return (
+  <>
+    {outOfStock && <OutOfStock setOutOfStock={setOutOfStock} />}
     <div className="bg-underlay">
       <div className="modal-container">
         <div className="product-modal-left">
@@ -107,6 +116,7 @@ const ProductsModal = (props) => {
 
           <div className="product-modal-left-bottom-info">
             <p>Färg: {product.color}</p>
+            {stock && (<p style={{ fontSize: "10px", }}>OTILLGÄNGLIG</p>)}
             <select name="Välj storlek">
               <option value="">Välj storlek</option>
               <option value="3XS">3XS</option>
@@ -123,7 +133,8 @@ const ProductsModal = (props) => {
           </div>
         </div>
       </div>
-    </div>
+      </div>
+      </>
   );
 };
 

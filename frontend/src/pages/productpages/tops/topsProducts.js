@@ -22,6 +22,7 @@ const products = [
         img: topsImg3,
       },
     ],
+    quantity: 0
   },
   {
     id: 26,
@@ -42,6 +43,7 @@ const products = [
         img: topsImg3,
       },
     ],
+    quantity: 3
   },
   {
     id: 27,
@@ -62,6 +64,7 @@ const products = [
         img: topsImg3,
       },
     ],
+    quantity: 3
   },
   {
     id: 28,
@@ -82,6 +85,7 @@ const products = [
         img: topsImg3,
       },
     ],
+    quantity: 3
   },
   {
     id: 29,
@@ -102,6 +106,7 @@ const products = [
         img: topsImg3,
       },
     ],
+    quantity: 3
   },
   {
     id: 30,
@@ -122,6 +127,7 @@ const products = [
         img: topsImg3,
       },
     ],
+    quantity: 3
   },
 ];
 
