@@ -24,3 +24,14 @@
     color: #b4000f;
     font-weight:bold;
 }
+.heartButton{
+    background-color: unset;
+    border: unset;
+    outline: unset;
+    margin-left: 5px;
+    color:grey;
+}
+
+.heartButtonClick{
+    svg{color: red;}
+}
