@@ -97,11 +97,13 @@ const MenuNavbar = (props) => {
                 </div>
               </DropDownModal>
               {/* SHOPPING CART */}
+              <button type="button" onClick={openCart} id="checkout" className="nav_button">
               <BsBag
-                  style={{ width: '1.7rem', height: '1.7rem' }}
+                  style={{ width: '1.7rem', height: '1.7rem', marginBottom: "2px" }}
                 >
                 </BsBag>
-                <p>{cart.length}</p>
+              <p>{cart.length}</p>
+              </button>
 
               <button
                 id="hamburger"

@@ -114,9 +114,11 @@ const ProductsModal = (props) => {
           <h3>{product.price}kr</h3>
           <p>{product.description}</p>
 
-          <div className="product-modal-left-bottom-info">
-            <p>Färg: {product.color}</p>
-            {stock && (<p style={{ fontSize: "10px", }}>OTILLGÄNGLIG</p>)}
+            <div className="product-modal-left-bottom-info">
+          <div className="color-outOfStock-row">
+              <p>Färg: {product.color}</p>
+              {stock && (<p className="outOfStock-text">OTILLGÄNGLIG PRODUKT</p>)}
+              </div>
             <select name="Välj storlek">
               <option value="">Välj storlek</option>
               <option value="3XS">3XS</option>

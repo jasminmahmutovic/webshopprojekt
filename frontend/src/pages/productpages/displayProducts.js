@@ -22,10 +22,11 @@ const DisplayProds = (props) => {
   const [showToast, setShowToast] = React.useState(false)
   const [rotate, setRotate] = React.useState(false);
   const [outOfStock, setOutOfStock] = React.useState(false);
+  const [heartClicked, setHeartClicked] = useState()
 
   //check products that are no longer in stock
   const stock = product.quantity === 0;
-  const [heartClicked, setHeartClicked] = useState()
+ 
 
   //From Context
   const { cart, setCart } = useContext(CartContext);
@@ -148,7 +149,7 @@ const DisplayProds = (props) => {
               <Card.Title>{product.title}</Card.Title>
               <Card.Text>{product.price}:-</Card.Text>
             </div>
-            {stock && (<p style={{ fontSize: "10px", }}>OTILLGÄNGLIG</p>)}
+            {stock && (<p className="outOfStock-txt">OTILLGÄNGLIG</p>)}
             </div>
           <div style={{ display: "flex", justifyContent: "space-between" }}>
             <Button className="buy-btn" 

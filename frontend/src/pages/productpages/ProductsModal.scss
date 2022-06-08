@@ -89,3 +89,18 @@
     outline: none;
     border-radius: 5px;
 }
+
+//out of stock text styling
+.color-outOfStock-row {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+    padding-right: 1rem;
+}
+
+.outOfStock-text {
+    font-size: 1rem;
+    color: #b4000f;
+    font-weight:bold;
+}
