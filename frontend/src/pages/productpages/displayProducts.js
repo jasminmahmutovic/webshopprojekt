@@ -1,12 +1,16 @@
-import React from 'react'
+import React, { useState } from 'react'
 import Card from 'react-bootstrap/Card'
 import Button from 'react-bootstrap/Button'
 import { useContext } from 'react'
 import { CartContext } from '../../context/CartContext'
 import { Carousel } from 'react-bootstrap'
 import ToastMessage from './ToastMessage'
-import { BsArrowClockwise } from "react-icons/bs";
 import ProductsModal from "./ProductsModal";
+
+
+//Styling
+import { BsArrowClockwise } from "react-icons/bs";
+import { BsFillHeartFill } from "react-icons/bs";
 import "./displayProducts.scss";
 import OutOfStock from './outOfStock'
 
@@ -21,9 +25,14 @@ const DisplayProds = (props) => {
 
   //check products that are no longer in stock
   const stock = product.quantity === 0;
+  const [heartClicked, setHeartClicked] = useState()
+
+  //From Context
+  const { cart, setCart } = useContext(CartContext);
+  const { heartList, setHeartList } = useContext(CartContext);
+ 
 
   const handleShow = () => setShow(true);
-  const { cart, setCart } = useContext(CartContext);
 
 
   //to not dublicate item, but at the same time add item
@@ -49,6 +58,25 @@ const DisplayProds = (props) => {
     height: rotate ? "300px" : "300px",
     transition: "transform 150ms ease",
   };
+
+
+ const handlerHeartButton = () => {
+  setHeartClicked(!heartClicked)
+  const exist = heartList.find((x) => x.id === product.id)
+  
+  if (exist) {
+    setHeartList(
+      heartList.map((x) =>
+        x.id === product.id ? { ...exist, quantity: exist.quantity + 1 } : x
+      )
+    );
+  } else {
+    
+    setHeartList([...heartList, { ...product, quantity: 1 }])
+  }
+  
+  alert("din produkt är tillagd i önskelistan")
+ }
 
   return (
     <>
@@ -131,6 +159,9 @@ const DisplayProds = (props) => {
             <Button variant="outline-primary" onClick={handleShow}>
               Mer info
             </Button>
+            <button 
+             className={`heartButton ${heartClicked ? 'heartButtonClick' : ''}`}
+            onClick={handlerHeartButton}> <BsFillHeartFill/> </button>
           </div>
         </Card.Body>
       </Card>

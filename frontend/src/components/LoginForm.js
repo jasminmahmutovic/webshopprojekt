@@ -47,8 +47,9 @@ const LoginForm = () => {
         value.username === user.usernameInput &&
         value.password === user.passwordInput
       ) {
-        setLoggedIn(true);
         setError("");
+        setLoggedIn(true);
+        navigate("/myaccount/");
       } else {
         setError("Användarnamn eller löseonrd är felaktigt...");
       }
