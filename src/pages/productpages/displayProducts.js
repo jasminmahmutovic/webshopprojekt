@@ -24,6 +24,7 @@ const DisplayProds = (props) => {
   //From Context
   const { cart, setCart } = useContext(CartContext);
   const { heartList, setHeartList } = useContext(CartContext);
+ 
 
   const handleShow = () => setShow(true);
 
@@ -61,10 +62,11 @@ const DisplayProds = (props) => {
       )
     );
   } else {
-    setShowToast(true)
+    
     setHeartList([...heartList, { ...product, quantity: 1 }])
   }
- 
+  
+  alert("din produkt är tillagd i önskelistan")
  }
 
   return (
