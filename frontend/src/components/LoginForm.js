@@ -13,6 +13,30 @@ const LoginForm = () => {
 
   const { user, setUser, setLoggedIn } = useContext(UserContext);
   const [error, setError] = useState("");
+  
+  //backend 
+  // const [login, setLogin] = useState();
+
+  // const inputLogin = (e) => {
+  //   setLogin({ ...login, [e.target.name]: e.target.value });
+  // };
+
+  // const handleLogin = (e) => {
+  //   e.preventDefault();
+  //   try {
+  //     fetch("http://localhost:5000/api/login", {
+  //       method: "post",
+  //       body: JSON.stringify(login),
+  //       headers: {
+  //         "Content-Type": "application/json",
+  //       },
+  //     });
+  //     console.log("success");
+  //   } catch (error) {
+  //     console.error("Error: ", error);
+  //   }
+  // };
+  //backendstop
 
   const userInlog = [
     {
@@ -44,8 +68,8 @@ const LoginForm = () => {
 
     userInlog.forEach((value) => {
       if (
-        value.username === user.usernameInput &&
-        value.password === user.passwordInput
+        value.username === user.username &&
+        value.password === user.password
       ) {
         setError("");
         setLoggedIn(true);
@@ -57,8 +81,8 @@ const LoginForm = () => {
 
     superUser.forEach((value) => {
       if (
-        value.username === user.usernameInput &&
-        value.password === user.passwordInput
+        value.username === user.username &&
+        value.password === user.password
       ) {
         setLoggedIn(true);
         alert("välkommen SUPERUSER, du navigeras om till admin");
@@ -83,14 +107,14 @@ const LoginForm = () => {
           <div className="content_wrapper">
             <input
               id="inputUser"
-              name="usernameInput"
+              name="username"
               placeholder="Användarnamn"
               onChange={handleInput}
               required
             />
 
             <input
-              name="passwordInput"
+              name="password"
               type="password"
               placeholder="Lösenord"
               onChange={handleInput}
