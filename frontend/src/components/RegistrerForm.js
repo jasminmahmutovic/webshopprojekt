@@ -9,15 +9,29 @@ import "./MenuNavbar.js";
 import { BsPerson } from "react-icons/bs";
 
 const RegistrerForm = () => {    
-  const { user, setUser, setLoggedIn } = useContext(UserContext);
-  const [error, setError] = useState("");
+  //nytt state, eller ska vi använda user statet vi har?
+  const [register, setRegister] = useState()
+  const [error, setError] = useState()
 
   const handleInput = (e) => {
-    setUser({ ...user, [e.target.name]: e.target.value });
+    setRegister({...register, [e.target.name]: e.target.value})
   };
 
-  const handleSubmit = (e) => {
+  const handleRegister = (e) => {
     e.preventDefault();
+
+    try {
+      fetch("http://localhost:5000/api/register", {
+        method: "post",
+        body: JSON.stringify(register),
+        headers: {
+          "Content-Type": "application/json",
+        },
+      });
+      console.log("success");
+    } catch (error) {
+      console.error("Error: ", error);
+    }
     
   };
 
@@ -26,7 +40,7 @@ const RegistrerForm = () => {
     <div>
       <div>
         <form
-          onSubmit={handleSubmit}
+          onSubmit={handleRegister}
           className="contact_form"
           id="login_form"
           style={{ width: "375px", minHeight: "507px" }}
@@ -36,7 +50,7 @@ const RegistrerForm = () => {
           </div>
           <div className="content_wrapper">
             <input
-              id="inputUser"
+              id="username"
               name="usernameInput"
               placeholder="Användarnamn"
               onChange={handleInput}
@@ -44,7 +58,7 @@ const RegistrerForm = () => {
             />
 
             <input
-              name="passwordInput"
+              name="password"
               type="password"
               placeholder="Lösenord"
               onChange={handleInput}

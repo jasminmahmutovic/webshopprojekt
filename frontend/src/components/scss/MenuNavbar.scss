@@ -257,6 +257,8 @@ a.dropdown-item {
   }
 }
 
+//LOGINFORMULÄR STYLING//
+
 #login_form {
   border: 1px solid $hover-link;
   background: rgba(0, 0, 0, 0.75);
@@ -267,5 +269,8 @@ a.dropdown-item {
   justify-content: center;
   width: 40rem;
   height: fit-content;
-  position:unset;
+  position:inherit;
+  left:unset;
+  bottom:unset;
+  transform:unset;
 }
