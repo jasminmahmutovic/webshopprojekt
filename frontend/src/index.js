@@ -5,6 +5,7 @@ import App from './App'
 import UserProvider from './context/UserContext'
 import CartProvider from './context/CartContext'
 import ImageProvider from './context/ImageContext'
+import RegUserProvider from './context/RegisterContext'
 
 const root = ReactDOM.createRoot(document.getElementById('root'))
 root.render(
@@ -12,7 +13,9 @@ root.render(
     <UserProvider>
       <CartProvider>
         <ImageProvider>
+          <RegUserProvider>
         <App />
+        </RegUserProvider>
         </ImageProvider>
       </CartProvider>
     </UserProvider>

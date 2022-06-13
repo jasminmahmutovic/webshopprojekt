@@ -1,5 +1,5 @@
 import LoginForm from "../components/LoginForm.js";
-import RegistrerForm from "../components/RegistrerForm.js";
+import RegisterForm from "../components/RegisterForm.js";
 
 //style
 import Background from "../assets/images/stor_bakgrundCollage/loggaIn_regSida.png"
@@ -19,7 +19,7 @@ const Login = () => {
     return(
         <div style={wrapperLogin}>
         <LoginForm></LoginForm>
-        <RegistrerForm></RegistrerForm>
+        <RegisterForm></RegisterForm>
          </div>
     )
 };

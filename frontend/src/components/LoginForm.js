@@ -1,7 +1,8 @@
 import React from "react";
-import { UserContext } from "../context/UserContext";
-import { useContext, useState } from "react";
+import { useContext, useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
+import {RegisterContext} from "../context/RegisterContext"
+
 
 //STYLING - inline styling + ContactUs.scss
 import "./MenuNavbar.js";
@@ -10,93 +11,44 @@ import { BsPerson } from "react-icons/bs";
 
 const LoginForm = () => {
   const navigate = useNavigate();
+  const [checkUser, setCheckUser] = useState("")
 
-  const { user, setUser, setLoggedIn } = useContext(UserContext);
-  const [error, setError] = useState("");
-  
-  //backend 
-  // const [login, setLogin] = useState();
 
-  // const inputLogin = (e) => {
-  //   setLogin({ ...login, [e.target.name]: e.target.value });
-  // };
-
-  // const handleLogin = (e) => {
-  //   e.preventDefault();
-  //   try {
-  //     fetch("http://localhost:5000/api/login", {
-  //       method: "post",
-  //       body: JSON.stringify(login),
-  //       headers: {
-  //         "Content-Type": "application/json",
-  //       },
-  //     });
-  //     console.log("success");
-  //   } catch (error) {
-  //     console.error("Error: ", error);
-  //   }
-  // };
-  //backendstop
-
-  const userInlog = [
-    {
-      username: "Frida",
-      password: "test123",
-    },
-    {
-      username: "Jasmin",
-      password: "test123",
-    },
-    {
-      username: "Maia",
-      password: "test123",
-    },
-    {
-      username: "Amalia",
-      password: "test123",
-    },
-  ];
-
-  const superUser = [{ username: "superuser", password: "test123" }];
-
-  const handleInput = (e) => {
-    setUser({ ...user, [e.target.name]: e.target.value });
+  const inputLogin = (e) => {
+    setCheckUser({ ...checkUser, [e.target.name]: e.target.value });
   };
-
-  const handleSubmit = (e) => {
+  
+  const handleLogin = async (e) => {
     e.preventDefault();
 
-    userInlog.forEach((value) => {
-      if (
-        value.username === user.username &&
-        value.password === user.password
-      ) {
-        setError("");
-        setLoggedIn(true);
-        navigate("/myaccount/");
+    try {
+      const res = await fetch(`http://localhost:5000/api/login`, {
+        method: "post",
+        body: JSON.stringify(checkUser),
+        headers: {
+          "Content-Type": "application/json",
+        },
+      });
+      if (res.status !== 401) {
+        const data = await res.json();
+        console.log(data);
+        alert("välkommen")
+        navigate("/myaccount")
       } else {
-        setError("Användarnamn eller löseonrd är felaktigt...");
+        alert("fel lösenord eller användarnamn")
+        throw "Wrong username or password";
       }
-    });
+    } catch (error) {
+      console.error("Error: ", error);
+    }
 
-    superUser.forEach((value) => {
-      if (
-        value.username === user.username &&
-        value.password === user.password
-      ) {
-        setLoggedIn(true);
-        alert("välkommen SUPERUSER, du navigeras om till admin");
-        navigate("/admin/");
-        setError("");
-      }
-    });
   };
 
   return (
     <div>
       <div>
         <form
-          onSubmit={handleSubmit}
+          onSubmit={handleLogin}
           className="contact_form"
           id="login_form"
           style={{ width: "375px", minHeight: "507px" }}
@@ -109,7 +61,7 @@ const LoginForm = () => {
               id="inputUser"
               name="username"
               placeholder="Användarnamn"
-              onChange={handleInput}
+              onChange={inputLogin}
               required
             />
 
@@ -117,7 +69,7 @@ const LoginForm = () => {
               name="password"
               type="password"
               placeholder="Lösenord"
-              onChange={handleInput}
+              onChange={inputLogin}
               required
             />
 
@@ -128,11 +80,6 @@ const LoginForm = () => {
             >
               LOGGA IN
             </button>
-
-            <p className="error" style={{ fontSize: "12px", color: "white" }}>
-              {" "}
-              {error}{" "}
-            </p>
           </div>
         </form>
       </div>

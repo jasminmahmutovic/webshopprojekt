@@ -1,6 +1,6 @@
 import React from 'react'
-import { UserContext } from "../context/UserContext";
-import { useContext, useState } from "react";
+import { useContext } from "react";
+import {RegisterContext} from "../context/RegisterContext"
 
 
 //STYLING - inline styling + ContactUs.scss
@@ -8,13 +8,13 @@ import "./MenuNavbar.js";
 
 import { BsPerson } from "react-icons/bs";
 
-const RegistrerForm = () => {    
-  //nytt state, eller ska vi använda user statet vi har?
-  const [register, setRegister] = useState()
-  const [error, setError] = useState()
+const RegisterForm = () => {    
+  const { regUser, setRegUser  } = useContext(RegisterContext);
+
 
   const handleInput = (e) => {
-    setRegister({...register, [e.target.name]: e.target.value})
+    setRegUser({...regUser, [e.target.name]: e.target.value})
+    console.log(regUser)
   };
 
   const handleRegister = (e) => {
@@ -23,7 +23,7 @@ const RegistrerForm = () => {
     try {
       fetch("http://localhost:5000/api/register", {
         method: "post",
-        body: JSON.stringify(register),
+        body: JSON.stringify(regUser),
         headers: {
           "Content-Type": "application/json",
         },
@@ -32,7 +32,6 @@ const RegistrerForm = () => {
     } catch (error) {
       console.error("Error: ", error);
     }
-    
   };
 
 
@@ -51,7 +50,7 @@ const RegistrerForm = () => {
           <div className="content_wrapper">
             <input
               id="username"
-              name="usernameInput"
+              name="username"
               placeholder="Användarnamn"
               onChange={handleInput}
               required
@@ -64,27 +63,7 @@ const RegistrerForm = () => {
               onChange={handleInput}
               required
             />
-              <input
-              name="mail"
-              type="email"
-              placeholder="Mail"
-              onChange={handleInput}
-              required
-            />
-              <input
-              name="firstname"
-              type="text"
-              placeholder="firstname"
-              onChange={handleInput}
-              required
-            />
-             <input
-              name="lastname"
-              type="text"
-              placeholder="lastname"
-              onChange={handleInput}
-              required
-            />
+
 
             <button
               style={{ width: "70%", backgroundColor: "black" }}
@@ -92,10 +71,7 @@ const RegistrerForm = () => {
             >
               SKAPA KONTO
             </button>
-            <p className="error" style={{ fontSize: "12px", color: "white" }}>
-              {" "}
-              {error}{" "}
-            </p>
+
           </div>
         </form>
       </div>
@@ -103,4 +79,4 @@ const RegistrerForm = () => {
   )
 }
 
-export default RegistrerForm
+export default RegisterForm

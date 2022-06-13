@@ -5,10 +5,11 @@ const cookieParser = require("cookie-parser");
 const mongoose = require("mongoose");
 const path = require("path");
 
+
 //importera alla våra routes
 const submitOrderRouter = require("./routes/submitOrder");
-const EmailRouter = require("./routes/EmailRout");
-const LoginRouter = require("./routes/LoginRout");
+const userRouter = require("./routes/user")
+
 
 //implementation of use local .env file
 require("dotenv").config();
@@ -20,11 +21,12 @@ app.use(express.json());
 
 //lägg till alla våra routes
 app.use("/api/order/", submitOrderRouter);
-app.use("/api", EmailRouter);
-app.use("/api", LoginRouter);
+app.use("/api", userRouter);
+
+
 
 //static folder for frontend
-app.use(express.static(path.join(__dirname, "frontend/build")));
+app.use(express.static(path.join(__dirname, "../frontend/build")));
 
 
 mongoose.connect(
