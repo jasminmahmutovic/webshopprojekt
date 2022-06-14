@@ -4,7 +4,7 @@ POST http://localhost:5000/api/user/register
 content-type: application/json
 
 {
-    "username":"Admin",
+    "username":"test",
     "password":"test123",
     "role": "admin"
 }
@@ -39,3 +39,9 @@ content-type: application/json
 }
 
 ###
+
+GET http://localhost:5000/api/user/getUsers
+
+###
+
+DELETE http://localhost:5000/api/user/deleteUser/62a8d531d8347d5ff8f06ef2

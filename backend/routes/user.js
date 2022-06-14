@@ -86,6 +86,47 @@ userRouter.get(
 );
 
 userRouter.get(
+  "/getUsers",
+  (req, res) => {
+    User.find({}, (err, documents) => {
+      if (err) {
+        res.status(500).json({
+          msg: {
+            msgBody: "An error occured while retrieving posts",
+            msgError: true,
+          },
+        });
+      } else {
+        res.status(200).json({ user: documents });
+      }
+    });
+  }
+);
+
+userRouter.delete(
+  "/deleteUser/:id",
+  (req, res) => {
+    User.findByIdAndDelete(req.params.id, (err) => {
+      if (err) {
+        res.status(500).json({
+          msg: {
+            msgBody: "An error occured while deleting user",
+            msgError: true,
+          },
+        });
+      } else {
+        res.status(200).json({
+          msg: {
+            msgBody: "User was deleted",
+            msgError: false,
+          },
+        });
+      }
+    });
+  }
+);
+
+userRouter.get(
   "/logout",
   passport.authenticate("user-rule", { session: false }),
   (req, res) => {
