@@ -1,20 +1,41 @@
-POST http://localhost:5000/api/register
+
+###
+POST http://localhost:5000/api/user/register
 content-type: application/json
 
 {
-    "username":"Maia",
-    "password":"test123"
+    "username":"Admin",
+    "password":"test123",
+    "role": "admin"
 }
+
 ###
 
-POST http://localhost:5000/api/login
+POST http://localhost:5000/api/user/login
 content-type: application/json
 
 {
     "username":"Frida",
-    "password":"test123"
+    "password":"test123",
+    "role":"user"
 }
 
 ###
 
-Get  http://localhost:5000/api/logout
+Get  http://localhost:5000/api/user/logout
+
+###
+
+GET  http://localhost:5000/api/user/authenticated
+
+###
+
+POST http://localhost:5000/api/user/register
+content-type: application/json
+
+{
+    "username":"testar",
+    "password":"test123"
+}
+
+###

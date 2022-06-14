@@ -9,6 +9,7 @@ const path = require("path");
 //importera alla våra routes
 const submitOrderRouter = require("./routes/submitOrder");
 const userRouter = require("./routes/user")
+const postRouter = require("./routes/email")
 
 
 //implementation of use local .env file
@@ -21,7 +22,9 @@ app.use(express.json());
 
 //lägg till alla våra routes
 app.use("/api/order/", submitOrderRouter);
-app.use("/api", userRouter);
+app.use("/api/user", userRouter);
+app.use("/api", postRouter);
+
 
 
 
