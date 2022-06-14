@@ -1,7 +1,7 @@
 import React from "react";
-import { useContext, useState, useEffect } from "react";
+import {  useState, useContext  } from "react";
 import { useNavigate } from "react-router-dom";
-import {RegisterContext} from "../context/RegisterContext"
+import { UserContext } from '../context/UserContext'
 
 
 //STYLING - inline styling + ContactUs.scss
@@ -12,6 +12,7 @@ import { BsPerson } from "react-icons/bs";
 const LoginForm = () => {
   const navigate = useNavigate();
   const [checkUser, setCheckUser] = useState("")
+  const { setLoggedIn } = useContext(UserContext)
 
 
   const inputLogin = (e) => {
@@ -34,6 +35,7 @@ const LoginForm = () => {
         console.log(data);
         alert("välkommen")
         navigate("/myaccount")
+        setLoggedIn(true)
       } else {
         alert("fel lösenord eller användarnamn")
         throw "Wrong username or password";
