@@ -7,6 +7,12 @@
     h2{
         margin-top: 1rem;
     }
+    .changeUserModal{
+        display: flex;
+        input{
+            align-self: center;
+        }
+    }
 }
 
 .userCard{

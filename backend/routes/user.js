@@ -137,6 +137,30 @@ userRouter.get(
   }
 );
 
+userRouter.put("/updateUser/:id", (req, res) => {
+  User.findByIdAndUpdate(
+    req.params.id,
+    { username: req.body.username, password: req.body.password },
+    (err) => {
+      if (err) {
+        res.status(500).json({
+          msg: {
+            msgBody: "An error occured while updating user",
+            msgError: true,
+          },
+        });
+      } else {
+        res.status(200).json({
+          msg: {
+            msgBody: "user was updated",
+            msgError: false,
+          },
+        });
+      }
+    }
+  );
+});
+
 
 
 
