@@ -12,8 +12,9 @@ const cookieExtractor = (req) => {
   return token;
 };
 
-//jwt strategy - gets run every time the passport "jwt" argument set on passports authenticate param on request handler
+//authenticate user
 passport.use(
+  "user-rule",
   new jwtStrategy(
     {
       jwtFromRequest: cookieExtractor,
@@ -24,6 +25,24 @@ passport.use(
         if (err) return done(err);
         if (!user) return done(null, false);
         return done(null, user);
+      });
+    }
+  )
+);
+
+//authenticate admin
+passport.use(
+  "admin-rule",
+  new jwtStrategy(
+    {
+      jwtFromRequest: cookieExtractor,
+      secretOrKey: process.env.JWT_SECRET,
+    },
+    (payload, done) => {
+      User.findById({ _id: payload.sub }, (err, user) => {
+        if (err) return done(err);
+        if (user && user.role === "admin") return done(null, user);
+        return done(null, false);
       });
     }
   )

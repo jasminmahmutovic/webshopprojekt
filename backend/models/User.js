@@ -1,5 +1,6 @@
 const mongoose = require("mongoose");
 const bcrypt = require("bcrypt");
+const passport = require("passport");
 
 const UserSchema = mongoose.Schema({
   username: {
@@ -18,6 +19,8 @@ const UserSchema = mongoose.Schema({
 });
 
 //middleware that runs before every mongodb save call via mongoose
+//user authentication 
+
 UserSchema.pre("save", function (next) {
   if (!this.isModified("password")) next();
   bcrypt.hash(this.password, 10, (err, passwordHashed) => {
@@ -26,6 +29,7 @@ UserSchema.pre("save", function (next) {
     next();
   });
 });
+
 
 //gets call from passport local strategy to compare password submitted from client with password on user in db
 UserSchema.methods.comparePassword = function (password, cb) {

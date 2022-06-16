@@ -27,9 +27,9 @@ POST http://localhost:5000/api/user/login
 content-type: application/json
 
 {
-    "username":"fripps",
+    "username":"Admin",
     "password":"test123",
-    "role":"user"
+    "role":"admin"
 }
 
 ###
@@ -50,7 +50,7 @@ GET http://localhost:5000/api/user/getOneUser/62aa09a2ef7c5450de130ae8
 
 ###
 
-DELETE http://localhost:5000/api/user/deleteUser/62ab2a84e3f940e276883bfb
+DELETE http://localhost:5000/api/user/deleteUser/62ab2e4e328cdffa91ce67af
 
 
 ###
