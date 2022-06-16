@@ -10,6 +10,7 @@ const path = require("path");
 const submitOrderRouter = require("./routes/submitOrder");
 const userRouter = require("./routes/user");
 const productRouter = require("./routes/product");
+const postRouter = require("./routes/email")
 
 
 //implementation of use local .env file
@@ -22,8 +23,9 @@ app.use(express.json());
 
 //lägg till alla våra routes
 app.use("/api/order/", submitOrderRouter);
-app.use("/api", userRouter);
+app.use("/api/user", userRouter);
 app.use("/api/product", productRouter);
+app.use("/api", postRouter);
 
 
 

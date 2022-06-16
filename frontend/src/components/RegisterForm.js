@@ -17,11 +17,12 @@ const RegisterForm = () => {
     console.log(regUser)
   };
 
+
   const handleRegister = (e) => {
     e.preventDefault();
 
     try {
-      fetch("http://localhost:5000/api/register", {
+      fetch("http://localhost:5000/api/user/register", {
         method: "post",
         body: JSON.stringify(regUser),
         headers: {
@@ -59,11 +60,22 @@ const RegisterForm = () => {
             <input
               name="password"
               type="password"
-              placeholder="Lösenord"
               onChange={handleInput}
+              placeholder="Lösenord"
               required
             />
+            
+            <div>
+            <label style={{color:"white"}}>Kund</label>
+            <input  onChange={handleInput}
+             name="role" value="user" 
+             type="checkbox"/>
 
+            {/* <label style={{color:"white"}}>Admin</label>
+            <input  onChange={handleInput}
+             name="role" value="admin" 
+             type="checkbox"/> */}
+            </div>
 
             <button
               style={{ width: "70%", backgroundColor: "black" }}

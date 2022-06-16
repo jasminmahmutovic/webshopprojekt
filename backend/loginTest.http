@@ -1,20 +1,58 @@
-POST http://localhost:5000/api/register
+
+###
+POST http://localhost:5000/api/user/register
 content-type: application/json
 
 {
-    "username":"Maia",
-    "password":"test123"
+    "username":"Azlan",
+    "password":"test123",
+    "role": "user"
 }
+
 ###
 
-POST http://localhost:5000/api/login
+POST http://localhost:5000/api/user/login
 content-type: application/json
 
 {
     "username":"Frida",
+    "password":"test123",
+    "role":"user"
+}
+
+###
+
+Get  http://localhost:5000/api/user/logout
+
+###
+
+GET  http://localhost:5000/api/user/authenticated
+
+###
+
+POST http://localhost:5000/api/user/register
+content-type: application/json
+
+{
+    "username":"testar",
     "password":"test123"
 }
 
 ###
 
-Get  http://localhost:5000/api/logout
+GET http://localhost:5000/api/user/getUsers
+
+###
+
+DELETE http://localhost:5000/api/user/deleteUser/62a8d531d8347d5ff8f06ef2
+
+
+###
+
+PUT http://localhost:5000/api/user/updateUser/62a8db1cf72d5c387d91ec3d
+content-type: application/json
+
+{
+    "username":"fripps",
+    "password":"fripps"
+}

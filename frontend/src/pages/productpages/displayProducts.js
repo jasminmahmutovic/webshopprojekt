@@ -6,7 +6,7 @@ import { CartContext } from '../../context/CartContext'
 import { Carousel } from 'react-bootstrap'
 import ToastMessage from './ToastMessage'
 import ProductsModal from "./ProductsModal";
-
+import Share from '../../components/Share'
 
 //Styling
 import { BsArrowClockwise } from "react-icons/bs";
@@ -161,9 +161,12 @@ const DisplayProds = (props) => {
             <Button variant="outline-primary" onClick={handleShow}>
               Mer info
             </Button>
+            <div>
             <button 
              className={`heartButton ${heartClicked ? 'heartButtonClick' : ''}`}
             onClick={handlerHeartButton}> <BsFillHeartFill/> </button>
+           <Share></Share>
+          </div>
           </div>
         </Card.Body>
       </Card>
