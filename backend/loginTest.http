@@ -4,7 +4,7 @@ POST http://localhost:5000/api/user/register
 content-type: application/json
 
 {
-    "username":"Azlan",
+    "username":"Frida",
     "password":"test123",
     "role": "user"
 }
@@ -44,15 +44,23 @@ GET http://localhost:5000/api/user/getUsers
 
 ###
 
-DELETE http://localhost:5000/api/user/deleteUser/62a8d531d8347d5ff8f06ef2
+GET http://localhost:5000/api/user/getOneUser/62aadaf46009d9925b1c5e58
+
+###
+
+DELETE http://localhost:5000/api/user/deleteUser/62aadaf46009d9925b1c5e58
 
 
 ###
 
-PUT http://localhost:5000/api/user/updateUser/62a8db1cf72d5c387d91ec3d
+PUT http://localhost:5000/api/user/updateUser/62aadaf46009d9925b1c5e58
 content-type: application/json
 
 {
     "username":"fripps",
     "password":"fripps"
 }
+
+###
+
+

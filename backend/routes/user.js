@@ -92,7 +92,25 @@ userRouter.get(
       if (err) {
         res.status(500).json({
           msg: {
-            msgBody: "An error occured while retrieving posts",
+            msgBody: "An error occured while retrieving users",
+            msgError: true,
+          },
+        });
+      } else {
+        res.status(200).json({ user: documents });
+      }
+    });
+  }
+);
+
+userRouter.get(
+  "/getOneUser/:id",
+  (req, res) => {
+    User.findById({_id: req.params.id}, (err, documents) => {
+      if (err) {
+        res.status(500).json({
+          msg: {
+            msgBody:"An error occured while retrieving your user",
             msgError: true,
           },
         });
@@ -137,11 +155,12 @@ userRouter.get(
   }
 );
 
-userRouter.put("/updateUser/:id", (req, res) => {
+userRouter.put("/updateUser/:id", 
+(req, res) => {
   User.findByIdAndUpdate(
     req.params.id,
     { username: req.body.username, password: req.body.password },
-    (err) => {
+    (err, documents) => {
       if (err) {
         res.status(500).json({
           msg: {
@@ -150,6 +169,7 @@ userRouter.put("/updateUser/:id", (req, res) => {
           },
         });
       } else {
+        res.status(200).json({ user: documents }),
         res.status(200).json({
           msg: {
             msgBody: "user was updated",

@@ -1,8 +1,7 @@
 import React, { useState, useEffect } from "react";
 import NavbarAdmin from "./components/NavbarAdmin";
 import Modal from "../../modal/Modal"
-import Users from "../../components/Users"
-
+import User from "./components/User";
 //style
 import "./scss/emailadmin.scss";
 import { BsPersonCircle } from "react-icons/bs";
@@ -38,14 +37,14 @@ const EmailAdmin = (props) => {
   return (
     <div style={{ display: "flex" }}>
       <NavbarAdmin></NavbarAdmin>
-      <Users></Users>
+      <User></User>
       <div className="emailWrapper">
         <div className="outerDiv">
    
         <div className="left">
             { renderEmail &&
             renderEmail.map((email) => (
-              <div key={email._id}>
+              <>
               <div className="emailInformation" onClick={showEmail}>
               <div className="logo">
                 <BsPersonCircle></BsPersonCircle>
@@ -59,7 +58,7 @@ const EmailAdmin = (props) => {
             </div>
             <i className="iEmail">Din maillista slutar här...</i>
        
-          {/* <Modal  open={isOpen} onClose={() => setIsOpen(false)}>         
+          <Modal  open={isOpen} onClose={() => setIsOpen(false)}>         
              <div className="right">
             <div className="emailName">
               <p style={{ fontSize: "24px" }}>
@@ -71,9 +70,9 @@ const EmailAdmin = (props) => {
               <p style={{ fontSize: "18px" }}>{email.body}</p>
             </div>
             <div className="emailFile">
-            <div className="file">
+            {/* <div className="file">
               <p style={{ fontSize: "14px" }}></p> {user.file}
-            </div>
+            </div> */}
           </div>
           <div className="answerWrapper">
           <form onSubmit={() => alert("Ditt svar är skickat")}>
@@ -84,8 +83,8 @@ const EmailAdmin = (props) => {
             <button type="submit" onClick={answerMail}>Skicka svar</button>
           </form>
           </div>
-          </div></Modal>  */}
-            </div>
+          </div></Modal> 
+            </>
           ))}
           </div>
         
