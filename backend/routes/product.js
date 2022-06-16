@@ -47,6 +47,21 @@ productRouter.get("/allproducts", (req, res) => {
   });
 });
 
+productRouter.get("/product/:id", (req, res) => {
+  Product.findById({_id: req.params.id}, (err, products) => {
+    if (err) {
+      res.status(500).json({
+        message: { msgBody: "An error occured when trying to get a product", msgError: true },
+      });
+    } else {
+      res.status(200).json({
+        products,
+        message: { msgBody: "Successfully got the product", msgError: true },
+      });
+    }
+  });
+});
+
 productRouter.put(
   "/updateproducts/:id",
 //   passport.authenticate("admin-rule", { session: false }),
