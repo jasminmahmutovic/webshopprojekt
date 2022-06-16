@@ -19,11 +19,7 @@ const signToken = (userId) => {
     }
   );
 };
-//token går ut inom ett dygn
 
-//save new user to db
-//längst ned under newuser.save() körs så anropas User.js middelware funktion som
-//kollar på lösenordet och hashar den för att sedan sätta lösenordet.
 userRouter.post("/register", (req, res) => {
   const { username, password, role } = req.body;
   User.findOne({ username }, (err, user) => {
@@ -53,8 +49,6 @@ userRouter.post("/register", (req, res) => {
   });
 });
 
-//innan callbacken körs går den in i passport och hittar localstrategy
-//runs local strategy middleware (passport.js file) and sets cookie to jwt created through our signToken() function
 
 userRouter.post(
   "/login",
@@ -159,8 +153,8 @@ userRouter.put("/updateUser/:id",
 (req, res) => {
   User.findByIdAndUpdate(
     req.params.id,
-    { username: req.body.username, password: req.body.password },
-    (err, documents) => {
+    { username: req.body.username, password: req.body.password , role: req.body.role },
+    (err) => {
       if (err) {
         res.status(500).json({
           msg: {
@@ -169,7 +163,6 @@ userRouter.put("/updateUser/:id",
           },
         });
       } else {
-        res.status(200).json({ user: documents }),
         res.status(200).json({
           msg: {
             msgBody: "user was updated",

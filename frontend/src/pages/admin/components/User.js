@@ -6,7 +6,7 @@ import Modal from '../../../modal/Modal'
 import "../scss/user.scss"
 
 //Funkade inte att skicka props från en annan komponent? så fick göra ovanför
-const Users = () => {
+const User = () => {
   
   const [getUsers, setGetUsers] = useState()
  
@@ -22,8 +22,6 @@ const Users = () => {
   
 
   
-
-
   return (
     <div className="App">
       {getUsers &&
@@ -45,8 +43,6 @@ const RenderUser = (props) => {
   const [changedUser, setChangeUser] = useState()
 
   
-
-
   const changeUser = (_id) =>{
 
     try {
@@ -127,4 +123,4 @@ const RenderUser = (props) => {
   );
 };
 
-export default Users
+export default User

@@ -9,7 +9,7 @@ content-type: application/json
 
 {
     "name":"Frida",
-    "message":"Det här är ett mail",
+    "text":"Det här är ett mail",
     "email":"fridasofia.bolin@gmail.com"
 }
 

@@ -5,17 +5,14 @@ import App from './App'
 import UserProvider from './context/UserContext'
 import CartProvider from './context/CartContext'
 import ImageProvider from './context/ImageContext'
-import GetUserProvider from './context/GetUsers'
 
 const root = ReactDOM.createRoot(document.getElementById('root'))
 root.render(
   <React.StrictMode>
     <UserProvider>
       <CartProvider>
-        <ImageProvider>
-          <GetUserProvider>
+        <ImageProvider>        
         <App />
-        </GetUserProvider>
         </ImageProvider>
       </CartProvider>
     </UserProvider>

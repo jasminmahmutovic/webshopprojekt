@@ -15,8 +15,6 @@ const LoginForm = () => {
   const [checkUser, setCheckUser] = useState("")
   
 
-
-
   const inputLogin = (e) => {
     setCheckUser({ ...checkUser, [e.target.name]: e.target.value });
     console.log(checkUser)
