@@ -20,6 +20,20 @@ const User = () => {
     fetchBlogs();
   }, []);
   
+  const deleteUser = (_id) => {
+    try {
+      fetch(`http://localhost:5000/api/user/deleteUser/${_id}`, {
+        method: "DELETE",
+      });
+      console.log("success");
+    } catch (error) {
+      console.error("Error: ", error);
+    }
+
+    const newUser = getUsers.filter((user) => user._id !== _id);
+    setGetUsers(newUser);
+  };
+
 
   
   return (
@@ -27,7 +41,7 @@ const User = () => {
       {getUsers &&
       getUsers.map((user) => (
 
-        <RenderUser key={user._id} user={user}/>
+        <RenderUser key={user._id} user={user} deleteUser={deleteUser}/>
       ))}
     </div>
   );
@@ -37,6 +51,7 @@ const User = () => {
 
 const RenderUser = (props) => {
   console.log(props);
+
 
 
   const [isOpen, setIsOpen] = useState(false)
@@ -64,24 +79,15 @@ const RenderUser = (props) => {
     console.log(changeUser)
   };
 
-  const deleteUser = (_id) => {
-    try {
-      fetch(`http://localhost:5000/api/user/deleteUser/${_id}`, {
-        method: "DELETE",
-      });
-      console.log("success");
-    } catch (error) {
-      console.error("Error: ", error);
-    }
-  };
 
   return (
+    <>
     <div className="userCard">
         <div className='wrapper'> <p><b>Användarnamn</b></p><p>: {props.user.username}</p></div>
         <div className='wrapper'> <p><b>Id-nummer</b></p><p>: {props.user._id}</p></div>
         <div className='wrapper'> <p><b>Roll</b></p><p>: {props.user.role}</p></div>
   
-      <button  onClick={() => deleteUser(props.user._id)} >Radera användare</button>
+      <button  onClick={() => props.deleteUser(props.user._id)} >Radera användare</button>
 
 
           <button onClick={() => setIsOpen(!isOpen)}>Ändra uppgifter</button>
@@ -120,6 +126,7 @@ const RenderUser = (props) => {
              </form>
           </Modal>
     </div>
+    </>
   );
 };
 

@@ -8,6 +8,7 @@
   background-color: white;
   height: fit-content;
   width: fit-content;
+  margin-top:1rem;
 
 }
 
@@ -80,3 +81,11 @@
  }
 }
 
+.deleteEmail{
+  height: 2rem;
+  width: fit-content;
+  padding:5px;
+  font-size: 16px;
+  align-self: center;
+  margin-right: 1rem;
+}

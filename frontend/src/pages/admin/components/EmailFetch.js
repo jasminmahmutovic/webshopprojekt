@@ -21,6 +21,21 @@ const EmailFetch = () => {
     }
     fetchEmails();
   }, []);
+
+  const deleteEmail = (_id) => {
+    try {
+      fetch(`http://localhost:5000/api/deleteEmail/${_id}`, {
+        method: "DELETE",
+      });
+      console.log("success");
+    } catch (error) {
+      console.error("Error: ", error);
+    }
+
+    const newUser = getEmails.filter((email) => email._id !== _id);
+    setGetEmails(newUser);
+  };
+
   
 
   
@@ -28,7 +43,7 @@ const EmailFetch = () => {
     <div className="App">
       {getEmails &&
       getEmails.map((email) => (
-        <RenderEmail key={email._id} email={email}/>
+        <RenderEmail key={email._id} email={email} deleteEmail={deleteEmail}/>
       ))}
     </div>
   );
@@ -65,8 +80,9 @@ const RenderEmail = (props) => {
         <p style={{ fontSize: "16px" }}>
           {props.email.name}
         </p>
-        <p style={{ fontSize: "14px" }}>{props.email.body}...</p>
+        <p style={{ fontSize: "14px" }}>{props.email.text}...</p>
       </div>
+      <button className='deleteEmail' onClick={() => props.deleteEmail(props.email._id)}>Radera mail</button>
       </div>
       </div>
 

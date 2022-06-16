@@ -12,8 +12,12 @@ const EmailAdmin = () => {
   return (
     <div style={{ display: "flex" }}>
       <NavbarAdmin></NavbarAdmin>
+
+      <div>
+        <h2 className="outerDivUser" >Användare</h2>
       <User></User>
-      
+      </div>
+
       <div className="outerDivEmail">
       <h2>Email</h2>
       <div className="wrapperEmail">
