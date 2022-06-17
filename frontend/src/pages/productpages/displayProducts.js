@@ -1,40 +1,36 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import Card from 'react-bootstrap/Card'
 import Button from 'react-bootstrap/Button'
 import { useContext } from 'react'
 import { CartContext } from '../../context/CartContext'
 import { Carousel } from 'react-bootstrap'
 import ToastMessage from './ToastMessage'
-import ProductsModal from "./ProductsModal";
+import ProductsModal from './ProductsModal'
 import Share from '../../components/Share'
 
 //Styling
-import { BsArrowClockwise } from "react-icons/bs";
-import { BsFillHeartFill } from "react-icons/bs";
-import "./displayProducts.scss";
+import { BsArrowClockwise } from 'react-icons/bs'
+import { BsFillHeartFill } from 'react-icons/bs'
+import './displayProducts.scss'
 import OutOfStock from './outOfStock'
 
-
 const DisplayProds = (props) => {
-  const { product } = props;
+  const { product } = props
 
   const [show, setShow] = React.useState(false)
   const [showToast, setShowToast] = React.useState(false)
-  const [rotate, setRotate] = React.useState(false);
-  const [outOfStock, setOutOfStock] = React.useState(false);
+  const [rotate, setRotate] = React.useState(false)
+  const [outOfStock, setOutOfStock] = React.useState(false)
   const [heartClicked, setHeartClicked] = useState()
 
   //check products that are no longer in stock
-  const stock = product.quantity === 0;
- 
+  const stock = product.quantity === 0
 
   //From Context
-  const { cart, setCart } = useContext(CartContext);
-  const { heartList, setHeartList } = useContext(CartContext);
- 
+  const { cart, setCart } = useContext(CartContext)
+  const { heartList, setHeartList } = useContext(CartContext)
 
-  const handleShow = () => setShow(true);
-
+  const handleShow = () => setShow(true)
 
   //to not dublicate item, but at the same time add item
   const addProducts = (product) => {
@@ -43,41 +39,40 @@ const DisplayProds = (props) => {
     if (exist) {
       setCart(
         cart.map((x) =>
-          x.id === product.id ? { ...exist, quantity: exist.quantity + 1 } : x
-        )
-      );
-    } else if (product.quantity === 0) { 
+          x.id === product.id ? { ...exist, quantity: exist.quantity + 1 } : x,
+        ),
+      )
+    } else if (product.quantity === 0) {
       setOutOfStock(true)
     } else {
       setShowToast(true)
       setCart([...cart, { ...product, quantity: 1 }])
     }
-  };
+    console.log(product)
+  }
 
   const rotateImage = {
-    width: rotate ? "500px" : "200px",
-    height: rotate ? "300px" : "300px",
-    transition: "transform 150ms ease",
-  };
-
-
- const handlerHeartButton = () => {
-  setHeartClicked(!heartClicked)
-  const exist = heartList.find((x) => x.id === product.id)
-  
-  if (exist) {
-    setHeartList(
-      heartList.map((x) =>
-        x.id === product.id ? { ...exist, quantity: exist.quantity + 1 } : x
-      )
-    );
-  } else {
-    
-    setHeartList([...heartList, { ...product, quantity: 1 }])
+    width: rotate ? '500px' : '200px',
+    height: rotate ? '300px' : '300px',
+    transition: 'transform 150ms ease',
   }
-  
-  alert("din produkt är tillagd i önskelistan")
- }
+
+  const handlerHeartButton = () => {
+    setHeartClicked(!heartClicked)
+    const exist = heartList.find((x) => x.id === product.id)
+
+    if (exist) {
+      setHeartList(
+        heartList.map((x) =>
+          x.id === product.id ? { ...exist, quantity: exist.quantity + 1 } : x,
+        ),
+      )
+    } else {
+      setHeartList([...heartList, { ...product, quantity: 1 }])
+    }
+
+    alert('din produkt är tillagd i önskelistan')
+  }
 
   return (
     <>
@@ -94,26 +89,26 @@ const DisplayProds = (props) => {
       )}
 
       <Card
-        style={rotate ? { maxWidth: "500px" } : { maxWidth: "200px" }}
+        style={rotate ? { maxWidth: '500px' } : { maxWidth: '200px' }}
         key={product.id}
       >
         <div
           style={{
-            position: "relative",
-            display: "flex",
-            justifyContent: "flex-end",
+            position: 'relative',
+            display: 'flex',
+            justifyContent: 'flex-end',
           }}
         >
           <BsArrowClockwise
             style={{
-              position: "absolute",
-              zIndex: "1000",
-              backgroundColor: "#878484a1",
-              color: "#FFF700",
-              fontSize: "1.5rem",
-              margin: "0.5rem",
-              borderRadius: "50%",
-              cursor: "pointer",
+              position: 'absolute',
+              zIndex: '1000',
+              backgroundColor: '#878484a1',
+              color: '#FFF700',
+              fontSize: '1.5rem',
+              margin: '0.5rem',
+              borderRadius: '50%',
+              cursor: 'pointer',
             }}
             onClick={() => setRotate(!rotate)}
           />
@@ -145,33 +140,37 @@ const DisplayProds = (props) => {
           </Carousel.Item>
         </Carousel>
         <Card.Body>
-          <div className='title-price-outOfStock-row'>
-            <div className='title-price-container'>
+          <div className="title-price-outOfStock-row">
+            <div className="title-price-container">
               <Card.Title>{product.title}</Card.Title>
               <Card.Text>{product.price}:-</Card.Text>
             </div>
-            {stock && (<p className="outOfStock-txt">OTILLGÄNGLIG</p>)}
-            </div>
-          <div style={{ display: "flex", justifyContent: "space-between" }}>
-            <Button className="buy-btn" 
-              onClick={() => addProducts(product)}
-            >
+            {stock && <p className="outOfStock-txt">OTILLGÄNGLIG</p>}
+          </div>
+          <div style={{ display: 'flex', justifyContent: 'space-between' }}>
+            <Button className="buy-btn" onClick={() => addProducts(product)}>
               Köp
             </Button>
             <Button variant="outline-primary" onClick={handleShow}>
               Mer info
             </Button>
             <div>
-            <button 
-             className={`heartButton ${heartClicked ? 'heartButtonClick' : ''}`}
-            onClick={handlerHeartButton}> <BsFillHeartFill/> </button>
-           <Share></Share>
-          </div>
+              <button
+                className={`heartButton ${
+                  heartClicked ? 'heartButtonClick' : ''
+                }`}
+                onClick={handlerHeartButton}
+              >
+                {' '}
+                <BsFillHeartFill />{' '}
+              </button>
+              <Share></Share>
+            </div>
           </div>
         </Card.Body>
       </Card>
     </>
-  );
-};
+  )
+}
 
-export default DisplayProds;
+export default DisplayProds
