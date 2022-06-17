@@ -6,7 +6,7 @@ const Product = require("../models/Products");
 
 productRouter.post(
   "/newproduct",
-//   passport.authenticate("admin-rule", { session: false }),
+  passport.authenticate("admin-rule", { session: false }),
   (req, res) => {
     const { category, title, description, price } = req.body;
     const newProduct = new Product({
@@ -79,7 +79,7 @@ productRouter.get("/category/:category", (req, res) => {
 
 productRouter.put(
   "/updateproducts/:id",
-//   passport.authenticate("admin-rule", { session: false }),
+  passport.authenticate("admin-rule", { session: false }),
   (req, res) => {
     const { category, title, description, price } = req.body;
     Product.findByIdAndUpdate(
@@ -105,7 +105,7 @@ productRouter.put(
 
 productRouter.delete(
   "/deleteproduct/:id",
-//   passport.authenticate("admin-rule", { session: false }),
+  passport.authenticate("admin-rule", { session: false }),
   (req, res) => {
     Product.findByIdAndDelete({ _id: req.params.id }, (err) => {
       if (err) {

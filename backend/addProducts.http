@@ -1,9 +1,0 @@
-POST http://localhost:5000/api/newproduct
-content-type: application/json
-
-{
-    "title": "Baggie bear",
-    "description": "wupdidup",
-    "price": "10kr"
-}
-###
