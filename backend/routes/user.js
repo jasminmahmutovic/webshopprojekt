@@ -19,11 +19,7 @@ const signToken = (userId) => {
     }
   );
 };
-//token går ut inom ett dygn
 
-//save new user to db
-//längst ned under newuser.save() körs så anropas User.js middelware funktion som
-//kollar på lösenordet och hashar den för att sedan sätta lösenordet.
 userRouter.post("/register", (req, res) => {
   const { username, password, role } = req.body;
   User.findOne({ username }, (err, user) => {
@@ -53,8 +49,6 @@ userRouter.post("/register", (req, res) => {
   });
 });
 
-//innan callbacken körs går den in i passport och hittar localstrategy
-//runs local strategy middleware (passport.js file) and sets cookie to jwt created through our signToken() function
 
 userRouter.post(
   "/login",
@@ -92,7 +86,25 @@ userRouter.get(
       if (err) {
         res.status(500).json({
           msg: {
-            msgBody: "An error occured while retrieving posts",
+            msgBody: "An error occured while retrieving users",
+            msgError: true,
+          },
+        });
+      } else {
+        res.status(200).json({ user: documents });
+      }
+    });
+  }
+);
+
+userRouter.get(
+  "/getOneUser/:id",
+  (req, res) => {
+    User.findById({_id: req.params.id}, (err, documents) => {
+      if (err) {
+        res.status(500).json({
+          msg: {
+            msgBody:"An error occured while retrieving your user",
             msgError: true,
           },
         });
@@ -137,10 +149,11 @@ userRouter.get(
   }
 );
 
-userRouter.put("/updateUser/:id", (req, res) => {
+userRouter.put("/updateUser/:id", 
+(req, res) => {
   User.findByIdAndUpdate(
     req.params.id,
-    { username: req.body.username, password: req.body.password },
+    { username: req.body.username, password: req.body.password , role: req.body.role },
     (err) => {
       if (err) {
         res.status(500).json({

@@ -5,7 +5,6 @@ import Login from "./pages/login.js";
 import Main from "./pages/main/main.js";
 import MyAccount from "./pages/myaccount.js";
 import Products from "./pages/products.js";
-import Register from "./pages/register.js";
 import Pants from "./pages/productpages/pants/pants";
 import Outerwear from "./pages/productpages/outerwear/outerwear";
 import Skirtsdresses from "./pages/productpages/skirtsdresses/skirtsdresses";
@@ -35,7 +34,6 @@ function App() {
             <Route path="about" element={<About />} />
             <Route path="checkout" element={<Checkout />}></Route>
             <Route path="myaccount" element={<MyAccount />} />
-            <Route path="register" element={<Register />} />
             {/* Categories */}
             <Route path="pants" element={<Pants />} />
             <Route path="outerwear" element={<Outerwear />} />

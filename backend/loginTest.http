@@ -4,9 +4,21 @@ POST http://localhost:5000/api/user/register
 content-type: application/json
 
 {
-    "username":"Azlan",
+    "username":"Test",
     "password":"test123",
     "role": "user"
+}
+
+###
+
+
+PUT http://localhost:5000/api/user/updateUser/62ab2e4e328cdffa91ce67af
+content-type: application/json
+
+{
+    "username":"fripps",
+    "password":"test123",
+    "role":"admin"
 }
 
 ###
@@ -15,28 +27,18 @@ POST http://localhost:5000/api/user/login
 content-type: application/json
 
 {
-    "username":"Frida",
+    "username":"Admin",
     "password":"test123",
-    "role":"user"
+    "role":"admin"
 }
-
-###
-
-Get  http://localhost:5000/api/user/logout
 
 ###
 
 GET  http://localhost:5000/api/user/authenticated
-
 ###
 
-POST http://localhost:5000/api/user/register
-content-type: application/json
 
-{
-    "username":"testar",
-    "password":"test123"
-}
+Get  http://localhost:5000/api/user/logout
 
 ###
 
@@ -44,15 +46,14 @@ GET http://localhost:5000/api/user/getUsers
 
 ###
 
-DELETE http://localhost:5000/api/user/deleteUser/62a8d531d8347d5ff8f06ef2
+GET http://localhost:5000/api/user/getOneUser/62aa09a2ef7c5450de130ae8
+
+###
+
+DELETE http://localhost:5000/api/user/deleteUser/62ab2e4e328cdffa91ce67af
 
 
 ###
 
-PUT http://localhost:5000/api/user/updateUser/62a8db1cf72d5c387d91ec3d
-content-type: application/json
 
-{
-    "username":"fripps",
-    "password":"fripps"
-}
+

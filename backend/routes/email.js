@@ -22,7 +22,7 @@ emailRouter.post("/newEmail", (req, res) => {
     console.log("email to add: ", req.body);
     const newEmail = new Email({
       name: req.body.name,
-      body: req.body.body,
+      text: req.body.text,
       email: req.body.email,
     });
     newEmail.save((err) => {

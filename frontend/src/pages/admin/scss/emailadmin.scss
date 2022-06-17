@@ -1,90 +1,68 @@
-.emailWrapper {
-  height: 100vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-left: 5rem;
+
+.outerDivEmail{
+  margin-top: 1rem;
 }
 
-.outerDiv {
-  background-color: white;
-  height: 40rem;
-  display: flex;
-  border: 1px solid black;
 
-  .left {
-    height: 100%;
-    width: 20rem;
+.wrapperEmail{
+  background-color: white;
+  height: fit-content;
+  width: fit-content;
+  margin-top:1rem;
+
+}
+
+
+
+.emailInformation {
+  border-bottom: 1px solid black;
+  display: flex;
+  height: 4rem;
+  width: 100%;
+  cursor: pointer;
+  .logo {
     display: flex;
-    flex-direction: column;
-    .emailInformation {
-      border-bottom: 1px solid black;
-      display: flex;
-      height: 4rem;
-      cursor: pointer;
-      .logo {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        flex: 1;
-        svg {
-          font-size: 41px;
-          color: #a9a9a9;
-        }
-      }
-      .userinformation {
-        flex: 2;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        p {
-          margin: 0;
-        }
-      }
+    justify-content: center;
+    align-items: center;
+    flex: 1;
+    svg {
+      font-size: 41px;
+      color: #a9a9a9;
     }
   }
-
-  .right {
-    height: 100%;
-    border-left: 1px solid black;
-    width: 30rem;
+  .userinformation {
+    flex: 2;
     display: flex;
     flex-direction: column;
-    .emailName {
-      display: flex;
-      padding-left: 1rem;
-      padding-right: 1rem;
-      align-items: center;
-      flex: none;
-      height: 4rem;
+    justify-content: center;
+    p {
+      margin: 0;
     }
-    .emailBody {
-      padding: 1rem;
-      flex: 1;
-    }
-    .emailFile {
-      display: flex;
-      align-items: center;
-      flex: none;
-      height: 4rem;
-      padding-left: 1rem;
-      padding-right: 1rem;
-      .file {
-        display: flex;
-        align-items: center;
-        width: 240px;
-        height: 55px;
-        background-color: #b4b4b4;
-        border-radius: 5px;
-        text-align: center;
-        padding:5px;
-      }
-    }
+  }
+}
+
+.right {
+  height: 100%;
+  width: 30rem;
+  display: flex;
+  flex-direction: column;
+  .emailName {
+    display: flex;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    align-items: center;
+    flex: none;
+    height: 4rem;
+  }
+  .emailBody {
+    padding: 1rem;
+    flex: 1;
   }
 }
 
 
 .answerWrapper{
+  margin-top: 5rem;
   form{
   margin:auto;
   margin-bottom: 5px;
@@ -103,9 +81,11 @@
  }
 }
 
-
-.iEmail{
-  position: inherit;
-  margin-left:2rem;
-  margin-top:5px;
+.deleteEmail{
+  height: 2rem;
+  width: fit-content;
+  padding:5px;
+  font-size: 16px;
+  align-self: center;
+  margin-right: 1rem;
 }

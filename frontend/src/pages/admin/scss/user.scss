@@ -1,4 +1,8 @@
-
+.outerDivUser{
+    margin-top: 1rem;
+    margin-bottom:unset;
+    margin-left: 1rem;
+}
 
 .userWrapper{
     display: flex;
@@ -22,7 +26,9 @@
     background-color: white;
     padding:1rem;
     margin:1rem;
-
+    .wrapper{
+        display:flex;
+    }
     p{
         font-size: 16px;
     }
