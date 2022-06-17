@@ -47,7 +47,7 @@ productRouter.get("/allproducts", (req, res) => {
   });
 });
 
-productRouter.get("/product/:id", (req, res) => {
+productRouter.get("/:id", (req, res) => {
   Product.findById({_id: req.params.id}, (err, products) => {
     if (err) {
       res.status(500).json({
@@ -57,6 +57,21 @@ productRouter.get("/product/:id", (req, res) => {
       res.status(200).json({
         products,
         message: { msgBody: "Successfully got the product", msgError: true },
+      });
+    }
+  });
+});
+
+productRouter.get("/category/:category", (req, res) => {
+  Product.find({category: req.params.category}, (err, products) => {
+    if (err) {
+      res.status(500).json({
+        message: { msgBody: "An error occured when trying to get this category!", msgError: true },
+      });
+    } else {
+      res.status(200).json({
+        products,
+        message: { msgBody: "Successfully got the products in this category!", msgError: true },
       });
     }
   });
