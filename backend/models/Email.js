@@ -5,21 +5,15 @@ const EmailSchema = mongoose.Schema({
     type: String,
     required: true,
   },
-  lastname:{
-      type:String,
-      required:true,
-  },
-  mail:{
-    type: String,
-    required: true,
-  },
-  message: {
-    type: String,
-    required: true,
-  },
-  file:{
-      type:String
-  }
+   text: {
+     type: String, 
+     require: true
+   },
+   email:{
+     type: String,
+     require: true
+   }
+
 });
 
 module.exports = mongoose.model("Email", EmailSchema);

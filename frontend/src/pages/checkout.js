@@ -9,17 +9,42 @@ import maestroIcon from '../../src/assets/icons/icons8-maestro-100.png'
 import visaIcon from '../../src/assets/icons/icons8-visa-100.png'
 import mastercardIcon from '../../src/assets/icons/icons8-mastercard-logo-100.png'
 
-const rootURL = "/api/";
-
 const Checkout = () => {
-
-
 
   const { user } = useContext(UserContext)
   const { cart, setCart } = useContext(CartContext)
 
+
+  const [ myOrder, setMyOrder] = useState({
+    firstname: '',
+    lastname: '',
+    email: '',
+    telephone: '',
+    address: '',
+    city: '',
+    zipcode: '',
+    products: [
+      ...cart
+    ]
+  })
+
+
+
+   useEffect(() => {
+     setMyOrder({...myOrder})
+   }, [cart])
+
+  useEffect(() => {
+    //cartItems()
+  })
+
+  const handleInput = (e) => {
+    setMyOrder({ ...myOrder, [e.target.name]: e.target.value })
+  }
+
+
   //calculate the price of all items
-  const itemsPrice = cart.reduce((a, b) => a + b.price * b.quantity, 0)
+  const itemsPrice = cart.reduce((a, b) => a + parseInt(b.price) * parseInt(b.quantity), 0)
 
   const removeProduct = (product) => {
     const exist = cart.find((x) => x.id === product.id)
@@ -34,61 +59,26 @@ const Checkout = () => {
     }
   }
 
-  const [adressInfo, setAdressInfo] = useState({
-    firstname: user.firstname || '',
-    lastname: user.lastname || '',
-    mail: user.mail || '',
-    telephone: user.telephone || '',
-    adress: user.adress || '',
-    city: user.city || '',
-    zipCode: user.zipCode || '',
-    products: [],
-  })
-
-  useEffect(() => {
-    setAdressInfo({...adressInfo})
-  }, [cart])
-
-  const handleInput = (e) => {
-    setAdressInfo({ ...adressInfo, [e.target.name]: e.target.value })
-  }
-
-
-  const submitOrder = async () => {
-    // e.preventDefault()
+  const submitOrder = async (e) => {
+    e.preventDefault()
     // if (cart.length > 0) {
     //   alert("Din order är skickad!")
     //   //alert(JSON.stringify(adressInfo))
     // }
 
-    // const title = document.getElementById("product-title").value;
-    // const price = document.getElementById("product-price").value;
-    const fname = document.getElementById("firstname-order").value;
-    const lname = document.getElementById("lastname-order").value;
-
-
-    const order = {
-      fname,
-      lname,
-    };
-
     try {
-      const res = await fetch(`${rootURL}neworder`, {
-        method: "post",
-        body: JSON.stringify(order),
+      const res = await fetch('http://localhost:5000/api/order/neworder', {
+        method: 'post',
+        body: JSON.stringify(myOrder),
         headers: {
-          "Content-Type": "application/json",
+          'Content-Type': 'application/json',
         },
-      });
-      const data = await res.json();
-      console.log(data);
+      })
+      const data = await res.json()
+      console.log(data)
     } catch (error) {
-      console.error("Error: ", error);
+      console.error('Error: ', error)
     }
-
-    document.getElementById("firstname-order").value = "";
-    document.getElementById("lastname-order").value = "";
-
   }
 
   return (
@@ -110,18 +100,27 @@ const Checkout = () => {
                     {cart.length === 0 && <p>Inga produkter...</p>}
                   </div>
                   {/* lägga en mappning för denna div */}
-                  {cart.map((item) => (
+                  {cart && cart.map((item) => (
                     <div key={item.id} className="product-checkout">
-                      <img
+                      {/* <img
                         className="product-img-left"
                         src={item.img[0].img}
                         alt={item.title}
-                      />
+                      /> */}
 
                       <div className="procuct-info-right">
                         <div className="title-price">
-                          <p value={item.title} id="product-title">{item.title}</p>
-                          <p value={item.price} id="product-price" className="price">{item.price}kr</p>
+                          <p
+                            value={item.title}
+                            id="product-title"
+                          >{item.title} </p>
+                            
+                          <p
+                            value={item.price}
+                            id="product-price"
+                            className="price"
+                          >{item.price}kr</p>
+                         
                         </div>
 
                         <div className="color-size-remove-div">
@@ -159,7 +158,7 @@ const Checkout = () => {
                     className="first-sec-input"
                     name="firstname"
                     placeholder="Förnamn..."
-                    value={adressInfo.firstname}
+                    value={myOrder.firstname}
                     onChange={handleInput}
                     required
                   />
@@ -169,16 +168,16 @@ const Checkout = () => {
                     className="first-sec-input"
                     name="lastname"
                     placeholder="Efternamn..."
-                    value={adressInfo.lastname}
+                    value={myOrder.lastname}
                     onChange={handleInput}
                     required
                   />
 
                   <input
                     className="first-sec-input"
-                    name="mail"
+                    name="email"
                     placeholder="Email..."
-                    value={adressInfo.mail}
+                    value={myOrder.mail}
                     onChange={handleInput}
                     required
                   />
@@ -187,16 +186,16 @@ const Checkout = () => {
                     className="first-sec-input"
                     name="telephone"
                     placeholder="Telefon..."
-                    value={adressInfo.telephone}
+                    value={myOrder.telephone}
                     onChange={handleInput}
                     required
                   />
 
                   <input
                     className="second-sec-input"
-                    name="adress"
+                    name="address"
                     placeholder="Adress..."
-                    value={adressInfo.adress}
+                    value={myOrder.adress}
                     onChange={handleInput}
                     required
                   />
@@ -205,16 +204,16 @@ const Checkout = () => {
                     className="second-sec-input"
                     name="city"
                     placeholder="Stad..."
-                    value={adressInfo.city}
+                    value={myOrder.city}
                     onChange={handleInput}
                     required
                   />
 
                   <input
                     className="second-sec-input"
-                    name="zipCode"
+                    name="zipcode"
                     placeholder="Postnummer..."
-                    value={adressInfo.zipCode}
+                    value={myOrder.zipCode}
                     onChange={handleInput}
                     required
                   />
@@ -275,7 +274,9 @@ const Checkout = () => {
                     />
                   </div>
 
-                  <button type="submit" className="make-purchase-btn">SLUTFÖR KÖP</button>
+                  <button type="submit" className="make-purchase-btn">
+                    SLUTFÖR KÖP
+                  </button>
                 </div>
               </div>
             </div>

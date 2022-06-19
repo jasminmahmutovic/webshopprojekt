@@ -23,6 +23,13 @@ const Pants = () => {
     setItems(products);
   }, []);
 
+  // useEffect(() => {
+  //   fetch("http://localhost:5000/api/product/allproducts/").then((res) => res.json()).then((json) => {
+  //     setItems(products);
+  //     console.log(json);
+  //   })
+  // }, [])
+
   return (
     <div style={{ width: "auto", height: "auto" }}>
       <div className="header">

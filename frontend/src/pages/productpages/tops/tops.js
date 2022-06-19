@@ -1,39 +1,39 @@
-import React from "react";
-import { useState, useEffect } from "react";
-import products from "./topsProducts";
-import DisplayProducts from "../displayProducts";
-import TopsHeader from "../../../assets/images/Produkt_headers/toppar.png";
-import FilterIcon from "../../../assets/icons/filter.png";
-import Checkbox from "../../../components/Checkbox";
-import "../pageStyles/productStyles.css";
-import SearchProducts from "../../../functions/searchProducts/search";
+import React from 'react'
+import { useState, useEffect } from 'react'
+import products from './topsProducts'
+import DisplayProducts from '../displayProducts'
+import TopsHeader from '../../../assets/images/Produkt_headers/toppar.png'
+import FilterIcon from '../../../assets/icons/filter.png'
+import Checkbox from '../../../components/Checkbox'
+import '../pageStyles/productStyles.css'
+import SearchProducts from '../../../functions/searchProducts/search'
 
 const Tops = () => {
-  const [items, setItems] = useState([]);
-  const [input, setInput] = useState("");
-  const [open, setOpen] = useState(false);
+  const [items, setItems] = useState([])
+  const [input, setInput] = useState('')
+  const [open, setOpen] = useState(false)
 
   const handleInput = (e) => {
-    const lowerCase = e.target.value.toLowerCase();
-    setInput(lowerCase);
-    setOpen(!open);
-  };
+    const lowerCase = e.target.value.toLowerCase()
+    setInput(lowerCase)
+    setOpen(!open)
+  }
 
   useEffect(() => {
-    setItems(products);
-  }, []);
+    setItems(products)
+  }, [])
 
   return (
-    <div style={{ width: "auto", height: "auto" }}>
+    <div style={{ width: 'auto', height: 'auto' }}>
       <div className="header">
         <img
           src={TopsHeader}
           style={{
-            width: "100%",
-            height: "auto",
-            objectFit: "cover",
-            marginTop: "0",
-            marginBottom: "0",
+            width: '100%',
+            height: 'auto',
+            objectFit: 'cover',
+            marginTop: '0',
+            marginBottom: '0',
           }}
           alt="Tops header"
         />
@@ -52,8 +52,8 @@ const Tops = () => {
           <div>
             <h4
               style={{
-                fontSize: "1.5rem",
-                fontWeight: "bold",
+                fontSize: '1.5rem',
+                fontWeight: 'bold',
               }}
             >
               SÖK
@@ -64,8 +64,8 @@ const Tops = () => {
           <div>
             <h4
               style={{
-                fontSize: "1.5rem",
-                fontWeight: "bold",
+                fontSize: '1.5rem',
+                fontWeight: 'bold',
               }}
             >
               Pris Klasser
@@ -77,8 +77,8 @@ const Tops = () => {
             <hr />
             <h4
               style={{
-                fontSize: "1.5rem",
-                fontWeight: "bold",
+                fontSize: '1.5rem',
+                fontWeight: 'bold',
               }}
             >
               Färg
@@ -104,8 +104,8 @@ const Tops = () => {
             <hr />
             <h4
               style={{
-                fontSize: "1.5rem",
-                fontWeight: "bold",
+                fontSize: '1.5rem',
+                fontWeight: 'bold',
               }}
             >
               Storlek
@@ -128,7 +128,7 @@ const Tops = () => {
         </div>
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default Tops;
+export default Tops

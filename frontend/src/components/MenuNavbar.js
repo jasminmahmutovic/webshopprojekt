@@ -32,9 +32,17 @@ const MenuNavbar = (props) => {
   const { cart, cartVisible, setCartVisible } = useContext(CartContext) //basket state
 
   const handleLogOut = () => {
+
+    try {
+      fetch(`http://localhost:5000/api/user/logout`);
+      console.log("success");
+    } catch (error) {
+      console.error("Error: ", error);
+    }
     setLoggedIn(false)
     setUser({})
     navigate('/')
+    alert("välkommen tillbaka!")
   }
 
   const openCart = () => {

@@ -1,34 +1,73 @@
 const mongoose = require("mongoose");
+const bcrypt = require("bcrypt");
+const passport = require("passport");
 
 const UserSchema = mongoose.Schema({
-  firstname: {
+  username: {
     type: String,
     required: true,
+  },
+  password: {
+    type: String,
+    required: true,
+  },
+  role: {
+    type: String,
+    enum: ['user', 'admin'],
+    required: true,
+  },
+  firstname: {
+    type: String,
   },
   lastname: {
     type: String,
-    required: true,
   },
   email: {
     type: String,
-    required: true,
   },
   telephone: {
     type: Number,
-    required: true,
   },
   address: {
-        type: String,
-        required: true,
-    },
-    city: {
-        type: String,
-        required: true,
-    },
-    zipcode: {
-        type: Number,
-        required: true,
-      },
+    type: String,
+  },
+  city: {
+    type: String,
+  },
+  zipcode: {
+    type: Number,
+  },
+  orderHistory: [
+    {
+      type: mongoose.Schema.Types.ObjectId,
+      ref: "Order"
+    }
+  ]
 });
 
-module.exports = mongoose.model("User", UserSchema);
+//middleware that runs before every mongodb save call via mongoose
+//user authentication 
+
+UserSchema.pre("save", function (next) {
+  if (!this.isModified("password")) next();
+  bcrypt.hash(this.password, 10, (err, passwordHashed) => {
+    if (err) return next(err)
+    this.password = passwordHashed
+    next()
+  })
+})
+
+
+//gets call from passport local strategy to compare password submitted from client with password on user in db
+UserSchema.methods.comparePassword = function (password, cb) {
+  bcrypt.compare(password, this.password, (err, isMatch) => {
+    if (err) {
+      return cb(err)
+    } else {
+      if (!isMatch) return cb(null, isMatch)
+      return cb(null, this)
+    }
+  })
+}
+
+module.exports = mongoose.model('User', UserSchema)

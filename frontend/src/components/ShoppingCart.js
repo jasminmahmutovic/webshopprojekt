@@ -11,7 +11,7 @@ const ShoppingCart = () => {
   const { cart, setCart } = useContext(CartContext);
 
   //calculate the price of all items
-  const itemsPrice = cart.reduce((a, b) => a + b.price * b.quantity, 0);
+  const itemsPrice = cart.reduce((a, b) => a + parseInt(b.price) * parseInt(b.quantity), 0);
 
 //remove each item with 1
 const removeProduct = (product) => {
@@ -52,7 +52,7 @@ const removeProduct = (product) => {
           {cart.map((item => (
             <div key={item.id} className="products-wrapper">
               {/* mappning för produkter */}
-              <img className="img-productera" src={item.img[0].img} alt={item.title} />
+              {/* <img className="img-productera" src={item.img[0].img} alt={item.title} /> */}
               <div className="procuct-right-info">
                 <div className="title-n-price">
                   <p>{item.title}</p>
@@ -75,7 +75,7 @@ const removeProduct = (product) => {
         <div className="totalPrice-toCheckout-div">
           <div className="total-price-div">
             <h4>Totalt pris:</h4>
-            <h4>{itemsPrice}kr</h4>
+            <h4>{parseInt(itemsPrice)}kr</h4>
           </div>
           <button onClick={handleNavigate}>TILL KASSAN</button>
         </div>
