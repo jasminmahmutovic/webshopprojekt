@@ -1,0 +1,23 @@
+###
+
+POST http://localhost:5000/api/order/neworder
+content-type: application/json
+
+{
+    
+    "lastname": "Torell",
+    "email": "maiatorell@outlook.se",
+    "telephone": "0732039054",
+    "address":"rösvägen 11",
+    "city":"växjö",
+    "zipcode": "35449",
+    "products": [
+       { "_id": "62a84430c0711231dfd14a68",
+         "title": "Cool jeans", 
+         "price":"50kr",
+        "quantity": "1"
+       }
+    ]
+}
+
+### 

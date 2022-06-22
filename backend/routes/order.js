@@ -4,6 +4,8 @@ const Order = require('../models/Order')
 const User = require('../models/User')
 const passport = require('passport')
 const passportConfig = require('../passport')
+const { orderConfirmed } = require("../services/emailService");
+const { orderNotConfirmed } = require("../services/emailService");
 
 orderRouter.post('/neworder', (req, res) => {
   console.log(req.body)
@@ -16,6 +18,7 @@ orderRouter.post('/neworder', (req, res) => {
           msgError: true,
         },
       })
+      orderNotConfirmed(req.body);
     } else {
       if (req.body.userId) {
         User.findById({ _id: req.body.userId }, (error, user) => {
@@ -26,6 +29,7 @@ orderRouter.post('/neworder', (req, res) => {
                 msgError: true,
               },
             })
+            orderNotConfirmed(req.body);
           } else {
             user.orderHistory.push(newOrder)
             user.save((error) => {
@@ -42,7 +46,8 @@ orderRouter.post('/neworder', (req, res) => {
                     msgBody: 'Successfully added order in  order-history',
                     msgError: false,
                   },
-                })
+                });
+                orderConfirmed(req.body);
               }
             })
           }
@@ -53,7 +58,8 @@ orderRouter.post('/neworder', (req, res) => {
             msgBody: 'Successful submitted order',
             msgError: false,
           },
-        })
+        });
+        orderConfirmed(req.body);
       }
     }
   })
@@ -138,4 +144,4 @@ orderRouter.delete(
   },
 )
 
-module.exports = orderRouter
+module.exports = orderRouter;
